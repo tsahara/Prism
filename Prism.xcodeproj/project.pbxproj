@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */; };
-		1F0A73AD1A9C0BDE00FA91D4 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AC1A9C0BDE00FA91D4 /* Document.swift */; };
+		1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */; };
 		1F0A73B01A9C0BDE00FA91D4 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73AE1A9C0BDE00FA91D4 /* Document.xib */; };
 		1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */; };
 		1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */; };
@@ -29,7 +29,7 @@
 		1F0A73A51A9C0BDE00FA91D4 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0A73A91A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F0A73AC1A9C0BDE00FA91D4 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcapDocument.swift; sourceTree = "<group>"; };
 		1F0A73AF1A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F0A73B41A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
-				1F0A73AC1A9C0BDE00FA91D4 /* Document.swift */,
+				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
 				1F0A73AE1A9C0BDE00FA91D4 /* Document.xib */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0A73AD1A9C0BDE00FA91D4 /* Document.swift in Sources */,
+				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
