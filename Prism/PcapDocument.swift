@@ -28,7 +28,7 @@ class PcapDocument: NSDocument {
     override var windowNibName: String? {
         // Returns the nib file name of the document
         // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
-        return "Document"
+        return "PcapDocument"
     }
 
     override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
