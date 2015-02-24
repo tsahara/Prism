@@ -13,6 +13,7 @@
 		1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */; };
 		1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */; };
 		1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */; };
+		1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrismTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismTests.swift; sourceTree = "<group>"; };
+		1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = emptyfile.pcap; path = Data/emptyfile.pcap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */,
+				1F0A73CC1A9CABF200FA91D4 /* Data */,
 				1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */,
 			);
 			path = PrismTests;
@@ -110,6 +113,14 @@
 				1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F0A73CC1A9CABF200FA91D4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
