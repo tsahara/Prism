@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PcapDocument: NSDocument {
+class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
 
     override init() {
         super.init()
@@ -46,6 +46,31 @@ class PcapDocument: NSDocument {
         return false
     }
 
+    
+    // NSTableViewDataSource Protocol
+    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
 
+        if let label = aTableColumn!.identifier {
+            switch label {
+            case "TimeCell":
+                return "time"
+            case "SourceCell":
+                return "srcaddr"
+            case "DestinationCell":
+                return "dstaddr"
+            case "ProtocolCell":
+                return "proto"
+            case "SummaryCell":
+                return "summary"
+            default:
+                return "(no value)"
+            }
+        } else {
+            return "(nil)"
+        }
+    }
 }
-
