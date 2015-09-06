@@ -18,6 +18,7 @@
 		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
+		1FB57EE01B9C59690016FCA6 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB57EE01B9C59690016FCA6 /* Packet.swift in Sources */,
 				1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */,
 				1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */,
 			);
