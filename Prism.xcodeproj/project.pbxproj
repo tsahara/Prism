@@ -20,6 +20,7 @@
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EE01B9C59690016FCA6 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
+		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
 		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
+		1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
+		1FB57EEC1B9DD26E0016FCA6 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +97,12 @@
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
+				1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
 				1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
+				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
 			);
 			path = Prism;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
 				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
 				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
@@ -370,10 +376,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -381,10 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
 			};
 			name = Release;
 		};

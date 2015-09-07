@@ -9,6 +9,7 @@
 import Cocoa
 
 class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
+    var pcap = Pcap()
 
     override init() {
         super.init()
@@ -37,7 +38,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         
         //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         
-        return NSData(bytes: [1, 2, 3] as [UInt8], length: 3)
+        return pcap.encode()
     }
 
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {

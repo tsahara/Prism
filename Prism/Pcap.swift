@@ -8,6 +8,19 @@
 
 import Foundation
 
+let PCAP_FILE_MAGIC: bpf_u_int32 = 0xa1b2c3d4
+
 class Pcap {
     var packets: [Packet] = []
+    
+    func encode() -> NSData {
+        var hdr = pcap_file_header()
+        hdr.magic = PCAP_FILE_MAGIC
+        hdr.version_major = 2
+        hdr.version_minor = 4
+        hdr.thiszone = 0
+        hdr.snaplen = 65536
+        hdr.linktype = 0
+        return NSData(bytes: &hdr, length: sizeof(pcap_file_header))
+    }
 }
