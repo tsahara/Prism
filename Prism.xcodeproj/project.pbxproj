@@ -19,6 +19,7 @@
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EE01B9C59690016FCA6 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
+		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
 		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
+		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
+				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
+				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
 				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 			);
