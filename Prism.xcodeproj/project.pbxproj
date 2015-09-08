@@ -97,12 +97,12 @@
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
-				1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
-				1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
 				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
+				1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
+				1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
 			);
 			path = Prism;
 			sourceTree = "<group>";
