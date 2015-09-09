@@ -25,17 +25,43 @@ class Pcap {
     }
 
     class func readFile(data: NSData) -> Pcap? {
+        var i = 0
+
         if (data.length < sizeof(pcap_file_header)) {
             print("File too short (size=\(data.length))")
             return nil
         }
-        
-        let hdr = UnsafePointer<pcap_file_header>(data.bytes).memory
-        if (hdr.magic != PCAP_FILE_MAGIC) {
-            print("bad magic: \(hdr.magic)")
+
+        let filehdr = UnsafePointer<pcap_file_header>(data.bytes).memory
+        if (filehdr.magic != PCAP_FILE_MAGIC) {
+            print("bad magic: \(filehdr.magic)")
             return nil
         }
+        i += sizeof(pcap_file_header)
+
+        var pcap = Pcap()
         
-        return Pcap()
+        while (i < data.length) {
+            if (i + 16 > data.length) {
+                return nil
+            }
+            let ts_sec  = UnsafePointer<UInt32>(data.bytes + i).memory
+            let ts_usec = UnsafePointer<UInt32>(data.bytes + i + 4).memory
+            let caplen  = UnsafePointer<UInt32>(data.bytes + i + 8).memory
+            let origlen = UnsafePointer<UInt32>(data.bytes + i + 12).memory
+            i += 16
+            
+            if (i + Int(caplen) > data.length) {
+                return nil
+            }
+
+            let sec = Double(ts_sec) + 1.0e-6 * Double(ts_usec)
+            let date = NSDate(timeIntervalSinceReferenceDate: sec)
+
+            let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: NSData(bytes: data.bytes + i, length: Int(caplen)))
+            pcap.packets.append(pkt)
+            i += Int(caplen)
+        }
+        return pcap
     }
 }

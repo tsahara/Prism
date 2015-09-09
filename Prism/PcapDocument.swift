@@ -55,6 +55,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
 
         pcap = Pcap.readFile(data)
+        print("Read \(count(pcap!.packets)) packets")
         
         //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return true
