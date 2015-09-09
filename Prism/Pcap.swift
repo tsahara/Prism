@@ -23,4 +23,19 @@ class Pcap {
         hdr.linktype = 0
         return NSData(bytes: &hdr, length: sizeof(pcap_file_header))
     }
+
+    class func readFile(data: NSData) -> Pcap? {
+        if (data.length < sizeof(pcap_file_header)) {
+            print("File too short (size=\(data.length))")
+            return nil
+        }
+        
+        let hdr = UnsafePointer<pcap_file_header>(data.bytes).memory
+        if (hdr.magic != PCAP_FILE_MAGIC) {
+            print("bad magic: \(hdr.magic)")
+            return nil
+        }
+        
+        return Pcap()
+    }
 }

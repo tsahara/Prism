@@ -9,7 +9,7 @@
 import Cocoa
 
 class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
-    var pcap = Pcap()
+    var pcap: Pcap?
     
     @IBOutlet var text: NSTextView!
 
@@ -43,15 +43,21 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         
         //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         
-        return pcap.encode()
+        if pcap == nil {
+            pcap = Pcap()
+        }
+        return pcap!.encode()
     }
 
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
         // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return false
+
+        pcap = Pcap.readFile(data)
+        
+        //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        return true
     }
 
     
