@@ -64,7 +64,11 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
     
     // NSTableViewDataSource Protocol
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
-        return 1
+        if pcap != nil {
+            return pcap!.packets.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
