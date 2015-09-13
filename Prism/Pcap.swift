@@ -37,6 +37,7 @@ class Pcap {
             print("bad magic: \(filehdr.magic)")
             return nil
         }
+        print("linktype=\(filehdr.linktype)\n")
         reader.advance(sizeof(pcap_file_header))
 
         var pcap = Pcap()
