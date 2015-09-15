@@ -11,25 +11,44 @@ import Foundation
 class NSDataReader {
     let data: NSData
     var offset: Int
+    var endian: ByteOrder = .BigEndian
     
     init(_ data: NSData) {
         self.data   = data
         self.offset = 0
     }
-    
+
     func advance(n: Int) {
         offset += n
     }
     
+    var length: Int { get { return data.length - offset } }
+   
     func readdata(len: Int) -> NSData {
         let d = NSData(bytes: data.bytes + offset, length: len)
         offset += len
         return d
     }
-    
+
     func u32() -> UInt32 {
-        let val = UnsafePointer<UInt32>(data.bytes + offset).memory
+        let val = UnsafePointer<UInt32>(data.bytes + offset).memory.bigEndian
         offset += 4
         return val
+    }
+    
+    func u32be() -> UInt32 {
+        return u32()
+    }
+
+    func u32endian() -> UInt32 {
+        if (endian == .BigEndian) {
+            return u32be()
+        } else {
+            return u32le()
+        }
+    }
+   
+    func u32le() -> UInt32 {
+        return u32().byteSwapped
     }
 }

@@ -14,11 +14,22 @@ class Packet {
     let captured_length: Int
     let data: NSData
     
+    var protocols: [Protocol] = []
+
     init(timestamp: NSDate, original_length: Int, captured_length: Int, data: NSData) {
         self.timestamp = timestamp
         self.original_length = original_length
         self.captured_length = captured_length
         self.data = data
+    }
+    
+    func parse(context: ParseContext) {
+        while (context.parser != nil) {
+            let parser = context.parser!
+            context.parser = nil
+            let p = parser(context)
+            protocols.append(p)
+        }
     }
     
     class func parseText(text: String) -> Packet? {

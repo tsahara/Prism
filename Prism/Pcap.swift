@@ -12,6 +12,7 @@ let PCAP_FILE_MAGIC: bpf_u_int32 = 0xa1b2c3d4
 
 class Pcap {
     var packets: [Packet] = []
+    var link_protocol: Protocol = UnknownProtocol()
     
     func encode() -> NSData {
         var hdr = pcap_file_header()
@@ -33,25 +34,36 @@ class Pcap {
         }
 
         let filehdr = UnsafePointer<pcap_file_header>(data.bytes).memory
-        if (filehdr.magic != PCAP_FILE_MAGIC) {
-            print("bad magic: \(filehdr.magic)")
+
+        var endian: ByteOrder
+        switch reader.u32() {
+        case PCAP_FILE_MAGIC:
+            endian = .BigEndian
+        case PCAP_FILE_MAGIC.byteSwapped:
+            endian = .LittleEndian
+        default:
+            print("bad magic: \(filehdr.magic.bigEndian)")
             return nil
         }
+        reader.endian = endian
+        
         print("linktype=\(filehdr.linktype)\n")
-        reader.advance(sizeof(pcap_file_header))
+        reader.advance(20)
 
         var pcap = Pcap()
         
         while (reader.offset < data.length) {
             if (reader.offset + 16 > data.length) {
+                print("short packet header!")
                 return nil
             }
-            let ts_sec  = reader.u32()
-            let ts_usec = reader.u32()
-            let caplen  = reader.u32()
-            let origlen = reader.u32()
+            let ts_sec  = reader.u32endian()
+            let ts_usec = reader.u32endian()
+            let caplen  = reader.u32endian()
+            let origlen = reader.u32endian()
             
             if (reader.offset + Int(caplen) > data.length) {
+                print("packets < caplen")
                 return nil
             }
 
@@ -59,6 +71,9 @@ class Pcap {
             let date = NSDate(timeIntervalSinceReferenceDate: sec)
 
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
+            let context = ParseContext(pkt.data, endian: endian, parser: LoopbackProtocol.parse)
+            pkt.parse(context)
+
             pcap.packets.append(pkt)
         }
         return pcap
