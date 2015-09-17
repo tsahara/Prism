@@ -72,11 +72,18 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
+        if (pcap?.packets[rowIndex] == nil) {
+            return "???"
+        }
+        let pkt = pcap!.packets[rowIndex]
 
         if let label = aTableColumn!.identifier {
             switch label {
             case "TimeCell":
-                return "time"
+                var f = NSDateFormatter()
+                f.dateFormat = "HH:mm:ss.SSSSSS"
+                return f.stringFromDate(pkt.timestamp)
+
             case "SourceCell":
                 return "srcaddr"
             case "DestinationCell":
