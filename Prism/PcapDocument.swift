@@ -81,8 +81,9 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             switch label {
             case "TimeCell":
                 var f = NSDateFormatter()
-                f.dateFormat = "HH:mm:ss.SSSSSS"
-                return f.stringFromDate(pkt.timestamp)
+                f.dateFormat = "HH:mm:ss"
+                let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
+                return f.stringFromDate(pkt.timestamp) + subsec
 
             case "SourceCell":
                 return "srcaddr"
