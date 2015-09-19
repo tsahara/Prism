@@ -74,27 +74,24 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         }
         let pkt = pcap!.packets[rowIndex]
 
-        if let label = aTableColumn!.identifier {
-            switch label {
-            case "TimeCell":
-                var f = NSDateFormatter()
-                f.dateFormat = "HH:mm:ss"
-                let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
-                return f.stringFromDate(pkt.timestamp) + subsec
-
-            case "SourceCell":
-                return "srcaddr"
-            case "DestinationCell":
-                return "dstaddr"
-            case "ProtocolCell":
-                return "proto"
-            case "SummaryCell":
-                return "summary"
-            default:
-                return "(no value)"
-            }
-        } else {
-            return "(nil)"
+        let label = aTableColumn!.identifier
+        switch label {
+        case "TimeCell":
+            let f = NSDateFormatter()
+            f.dateFormat = "HH:mm:ss"
+            let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
+            return f.stringFromDate(pkt.timestamp) + subsec
+            
+        case "SourceCell":
+            return "srcaddr"
+        case "DestinationCell":
+            return "dstaddr"
+        case "ProtocolCell":
+            return "proto"
+        case "SummaryCell":
+            return "summary"
+        default:
+            return "(no value)"
         }
     }
 }
