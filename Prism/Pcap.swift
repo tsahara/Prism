@@ -26,10 +26,10 @@ class Pcap {
     }
 
     class func readFile(data: NSData) -> Pcap? {
-        var reader = NSDataReader(data)
+        let reader = NSDataReader(data)
 
         if (data.length < sizeof(pcap_file_header)) {
-            print("File too short (size=\(data.length))")
+            print("File too short (size=\(data.length))", terminator: "")
             return nil
         }
 
@@ -42,19 +42,19 @@ class Pcap {
         case PCAP_FILE_MAGIC.byteSwapped:
             endian = .LittleEndian
         default:
-            print("bad magic: \(filehdr.magic.bigEndian)")
+            print("bad magic: \(filehdr.magic.bigEndian)", terminator: "")
             return nil
         }
         reader.endian = endian
         
-        print("linktype=\(filehdr.linktype)\n")
+        print("linktype=\(filehdr.linktype)\n", terminator: "")
         reader.advance(20)
 
-        var pcap = Pcap()
+        let pcap = Pcap()
         
         while (reader.offset < data.length) {
             if (reader.offset + 16 > data.length) {
-                print("short packet header!")
+                print("short packet header!", terminator: "")
                 return nil
             }
             let ts_sec  = reader.u32endian()
@@ -63,7 +63,7 @@ class Pcap {
             let origlen = reader.u32endian()
             
             if (reader.offset + Int(caplen) > data.length) {
-                print("packets < caplen")
+                print("packets < caplen", terminator: "")
                 return nil
             }
 

@@ -40,31 +40,31 @@ class Packet {
         var now = time(nil)
         let tm_now = localtime(&now).memory
 
-        let re_summary = NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+) ", options: nil, error: nil)!
-        let re_bytes = NSRegularExpression(pattern: "^ *0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: nil, error: nil)!
+        let re_summary = try! NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+) ", options: [])
+        let re_bytes = try! NSRegularExpression(pattern: "^ *0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: [])
         
         NSString(string: text).enumerateLinesUsingBlock {
             line, _ in
             let nsline = line as NSString
 
-            if let m = re_summary.firstMatchInString(line, options: nil, range: NSRange(location: 0, length: count(line))) {
+            if let m = re_summary.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 var tm = tm_now
-                tm.tm_hour = Int32(nsline.substringWithRange(m.rangeAtIndex(1)).toInt()!)
-                tm.tm_min  = Int32(nsline.substringWithRange(m.rangeAtIndex(2)).toInt()!)
-                tm.tm_sec  = Int32(nsline.substringWithRange(m.rangeAtIndex(3)).toInt()!)
+                tm.tm_hour = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(1)))!)
+                tm.tm_min  = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(2)))!)
+                tm.tm_sec  = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(3)))!)
                 let sec = mktime(&tm)
-                let subsec = UInt64(nsline.substringWithRange(m.rangeAtIndex(4)).toInt()!)
+                let subsec = UInt64(Int(nsline.substringWithRange(m.rangeAtIndex(4)))!)
                 timestamp = NSDate(timeIntervalSince1970: NSTimeInterval(mktime(&tm)))
             }
 
-            if let m = re_bytes.firstMatchInString(line, options: nil, range: NSRange(location: 0, length: count(line))) {
+            if let m = re_bytes.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 for s in nsline.substringWithRange(m.rangeAtIndex(1)).componentsSeparatedByString(" ") {
-                    if count(s) == 4 {
+                    if s.characters.count == 4 {
                         let word = strtoul(s, nil, 16)
                         buf[idx]   = UInt8(word >> 8)
                         buf[idx+1] = UInt8(word & 0xff)
                         idx += 2
-                    } else if count(s) == 2 {
+                    } else if s.characters.count == 2 {
                         let word = strtoul(s, nil, 16)
                         buf[idx] = UInt8(word & 0xff)
                         idx += 1

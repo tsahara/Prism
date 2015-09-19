@@ -14,7 +14,7 @@ class LoopbackProtocol : Protocol {
     var af = 0
     
     override class func parse(context: ParseContext) -> Protocol {
-        var p = LoopbackProtocol()
+        let p = LoopbackProtocol()
 
         let reader = context.reader
         if (context.endian == .LittleEndian) {

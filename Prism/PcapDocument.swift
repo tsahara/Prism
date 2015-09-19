@@ -14,7 +14,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet var text: NSTextView!
 
     @IBAction func ReadText(sender: AnyObject) {
-        print("Read Button -> " + text.string!)
+        print("Read Button -> " + text.string!, terminator: "")
     }
 
     override init() {
@@ -37,7 +37,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         return "PcapDocument"
     }
 
-    override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
+    override func dataOfType(typeName: String) throws -> NSData {
         // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
         // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
         
@@ -49,16 +49,13 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         return pcap!.encode()
     }
 
-    override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
+    override func readFromData(data: NSData, ofType typeName: String) throws {
         // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
 
         pcap = Pcap.readFile(data)
-        print("Read \(count(pcap!.packets)) packets")
-        
-        //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return true
+        print("Read \(pcap!.packets.count) packets", terminator: "")
     }
 
     

@@ -224,6 +224,8 @@
 		1F0A739D1A9C0BDE00FA91D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Tomoyuki Sahara";
 				TargetAttributes = {
