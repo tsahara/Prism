@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Tomoyuki Sahara. All rights reserved.
 //
 
-import Cocoa
 import XCTest
+@testable import Prism
 
 class PacketTests: XCTestCase {
 
