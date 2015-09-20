@@ -8,5 +8,5 @@
 
 import Foundation
 
-class UnknownProtocol : Protocol {
+class UnknownProtocol : BaseProtocol {
 }

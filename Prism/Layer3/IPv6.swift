@@ -8,7 +8,10 @@
 
 import Foundation
 
-class IPv6 : Protocol {
+class IPv6 : BaseProtocol {
+    override var name: String { get { return "IPv6" } }
+    override var isNetworkProtocol: Bool { get { return true } }
+    
     override class func parse(context: ParseContext) -> Protocol {
         let p = IPv6()
 

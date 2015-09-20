@@ -14,7 +14,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet var text: NSTextView!
 
     @IBAction func ReadText(sender: AnyObject) {
-        print("Read Button -> " + text.string!, terminator: "")
+        Packet.parseText(text.string!)
     }
 
     override init() {
@@ -86,8 +86,10 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             return "srcaddr"
         case "DestinationCell":
             return "dstaddr"
+
         case "ProtocolCell":
-            return "proto"
+            return pkt.proto
+            
         case "SummaryCell":
             return "summary"
         default:

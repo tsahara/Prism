@@ -15,7 +15,9 @@ class Packet {
     let data: NSData
     
     var protocols: [Protocol] = []
-
+    var layer3: Protocol? = nil
+    var transport: Protocol? = nil
+    
     init(timestamp: NSDate, original_length: Int, captured_length: Int, data: NSData) {
         self.timestamp = timestamp
         self.original_length = original_length
@@ -24,11 +26,19 @@ class Packet {
     }
     
     func parse(context: ParseContext) {
+        var p: Protocol
+
         while (context.parser != nil) {
             let parser = context.parser!
             context.parser = nil
-            let p = parser(context)
+            p = parser(context)
             protocols.append(p)
+        }
+    }
+    
+    var proto: String {
+        get {
+            return protocols[protocols.count - 1].name
         }
     }
     
@@ -37,26 +47,25 @@ class Packet {
         var buf = [UInt8](count: 2000, repeatedValue: 0)
         var idx = 0
 
-        var now = time(nil)
-        let tm_now = localtime(&now).memory
+        var time_t_now = time(nil)
+        let tm_now = localtime(&time_t_now).memory
 
-        let re_summary = try! NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+) ", options: [])
+        let re_summary = try! NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2}\\.\\d+) ", options: [])
         let re_bytes = try! NSRegularExpression(pattern: "^ *0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: [])
         
         NSString(string: text).enumerateLinesUsingBlock {
             line, _ in
             let nsline = line as NSString
-
+            
             if let m = re_summary.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 var tm = tm_now
                 tm.tm_hour = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(1)))!)
                 tm.tm_min  = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(2)))!)
-                tm.tm_sec  = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(3)))!)
-                let sec = mktime(&tm)
-                let subsec = UInt64(Int(nsline.substringWithRange(m.rangeAtIndex(4)))!)
-                timestamp = NSDate(timeIntervalSince1970: NSTimeInterval(mktime(&tm)))
+                tm.tm_sec  = 0
+                let sec = Double(nsline.substringWithRange(m.rangeAtIndex(3)))!
+                timestamp = NSDate(timeIntervalSince1970: NSTimeInterval(Double(mktime(&tm)) + sec))
             }
-
+            
             if let m = re_bytes.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 for s in nsline.substringWithRange(m.rangeAtIndex(1)).componentsSeparatedByString(" ") {
                     if s.characters.count == 4 {
@@ -70,7 +79,7 @@ class Packet {
                         idx += 1
                     }
                 }
-
+                
             }
         }
         let data = NSData(bytes: buf, length: idx)

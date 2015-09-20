@@ -10,7 +10,9 @@ import Foundation
 
 // Link Layer Protocol of DLT_NULL
 
-class LoopbackProtocol : Protocol {
+class LoopbackProtocol : BaseProtocol {
+    override var name: String { get { return "Loopback" } }
+
     var af = 0
     
     override class func parse(context: ParseContext) -> Protocol {
