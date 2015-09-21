@@ -20,8 +20,29 @@ class IPv6 : BaseProtocol {
             p.broken = true
             return p
         }
-
-        context.parser = nil
+        
+        // version:4
+        // traffic-class:8
+        // Flow Label: 20
+        // Payload Length: 16
+        // Next Header: 8
+        // Hop Limit: 8
+        // Source Address: 128
+        // Destination Address: 128
+       
+        reader.u32()
+        let len = Int(reader.read_u16be())
+        if (reader.length < 40 + len) {
+            p.broken = true
+        }
+        
+        let nxthdr = reader.read_u8()
+        switch nxthdr {
+        case 58:
+            context.parser = ICMP6.parse
+        default:
+            context.parser = UnknownProtocol.parse
+        }
         return p
     }
 

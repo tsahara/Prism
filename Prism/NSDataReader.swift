@@ -29,6 +29,18 @@ class NSDataReader {
         offset += len
         return d
     }
+    
+    func read_u8() -> UInt8 {
+        let val = UnsafePointer<UInt8>(data.bytes + offset).memory
+        offset += 1
+        return val
+    }
+    
+    func read_u16be() -> UInt16 {
+        let val = UnsafePointer<UInt16>(data.bytes + offset).memory.bigEndian
+        offset += 2
+        return val
+    }
 
     func u32() -> UInt32 {
         let val = UnsafePointer<UInt32>(data.bytes + offset).memory.bigEndian
