@@ -11,15 +11,16 @@ import Foundation
 class IPv6 : BaseProtocol {
     override var name: String { get { return "IPv6" } }
     override var isNetworkProtocol: Bool { get { return true } }
-    
+
     override class func parse(context: ParseContext) -> Protocol {
-        let p = IPv6()
+        let p = IPv6(context)
 
         let reader = context.reader
         if (reader.length < 40) {
             p.broken = true
             return p
         }
+        p.header_length = 40
         
         // version:4
         // traffic-class:8
@@ -46,4 +47,21 @@ class IPv6 : BaseProtocol {
         return p
     }
 
+    var dst: in6_addr? {
+        get {
+            guard header_length >= 40 else {
+                return nil
+            }
+            return in6_addr(data: data, offset: self.offset + 24)
+        }
+    }
+
+    var src: in6_addr? {
+        get {
+            guard header_length >= 32 else {
+                return nil
+            }
+            return in6_addr(data: data, offset: self.offset + 8)
+        }
+    }
 }

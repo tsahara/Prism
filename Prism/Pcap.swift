@@ -12,7 +12,6 @@ let PCAP_FILE_MAGIC: bpf_u_int32 = 0xa1b2c3d4
 
 class Pcap {
     var packets: [Packet] = []
-    var link_protocol: Protocol = UnknownProtocol()
     
     func encode() -> NSData {
         var hdr = pcap_file_header()

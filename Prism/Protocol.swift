@@ -10,7 +10,7 @@ import Foundation
 
 protocol Protocol {
     var broken: Bool { get }
-
+    var header_length: Int { get }
     var name: String { get }
 
     var isNetworkProtocol: Bool { get }
@@ -20,11 +20,20 @@ protocol Protocol {
 
 class BaseProtocol: Protocol {
     var broken = false
+    var header_length = 0
     var name: String { get { return "(base)" } }
     var isNetworkProtocol: Bool { get { return false } }
+    
+    var data: NSData
+    var offset: Int
+
+    init(_ context: ParseContext) {
+        self.data = context.reader.data
+        self.offset = context.reader.offset
+    }
 
     class func parse(context: ParseContext) -> Protocol {
         context.parser = nil
-        return UnknownProtocol()
+        return UnknownProtocol(context)
     }
 }

@@ -11,6 +11,6 @@ import Foundation
 class UnknownProtocol : BaseProtocol {
     override class func parse(context: ParseContext) -> Protocol {
         context.parser = nil
-        return UnknownProtocol()
+        return UnknownProtocol(context)
     }
 }

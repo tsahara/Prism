@@ -27,6 +27,7 @@
 		1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */; };
 		1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
 		1FF679221BB01F47009C6258 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679211BB01F47009C6258 /* ICMP6.swift */; settings = {ASSET_TAGS = (); }; };
+		1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownProtocol.swift; sourceTree = "<group>"; };
 		1FEE66E11BA83C2C006B2589 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv6.swift; path = Layer3/IPv6.swift; sourceTree = "<group>"; };
 		1FF679211BB01F47009C6258 /* ICMP6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICMP6.swift; sourceTree = "<group>"; };
+		1FF679231BB169EE009C6258 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
 				1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
 				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
+				1FF679231BB169EE009C6258 /* Utils.swift */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
 				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
@@ -290,6 +293,7 @@
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
 				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
 				1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */,
+				1FF679241BB169EE009C6258 /* Utils.swift in Sources */,
 				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
 				1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */,
 				1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */,

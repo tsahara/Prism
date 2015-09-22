@@ -12,7 +12,7 @@ class ICMP6 : BaseProtocol {
     override var name: String { get { return "ICMP6" } }
     
     override class func parse(context: ParseContext) -> Protocol {
-        var p = ICMP6()
+        let p = ICMP6(context)
        
         let r = context.reader
         if (r.length < 8) {

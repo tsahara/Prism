@@ -42,6 +42,17 @@ class Packet {
         }
     }
     
+    var ipv6: IPv6? {
+        get {
+            if (protocols.count > 2) {
+                if let p = protocols[1] as? IPv6 {
+                    return p
+                }
+            }
+            return nil
+        }
+    }
+    
     class func parseText(text: String) -> Packet? {
         var timestamp: NSDate?
         var buf = [UInt8](count: 2000, repeatedValue: 0)
