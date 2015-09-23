@@ -22,11 +22,13 @@ class LoopbackProtocol : BaseProtocol {
         if (context.endian == .LittleEndian) {
             p.af = Int(reader.u32le())
         } else {
-            p.af = Int(reader.u32be())
+            p.af = Int(reader.read_u32be())
         }
 
-        switch (p.af) {
-        case 30:
+        switch (Int32(p.af)) {
+        case AF_INET:
+            context.parser = IPv4.parse
+        case AF_INET6:
             context.parser = IPv6.parse
         default:
             break

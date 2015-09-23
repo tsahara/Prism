@@ -48,13 +48,13 @@ class NSDataReader {
         return val
     }
     
-    func u32be() -> UInt32 {
+    func read_u32be() -> UInt32 {
         return u32()
     }
 
     func u32endian() -> UInt32 {
         if (endian == .BigEndian) {
-            return u32be()
+            return read_u32be()
         } else {
             return u32le()
         }
