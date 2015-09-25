@@ -83,12 +83,18 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             return f.stringFromDate(pkt.timestamp) + subsec
             
         case "SourceCell":
+            if (pkt.ipv4 != nil) {
+                return pkt.ipv4!.src!.string
+            }
             if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.src!.string
             }
 
             return ""
         case "DestinationCell":
+            if (pkt.ipv4 != nil) {
+                return pkt.ipv4!.dst!.string
+            }
             if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.dst!.string
             }

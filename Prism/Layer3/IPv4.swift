@@ -8,6 +8,20 @@
 
 import Foundation
 
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |Version|  IHL  |Type of Service|          Total Length         |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |         Identification        |Flags|      Fragment Offset    |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |  Time to Live |    Protocol   |         Header Checksum       |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |                       Source Address                          |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |                    Destination Address                        |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+// |                    Options                    |    Padding    |
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
 class IPv4 : BaseProtocol {
     override var name: String { get { return "IPv4" } }
     override var isNetworkProtocol: Bool { get { return true } }
@@ -35,5 +49,23 @@ class IPv4 : BaseProtocol {
 
         context.parser = nil
         return p
+    }
+
+    var src: in_addr? {
+        get {
+            guard header_length >= 16 else {
+                return nil
+            }
+            return in_addr(data: data, offset: self.offset + 12)
+        }
+    }
+
+    var dst: in_addr? {
+        get {
+            guard header_length >= 20 else {
+                return nil
+            }
+            return in_addr(data: data, offset: self.offset + 16)
+        }
     }
 }

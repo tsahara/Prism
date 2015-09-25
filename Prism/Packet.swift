@@ -41,10 +41,21 @@ class Packet {
             return protocols[protocols.count - 1].name
         }
     }
-    
+
+    var ipv4: IPv4? {
+        get {
+            if (protocols.count >= 2) {
+                if let p = protocols[1] as? IPv4 {
+                    return p
+                }
+            }
+            return nil
+        }
+    }
+
     var ipv6: IPv6? {
         get {
-            if (protocols.count > 2) {
+            if (protocols.count >= 2) {
                 if let p = protocols[1] as? IPv6 {
                     return p
                 }
