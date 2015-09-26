@@ -14,7 +14,7 @@ protocol Protocol {
     var name: String { get }
 
     var isNetworkProtocol: Bool { get }
-    
+
     static func parse(context: ParseContext) -> Protocol
 }
 

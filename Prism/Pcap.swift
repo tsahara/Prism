@@ -45,9 +45,18 @@ class Pcap {
             return nil
         }
         reader.endian = endian
+        reader.advance(16)
         
-        print("linktype=\(filehdr.linktype)\n", terminator: "")
-        reader.advance(20)
+        let linktype = reader.u32le()
+        print("linktype=\(linktype)\n", terminator: "")
+        
+        var parser: (ParseContext) -> Protocol
+        switch linktype {
+        case 1:
+            parser = Ethernet.parse
+        default:
+            parser = LoopbackProtocol.parse
+        }
 
         let pcap = Pcap()
         
@@ -70,7 +79,7 @@ class Pcap {
             let date = NSDate(timeIntervalSinceReferenceDate: sec)
 
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
-            let context = ParseContext(pkt.data, endian: endian, parser: LoopbackProtocol.parse)
+            let context = ParseContext(pkt.data, endian: endian, parser: parser)
             pkt.parse(context)
 
             pcap.packets.append(pkt)
