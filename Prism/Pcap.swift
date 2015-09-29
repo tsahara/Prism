@@ -71,8 +71,8 @@ class Pcap {
             let origlen = reader.u32endian()
             
             if (reader.offset + Int(caplen) > data.length) {
-                print("packets < caplen", terminator: "")
-                return nil
+                print("packets < caplen")
+                return pcap
             }
 
             let sec = Double(ts_sec) + 1.0e-6 * Double(ts_usec)
