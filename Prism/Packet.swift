@@ -63,7 +63,19 @@ class Packet {
             return nil
         }
     }
+
+    var udp: UDP? {
+        get {
+            if (protocols.count >= 3) {
+                if let p = protocols[2] as? UDP {
+                    return p
+                }
+            }
+            return nil
+        }
+    }
     
+
     class func parseText(text: String) -> Packet? {
         var timestamp: NSDate?
         var buf = [UInt8](count: 2000, repeatedValue: 0)

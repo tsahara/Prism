@@ -39,11 +39,16 @@ class IPv6 : BaseProtocol {
         
         let nxthdr = reader.read_u8()
         switch nxthdr {
+        case 17:
+            context.parser = UDP.parse
         case 58:
             context.parser = ICMP6.parse
         default:
             context.parser = UnknownProtocol.parse
         }
+        reader.read_u8()
+        reader.readdata(16)
+        reader.readdata(16)
         return p
     }
 

@@ -24,7 +24,7 @@ class Ethernet : BaseProtocol {
         switch (reader.read_u16be()) {
         case 0x0800:
             context.parser = IPv4.parse
-        case 0x8644:
+        case 0x86dd:
             context.parser = IPv6.parse
         default:
             break

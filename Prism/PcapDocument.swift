@@ -84,7 +84,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             f.dateFormat = "HH:mm:ss"
             let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
             return f.stringFromDate(pkt.timestamp) + subsec
-            
+
         case "SourceCell":
             if (pkt.ipv4 != nil) {
                 return pkt.ipv4!.src!.string
@@ -92,8 +92,14 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.src!.string
             }
-
             return ""
+
+        case "SourcePortCell":
+            if (pkt.udp != nil) {
+                return pkt.udp!.srcport!
+            }
+            return ""
+
         case "DestinationCell":
             if (pkt.ipv4 != nil) {
                 return pkt.ipv4!.dst!.string
@@ -101,7 +107,13 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
             if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.dst!.string
             }
-            
+            return ""
+
+           
+        case "DestinationPortCell":
+            if (pkt.udp != nil) {
+                return pkt.udp!.dstport!
+            }
             return ""
 
         case "ProtocolCell":
