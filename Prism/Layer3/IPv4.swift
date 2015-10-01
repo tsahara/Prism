@@ -46,8 +46,13 @@ class IPv4 : BaseProtocol {
         r.read_u16be() // cksum
         r.read_u32be()
         r.read_u32be()
-
-        context.parser = nil
+        
+        switch proto {
+        case 17:
+            context.parser = UDP.parse
+        default:
+            context.parser = UnknownProtocol.parse
+        }
         return p
     }
 

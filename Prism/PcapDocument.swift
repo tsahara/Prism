@@ -96,7 +96,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
 
         case "SourcePortCell":
             if (pkt.udp != nil) {
-                return pkt.udp!.srcport!
+                return String(pkt.udp!.srcport!)
             }
             return ""
 
@@ -112,7 +112,7 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
            
         case "DestinationPortCell":
             if (pkt.udp != nil) {
-                return pkt.udp!.dstport!
+                return String(pkt.udp!.dstport!)
             }
             return ""
 
