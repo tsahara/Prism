@@ -30,7 +30,6 @@
 		1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
 		1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; settings = {ASSET_TAGS = (); }; };
 		1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; settings = {ASSET_TAGS = (); }; };
-		1FF679221BB01F47009C6258 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679211BB01F47009C6258 /* ICMP6.swift */; settings = {ASSET_TAGS = (); }; };
 		1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
 		1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -74,7 +73,6 @@
 		1FEE66E11BA83C2C006B2589 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv6.swift; path = Layer3/IPv6.swift; sourceTree = "<group>"; };
 		1FF263741BBEA3FB0073FCC6 /* ICMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP.swift; path = Layer3/ICMP.swift; sourceTree = "<group>"; };
 		1FF263761BBEA4E50073FCC6 /* ICMP6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP6.swift; path = Layer3/ICMP6.swift; sourceTree = "<group>"; };
-		1FF679211BB01F47009C6258 /* ICMP6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICMP6.swift; sourceTree = "<group>"; };
 		1FF679231BB169EE009C6258 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1FF679251BB2DD91009C6258 /* IPv4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv4.swift; path = Layer3/IPv4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				1FF263741BBEA3FB0073FCC6 /* ICMP.swift */,
-				1FF679211BB01F47009C6258 /* ICMP6.swift */,
 				1FF263761BBEA4E50073FCC6 /* ICMP6.swift */,
 				1FF679251BB2DD91009C6258 /* IPv4.swift */,
 				1FEE66E11BA83C2C006B2589 /* IPv6.swift */,
@@ -325,7 +322,6 @@
 				1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */,
 				1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */,
 				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
-				1FF679221BB01F47009C6258 /* ICMP6.swift in Sources */,
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 				1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */,
