@@ -48,6 +48,8 @@ class IPv4 : BaseProtocol {
         r.read_u32be()
         
         switch proto {
+        case 1:
+            context.parser = ICMP.parse
         case 17:
             context.parser = UDP.parse
         default:
