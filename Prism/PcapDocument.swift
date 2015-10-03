@@ -11,10 +11,14 @@ import Cocoa
 class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
     var pcap: Pcap?
     
+    @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
 
     @IBAction func ReadText(sender: AnyObject) {
-        Packet.parseText(text.string!)
+        if let pkt = Packet.parseText(text.string!) {
+            pcap!.packets.append(pkt)
+            packet_table.reloadData()
+        }
     }
 
     override init() {

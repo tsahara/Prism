@@ -85,7 +85,7 @@ class Packet {
         let tm_now = localtime(&time_t_now).memory
 
         let re_summary = try! NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2}\\.\\d+) ", options: [])
-        let re_bytes = try! NSRegularExpression(pattern: "^ *0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: [])
+        let re_bytes = try! NSRegularExpression(pattern: "^\\s*0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: [])
         
         NSString(string: text).enumerateLinesUsingBlock {
             line, _ in
@@ -118,7 +118,10 @@ class Packet {
         }
         let data = NSData(bytes: buf, length: idx)
         if timestamp != nil {
-            return Packet(timestamp: timestamp!, original_length: data.length, captured_length: data.length, data: data)
+            let pkt = Packet(timestamp: timestamp!, original_length: data.length, captured_length: data.length, data: data)
+            let context = ParseContext(pkt.data, endian: .BigEndian, parser: NullProtocol.parse)
+            pkt.parse(context)
+            return pkt
         } else {
             return nil
         }

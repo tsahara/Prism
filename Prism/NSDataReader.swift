@@ -23,6 +23,10 @@ class NSDataReader {
     }
     
     var length: Int { get { return data.length - offset } }
+    
+    func get_u8() -> UInt8 {
+        return UnsafePointer<UInt8>(data.bytes + offset).memory
+    }
    
     func readdata(len: Int) -> NSData {
         let d = NSData(bytes: data.bytes + offset, length: len)
