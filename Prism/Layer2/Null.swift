@@ -19,6 +19,8 @@ class NullProtocol : BaseProtocol {
         print("data=\(reader.data)")
         if ((firstbyte & 0xf0) == 0x40) {
             context.parser = IPv4.parse
+        } else if ((firstbyte & 0xf0) == 0x60) {
+            context.parser = IPv6.parse
         }
         return p
     }
