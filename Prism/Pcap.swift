@@ -11,8 +11,14 @@ import Foundation
 let PCAP_FILE_MAGIC: bpf_u_int32 = 0xa1b2c3d4
 
 class Pcap {
+    /// packets in PCAP
     var packets: [Packet] = []
     
+    /**
+     encode to PCAP file format.
+     
+     - returns: byte sequence.
+     */
     func encode() -> NSData {
         var hdr = pcap_file_header()
         hdr.magic = PCAP_FILE_MAGIC
@@ -24,6 +30,11 @@ class Pcap {
         return NSData(bytes: &hdr, length: sizeof(pcap_file_header))
     }
 
+    /**
+     read PCAP file.
+     
+     - returns: PCAP object.
+     */
     class func readFile(data: NSData) -> Pcap? {
         let reader = NSDataReader(data)
 
