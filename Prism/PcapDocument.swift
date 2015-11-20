@@ -8,19 +8,9 @@
 
 import Cocoa
 
-class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
+class PcapDocument: NSDocument {
     var pcap: Pcap?
     
-    @IBOutlet weak var packet_table: NSTableView!
-    @IBOutlet var text: NSTextView!
-
-    @IBAction func ReadText(sender: AnyObject) {
-        if let pkt = Packet.parseText(text.string!) {
-            pcap!.packets.append(pkt)
-            packet_table.reloadData()
-        }
-    }
-
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
@@ -35,10 +25,14 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         return true
     }
 
-    override var windowNibName: String? {
-        // Returns the nib file name of the document
-        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
-        return "PcapDocument"
+//    override var windowNibName: String? {
+//        // Returns the nib file name of the document
+//        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
+//        return "PcapDocument"
+//    }
+   
+    override func makeWindowControllers() {
+        self.addWindowController(PcapWindowController(windowNibName: "PcapDocument"))
     }
 
     override func dataOfType(typeName: String) throws -> NSData {
@@ -65,68 +59,4 @@ class PcapDocument: NSDocument, NSTableViewDataSource, NSTableViewDelegate {
         print("Read \(pcap!.packets.count) packets", terminator: "")
     }
 
-    
-    // NSTableViewDataSource Protocol
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
-        if pcap != nil {
-            return pcap!.packets.count
-        } else {
-            return 0
-        }
-    }
-    
-    func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
-        if (pcap?.packets[rowIndex] == nil) {
-            return "???"
-        }
-        let pkt = pcap!.packets[rowIndex]
-
-        let label = aTableColumn!.identifier
-        switch label {
-        case "TimeCell":
-            let f = NSDateFormatter()
-            f.dateFormat = "HH:mm:ss"
-            let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
-            return f.stringFromDate(pkt.timestamp) + subsec
-
-        case "SourceCell":
-            if (pkt.ipv4 != nil) {
-                return pkt.ipv4!.src!.string
-            }
-            if (pkt.ipv6 != nil) {
-                return pkt.ipv6!.src!.string
-            }
-            return ""
-
-        case "SourcePortCell":
-            if (pkt.udp != nil) {
-                return String(pkt.udp!.srcport!)
-            }
-            return ""
-
-        case "DestinationCell":
-            if (pkt.ipv4 != nil) {
-                return pkt.ipv4!.dst!.string
-            }
-            if (pkt.ipv6 != nil) {
-                return pkt.ipv6!.dst!.string
-            }
-            return ""
-
-           
-        case "DestinationPortCell":
-            if (pkt.udp != nil) {
-                return String(pkt.udp!.dstport!)
-            }
-            return ""
-
-        case "ProtocolCell":
-            return pkt.proto
-            
-        case "SummaryCell":
-            return "summary"
-        default:
-            return "(no value)"
-        }
-    }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PcapDocument" customModule="Prism" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PcapWindowController" customModule="Prism" customModuleProvider="target">
             <connections>
                 <outlet property="packet_table" destination="DSE-Hl-MPG" id="0pt-6R-sAd"/>
                 <outlet property="text" destination="veu-A3-LjB" id="sgE-lD-Aho"/>
@@ -23,8 +23,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="620"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iie-a4-3P6">
+                        <rect key="frame" x="342" y="57" width="117" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2yu-UQ-9Dt">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="ReadText:" target="-2" id="JLT-BC-Jcc"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-RA-2q1">
+                        <rect key="frame" x="20" y="99" width="760" height="221"/>
+                        <clipView key="contentView" ambiguous="YES" id="Shi-LH-WpX">
+                            <rect key="frame" x="1" y="1" width="758" height="219"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="veu-A3-LjB">
+                                    <rect key="frame" x="0.0" y="0.0" width="758" height="398"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="758" height="219"/>
+                                    <size key="maxSize" width="766" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="758" height="219"/>
+                                    <size key="maxSize" width="766" height="10000000"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </textView>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <animations/>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="6Tv-r3-QOq">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="ZgO-Qo-NEe">
+                            <rect key="frame" x="743" y="1" width="16" height="219"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                    </scrollView>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-L7-bD1">
-                        <rect key="frame" x="-1" y="432" width="802" height="189"/>
+                        <rect key="frame" x="-1" y="383" width="802" height="189"/>
                         <clipView key="contentView" ambiguous="YES" id="b7W-0A-cEw">
                             <rect key="frame" x="1" y="0.0" width="800" height="188"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,56 +203,24 @@
                             <animations/>
                         </tableHeaderView>
                     </scrollView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iie-a4-3P6">
-                        <rect key="frame" x="342" y="57" width="117" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2yu-UQ-9Dt">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <connections>
-                                <action selector="ReadText:" target="-2" id="JLT-BC-Jcc"/>
-                            </connections>
-                        </buttonCell>
-                    </button>
-                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-RA-2q1">
-                        <rect key="frame" x="20" y="99" width="760" height="314"/>
-                        <clipView key="contentView" ambiguous="YES" id="Shi-LH-WpX">
-                            <rect key="frame" x="1" y="1" width="758" height="312"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="veu-A3-LjB">
-                                    <rect key="frame" x="0.0" y="0.0" width="758" height="491"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="758" height="312"/>
-                                    <size key="maxSize" width="766" height="10000000"/>
-                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="758" height="312"/>
-                                    <size key="maxSize" width="766" height="10000000"/>
-                                    <allowedInputSourceLocales>
-                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                    </allowedInputSourceLocales>
-                                </textView>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <animations/>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="6Tv-r3-QOq">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="ZgO-Qo-NEe">
-                            <rect key="frame" x="743" y="1" width="16" height="312"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
-                        </scroller>
-                    </scrollView>
                 </subviews>
                 <animations/>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rz8-VD-Vzw">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Xxp-to-GL5"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="xJc-sS-DZ6"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="I1Z-Kr-SRR"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="y4v-ji-CGU"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d19-sJ-1bk"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="Xxp-to-GL5"/>
+                    <toolbarItem reference="xJc-sS-DZ6"/>
+                    <toolbarItem reference="d19-sJ-1bk"/>
+                    <toolbarItem reference="I1Z-Kr-SRR"/>
+                </defaultToolbarItems>
+            </toolbar>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>

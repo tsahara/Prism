@@ -11,13 +11,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
-        return false
-    }
+//    func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
+//        return false
+//    }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        NSDocumentController.sharedDocumentController().openDocument(self)
+//        NSDocumentController.sharedDocumentController().openDocument(self)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

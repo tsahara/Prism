@@ -14,25 +14,26 @@
 		1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */; };
 		1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */; };
 		1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */; };
+		1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */; };
 		1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
 		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
-		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; settings = {ASSET_TAGS = (); }; };
+		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
-		1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; settings = {ASSET_TAGS = (); }; };
+		1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; };
 		1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */; };
 		1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D81BA5C4B3006B2589 /* Loopback.swift */; };
 		1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */; };
 		1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DC1BA834A4006B2589 /* Protocol.swift */; };
 		1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */; };
 		1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
-		1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; settings = {ASSET_TAGS = (); }; };
-		1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; settings = {ASSET_TAGS = (); }; };
-		1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2637A1BC01A2D0073FCC6 /* Null.swift */; settings = {ASSET_TAGS = (); }; };
-		1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
-		1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; settings = {ASSET_TAGS = (); }; };
+		1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; };
+		1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; };
+		1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2637A1BC01A2D0073FCC6 /* Null.swift */; };
+		1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; };
+		1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismTests.swift; sourceTree = "<group>"; };
 		1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = emptyfile.pcap; path = Data/emptyfile.pcap; sourceTree = "<group>"; };
+		1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcapWindowController.swift; sourceTree = "<group>"; };
 		1F1283181B84D430007815E9 /* file-header-only.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "file-header-only.pcap"; path = "Data/file-header-only.pcap"; sourceTree = "<group>"; };
 		1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
 		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
+				1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
 				1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
 				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
 				1FF679231BB169EE009C6258 /* Utils.swift */,
@@ -318,6 +321,7 @@
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
 				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
 				1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */,
+				1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */,
 				1FF679241BB169EE009C6258 /* Utils.swift in Sources */,
 				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
 				1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */,
