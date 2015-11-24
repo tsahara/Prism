@@ -14,6 +14,8 @@ class PcapDocument: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+        
+        pcap = Pcap()
     }
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {

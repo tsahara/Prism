@@ -11,14 +11,22 @@ import Cocoa
 class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
-    
+
     override func windowDidLoad() {
 //        window!.titleVisibility = .Hidden
         print("loaded")
     }
     
     var pcap: Pcap? { get { return (self.document as! PcapDocument).pcap } }
-    
+
+    @IBAction func startstop(sender: AnyObject) {
+        if pcap!.capturing {
+            pcap!.stop_capture()
+        } else {
+            pcap!.start_capture()
+        }
+    }
+
     @IBAction func ReadText(sender: AnyObject) {
         if let pkt = Packet.parseText(text.string!) {
             pcap!.packets.append(pkt)
@@ -27,7 +35,6 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             print("parse error!!")
         }
     }
-    
     
     // NSTableViewDataSource Protocol
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {

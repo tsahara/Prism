@@ -14,6 +14,9 @@ class Pcap {
     /// packets in PCAP
     var packets: [Packet] = []
     
+    /// capturing or not
+    var capturing = false
+    
     /**
      encode to PCAP file format.
      
@@ -96,5 +99,18 @@ class Pcap {
             pcap.packets.append(pkt)
         }
         return pcap
+    }
+    
+    /**
+    start capture
+    */
+    func start_capture() {
+        self.capturing = true
+        print("start capture")
+    }
+
+    func stop_capture() {
+        self.capturing = false
+        print("stop capture")
     }
 }

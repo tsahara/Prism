@@ -35,20 +35,20 @@
                         </buttonCell>
                     </button>
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-RA-2q1">
-                        <rect key="frame" x="20" y="99" width="760" height="221"/>
+                        <rect key="frame" x="20" y="99" width="760" height="267"/>
                         <clipView key="contentView" ambiguous="YES" id="Shi-LH-WpX">
-                            <rect key="frame" x="1" y="1" width="758" height="219"/>
+                            <rect key="frame" x="1" y="1" width="758" height="265"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="veu-A3-LjB">
-                                    <rect key="frame" x="0.0" y="0.0" width="758" height="398"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="758" height="444"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="758" height="219"/>
+                                    <size key="minSize" width="758" height="265"/>
                                     <size key="maxSize" width="766" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="758" height="219"/>
+                                    <size key="minSize" width="758" height="265"/>
                                     <size key="maxSize" width="766" height="10000000"/>
                                     <allowedInputSourceLocales>
                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
@@ -65,19 +65,19 @@
                             <animations/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="ZgO-Qo-NEe">
-                            <rect key="frame" x="743" y="1" width="16" height="219"/>
+                            <rect key="frame" x="743" y="1" width="16" height="265"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
                     </scrollView>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-L7-bD1">
-                        <rect key="frame" x="-1" y="383" width="802" height="189"/>
+                        <rect key="frame" x="-1" y="388" width="802" height="233"/>
                         <clipView key="contentView" ambiguous="YES" id="b7W-0A-cEw">
-                            <rect key="frame" x="1" y="0.0" width="800" height="188"/>
+                            <rect key="frame" x="1" y="0.0" width="800" height="232"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Zae-e1-4dK" id="DSE-Hl-MPG">
-                                    <rect key="frame" x="0.0" y="0.0" width="883" height="165"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="883" height="209"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -188,7 +188,7 @@
                         </clipView>
                         <animations/>
                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="xvV-RP-vRg">
-                            <rect key="frame" x="1" y="172" width="800" height="16"/>
+                            <rect key="frame" x="1" y="216" width="800" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
@@ -208,23 +208,26 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rz8-VD-Vzw">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Xxp-to-GL5"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="xJc-sS-DZ6"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="I1Z-Kr-SRR"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="y4v-ji-CGU"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d19-sJ-1bk"/>
+                    <toolbarItem implicitItemIdentifier="E3E9F8C3-E907-42BA-BD39-0EAFFAA41308" label="Start / Stop" paletteLabel="Toolbar Item" tag="-1" image="NSGoRightTemplate" id="bJx-80-Gt0">
+                        <connections>
+                            <action selector="startstop:" target="-2" id="cKg-SP-0Rl"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
-                    <toolbarItem reference="Xxp-to-GL5"/>
-                    <toolbarItem reference="xJc-sS-DZ6"/>
+                    <toolbarItem reference="bJx-80-Gt0"/>
                     <toolbarItem reference="d19-sJ-1bk"/>
-                    <toolbarItem reference="I1Z-Kr-SRR"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
-            <point key="canvasLocation" x="305" y="-220"/>
+            <point key="canvasLocation" x="163" y="-325"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+    </resources>
 </document>
