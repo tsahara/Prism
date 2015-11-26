@@ -9,6 +9,6 @@
 #ifndef dummy_h
 #define dummy_h
 
-int c_open_bpf(int, const char *);
+int c_bpf_setup(int, const char *, unsigned int);
 
 #endif /* dummy_h */
