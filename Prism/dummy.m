@@ -16,22 +16,22 @@
 #include <net/bpf.h>
 #include <ifaddrs.h>
 
-int c_open_bpf(const char *ifname)
+int c_open_bpf(int fd, const char *ifname)
 {
     struct ifreq ifr;
     unsigned int k;
-    int fd, i;
+    int i;
     char path[20];
     
-    fd = -1;
-    for (i = 0; i < 10; i++) {
-        snprintf(path, sizeof(path), "/dev/bpf%d", i);
-        fd = open(path, O_RDONLY);
-        if (fd != -1)
-            break;
-    }
-    if (fd == -1)
-        return -1;
+//    fd = -1;
+//    for (i = 0; i < 10; i++) {
+//        snprintf(path, sizeof(path), "/dev/bpf%d", i);
+//        fd = open(path, O_RDONLY);
+//        if (fd != -1)
+//            break;
+//    }
+//    if (fd == -1)
+//        return -1;
     
     k = 2000;
     if (ioctl(fd, BIOCSBLEN, &k) == -1)
@@ -53,5 +53,10 @@ int c_open_bpf(const char *ifname)
     if (ioctl(fd, BIOCPROMISC) == -1)
         return -5;
     
+    {
+        char buf[2000];
+        int n = read(fd, buf, sizeof(buf));
+        printf("n=%d\n", n);
+    }
     return fd;
 }

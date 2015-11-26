@@ -11,17 +11,26 @@ import Foundation
 class NetworkInterface {
     let ifname: String
     var fd: Int32 = -1
+    var filehandle: NSFileHandle?
     
     init(name: String) {
         ifname = name
     }
     
     func start() {
-        self.fd = c_open_bpf(ifname)
-        if (self.fd == -1) {
-            print("Error: BPF fd=-1")
+        for i in 0..<8 {
+            filehandle = NSFileHandle(forReadingAtPath: "/dev/bpf\(i)")
+            if (filehandle != nil) { break }
+        }
+        self.fd = c_open_bpf(filehandle!.fileDescriptor, ifname)
+        if (self.fd < 0) {
+            print("Error: BPF fd=\(self.fd)")
             return
         }
-        var fh = NSFileHandle(fileDescriptor: self.fd, closeOnDealloc: true)
+        filehandle!.readabilityHandler = {
+            fh in
+            print("readability")
+        }
+        print("started")
     }
 }
