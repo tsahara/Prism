@@ -17,6 +17,9 @@ class Pcap {
     /// capturing or not
     var capturing = false
     
+    /// Network interface on which capturing is going
+    var netif: NetworkInterface?
+    
     /**
      encode to PCAP file format.
      
@@ -107,10 +110,17 @@ class Pcap {
     func start_capture() {
         self.capturing = true
         print("start capture")
+        
+        netif = NetworkInterface(name: "en0")
+        netif!.on_receive {
+            d in
+            print(d)
+        }
     }
 
     func stop_capture() {
         self.capturing = false
+        netif?.stop()
         print("stop capture")
     }
 }

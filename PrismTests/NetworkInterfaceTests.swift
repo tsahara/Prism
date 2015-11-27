@@ -27,7 +27,6 @@ class NetworkInterfaceTests: XCTestCase {
         
         let ni = NetworkInterface(name: "en0")
         ni.start()
-        assert(ni.fd != -1)
     }
 
     func testPerformanceExample() {

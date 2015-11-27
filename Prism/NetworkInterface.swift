@@ -18,7 +18,7 @@ class NetworkInterface {
         ifname = name
     }
     
-    func start() {
+    func on_receive(callback: ((NSData) -> Void)) {
         for i in 0..<8 {
             filehandle = NSFileHandle(forReadingAtPath: "/dev/bpf\(i)")
             if (filehandle != nil) { break }
@@ -28,9 +28,15 @@ class NetworkInterface {
 
         filehandle!.readabilityHandler = {
             fh in
-            let buflen = read(fh.fileDescriptor, &self.buffer, 2000)
-            print("read \(buflen) bytes")
+            let len = read(fh.fileDescriptor, &self.buffer, 2000)
+            print("read \(len) bytes")
+            callback(NSData(bytes: &self.buffer, length: len))
         }
         print("started")
+    }
+    
+    func stop() {
+        filehandle?.closeFile()
+        fd = -1
     }
 }

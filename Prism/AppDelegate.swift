@@ -10,8 +10,6 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var netif: NetworkInterface?
-
 //    func applicationShouldOpenUntitledFile(sender: NSApplication) -> Bool {
 //        return false
 //    }
@@ -19,9 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
 //        NSDocumentController.sharedDocumentController().openDocument(self)
-        
-        netif = NetworkInterface(name: "en0")
-        netif!.start()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

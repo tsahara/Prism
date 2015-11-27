@@ -210,7 +210,7 @@
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="y4v-ji-CGU"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d19-sJ-1bk"/>
-                    <toolbarItem implicitItemIdentifier="E3E9F8C3-E907-42BA-BD39-0EAFFAA41308" label="Start / Stop" paletteLabel="Toolbar Item" tag="-1" image="NSGoRightTemplate" id="bJx-80-Gt0">
+                    <toolbarItem implicitItemIdentifier="E3E9F8C3-E907-42BA-BD39-0EAFFAA41308" label="Start" paletteLabel="Toolbar Item" tag="-1" image="NSGoRightTemplate" id="bJx-80-Gt0">
                         <connections>
                             <action selector="startstop:" target="-2" id="cKg-SP-0Rl"/>
                         </connections>
