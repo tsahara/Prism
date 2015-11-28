@@ -9,18 +9,17 @@
 import Cocoa
 
 class PcapDocument: NSDocument {
-    var pcap: Pcap?
-    
+    var pcap: Pcap
+    var controller: PcapWindowController?
+
     override init() {
+        self.pcap = Pcap()
         super.init()
-        // Add your subclass-specific initialization here.
-        
-        pcap = Pcap()
     }
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
+        self.controller = aController as? PcapWindowController
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -42,11 +41,8 @@ class PcapDocument: NSDocument {
         // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
         
         //outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        
-        if pcap == nil {
-            pcap = Pcap()
-        }
-        return pcap!.encode()
+
+        return pcap.encode()
     }
 
     override func readFromData(data: NSData, ofType typeName: String) throws {
@@ -54,11 +50,11 @@ class PcapDocument: NSDocument {
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
 
-        pcap = Pcap.readFile(data)
-        if pcap == nil {
+        let p = Pcap.readFile(self.controller!, data: data)
+        guard (p == nil) else {
             throw NSError(domain: NSCocoaErrorDomain, code: NSFileReadCorruptFileError, userInfo: nil)
         }
-        print("Read \(pcap!.packets.count) packets", terminator: "")
+        print("Read \(p!.packets.count) packets", terminator: "")
     }
 
 }

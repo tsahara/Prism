@@ -10,6 +10,14 @@ import Foundation
 
 enum ByteOrder {
     case BigEndian, LittleEndian
+    
+    static func host() -> ByteOrder {
+        if CFByteOrderGetCurrent() == Int(CFByteOrderLittleEndian.rawValue) {
+            return .LittleEndian
+        } else {
+            return .BigEndian
+        }
+    }
 }
 
 typealias ParseClosure = ((ParseContext) -> Protocol)?

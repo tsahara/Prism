@@ -19,7 +19,7 @@ class Pcap {
     
     /// Network interface on which capturing is going
     var netif: NetworkInterface?
-    
+
     /**
      encode to PCAP file format.
      
@@ -41,7 +41,7 @@ class Pcap {
      
      - returns: PCAP object.
      */
-    class func readFile(data: NSData) -> Pcap? {
+    class func readFile(controller: PcapWindowController, data: NSData) -> Pcap? {
         let reader = NSDataReader(data)
 
         if (data.length < sizeof(pcap_file_header)) {
@@ -79,7 +79,7 @@ class Pcap {
         
         while (reader.offset < data.length) {
             if (reader.offset + 16 > data.length) {
-                print("short packet header!", terminator: "")
+                print("short packet header!")
                 return nil
             }
             let ts_sec  = reader.u32endian()
@@ -113,8 +113,37 @@ class Pcap {
         
         netif = NetworkInterface(name: "en0")
         netif!.on_receive {
-            d in
-            print(d)
+            data in
+            let reader = NSDataReader(data)
+            let endian = ByteOrder.host()
+            reader.endian = endian
+
+            if (reader.offset + 16 > data.length) {
+                print("BPF: short packet header!")
+                return
+            }
+            let ts_sec  = reader.u32endian()
+            let ts_usec = reader.u32endian()
+            let caplen  = reader.u32endian()
+            let origlen = reader.u32endian()
+            
+            if (reader.offset + Int(caplen) > data.length) {
+                print("BPF: packets < caplen")
+                return
+            }
+            
+            let sec = Double(ts_sec) + 1.0e-6 * Double(ts_usec)
+            let date = NSDate(timeIntervalSinceReferenceDate: sec)
+            
+            let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
+            let parser = Ethernet.parse
+            let context = ParseContext(pkt.data, endian: endian, parser: parser)
+            pkt.parse(context)
+
+            self.packets.append(pkt)
+            
+            let center = NSNotificationCenter.defaultCenter()
+            center.postNotificationName("AddPacketNotification", object: self)
         }
     }
 

@@ -12,28 +12,33 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
 
+    var pcap: Pcap { get { return (self.document as! PcapDocument).pcap } }
+
     override func windowDidLoad() {
 //        window!.titleVisibility = .Hidden
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserverForName("AddPacketNotification", object: pcap, queue: NSOperationQueue.mainQueue()) {
+            notification in
+            self.packet_table.noteNumberOfRowsChanged()
+        }
         print("loaded")
     }
     
-    var pcap: Pcap? { get { return (self.document as! PcapDocument).pcap } }
-
     @IBAction func startstop(sender: AnyObject) {
         let item = sender as! NSToolbarItem
 
-        if pcap!.capturing {
-            pcap!.stop_capture()
+        if pcap.capturing {
+            pcap.stop_capture()
             item.label = "Start"
         } else {
-            pcap!.start_capture()
+            pcap.start_capture()
             item.label = "Stop"
         }
     }
 
     @IBAction func ReadText(sender: AnyObject) {
         if let pkt = Packet.parseText(text.string!) {
-            pcap!.packets.append(pkt)
+            pcap.packets.append(pkt)
             packet_table.reloadData()
         } else {
             print("parse error!!")
@@ -42,18 +47,11 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     
     // NSTableViewDataSource Protocol
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
-        if pcap != nil {
-            return pcap!.packets.count
-        } else {
-            return 0
-        }
+        return pcap.packets.count
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
-        if (pcap?.packets[rowIndex] == nil) {
-            return "???"
-        }
-        let pkt = pcap!.packets[rowIndex]
+        let pkt = pcap.packets[rowIndex]
         
         let label = aTableColumn!.identifier
         switch label {
