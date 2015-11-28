@@ -21,7 +21,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
 
     @IBAction func startstop(sender: AnyObject) {
         let item = sender as! NSToolbarItem
-        
+
         if pcap!.capturing {
             pcap!.stop_capture()
             item.label = "Start"
