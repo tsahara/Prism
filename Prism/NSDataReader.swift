@@ -46,6 +46,14 @@ class NSDataReader {
         return val
     }
 
+    func u16endian() -> UInt16 {
+        if (endian == .BigEndian) {
+            return read_u16be()
+        } else {
+            return read_u16be().littleEndian
+        }
+    }
+
     func u32() -> UInt32 {
         let val = UnsafePointer<UInt32>(data.bytes + offset).memory.bigEndian
         offset += 4

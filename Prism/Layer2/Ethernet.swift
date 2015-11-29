@@ -20,7 +20,7 @@ class Ethernet : BaseProtocol {
         
         let reader = context.reader
         reader.advance(12)
-        
+
         switch (reader.read_u16be()) {
         case 0x0800:
             context.parser = IPv4.parse

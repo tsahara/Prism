@@ -126,6 +126,7 @@ class Pcap {
             let ts_usec = reader.u32endian()
             let caplen  = reader.u32endian()
             let origlen = reader.u32endian()
+            let hdrlen  = reader.u16endian()
             
             if (reader.offset + Int(caplen) > data.length) {
                 print("BPF: packets < caplen")
@@ -136,6 +137,7 @@ class Pcap {
             let date = NSDate(timeIntervalSinceReferenceDate: sec)
             
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
+            print(pkt.data)
             let parser = Ethernet.parse
             let context = ParseContext(pkt.data, endian: endian, parser: parser)
             pkt.parse(context)
