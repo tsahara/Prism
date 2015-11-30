@@ -50,6 +50,8 @@ class IPv4 : BaseProtocol {
         switch proto {
         case 1:
             context.parser = ICMP.parse
+        case 6:
+            context.parser = TCP.parse
         case 17:
             context.parser = UDP.parse
         default:

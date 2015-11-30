@@ -23,6 +23,7 @@
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
+		1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF35981C0C7E2100B1269A /* TCP.swift */; };
 		1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; };
 		1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */; };
 		1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */; };
@@ -73,6 +74,7 @@
 		1FB57EEC1B9DD26E0016FCA6 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 		1FCF35961C0926B900B1269A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FCF35971C0926DA00B1269A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		1FCF35981C0C7E2100B1269A /* TCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCP.swift; path = Layer4/TCP.swift; sourceTree = "<group>"; };
 		1FDAF28F1BBC0B7600DABACF /* UDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDP.swift; path = Layer4/UDP.swift; sourceTree = "<group>"; };
 		1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataReader.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		1FDAF28E1BBC0B5000DABACF /* Layer4 */ = {
 			isa = PBXGroup;
 			children = (
+				1FCF35981C0C7E2100B1269A /* TCP.swift */,
 				1FDAF28F1BBC0B7600DABACF /* UDP.swift */,
 			);
 			name = Layer4;
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */,
+				1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */,
 				1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
 				1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */,
 				1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */,

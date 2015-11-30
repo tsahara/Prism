@@ -64,6 +64,17 @@ class Packet {
         }
     }
 
+    var tcp: TCP? {
+        get {
+            if (protocols.count >= 3) {
+                if let p = protocols[2] as? TCP {
+                    return p
+                }
+            }
+            return nil
+        }
+    }
+
     var udp: UDP? {
         get {
             if (protocols.count >= 3) {

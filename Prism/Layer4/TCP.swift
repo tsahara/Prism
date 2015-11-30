@@ -1,20 +1,20 @@
 //
-//  UDP.swift
+//  TCP.swift
 //  Prism
 //
-//  Created by Tomoyuki Sahara on 9/30/15.
+//  Created by Tomoyuki Sahara on 11/30/15.
 //  Copyright © 2015 Tomoyuki Sahara. All rights reserved.
 //
 
 import Foundation
 
-class UDP : BaseProtocol {
-    override var name: String { get { return "UDP" } }
-
+class TCP : BaseProtocol {
+    override var name: String { get { return "TCP" } }
+    
     override class func parse(context: ParseContext) -> Protocol {
-        let p = UDP(context)
+        let p = TCP(context)
         let reader = context.reader
-        if (reader.length < 8) {
+        if (reader.length < 20) {
             p.broken = true
             return p
         }
@@ -32,5 +32,5 @@ class UDP : BaseProtocol {
             return Int(UnsafePointer<UInt16>(data.bytes + offset).memory.bigEndian)
         }
     }
-
+    
 }
