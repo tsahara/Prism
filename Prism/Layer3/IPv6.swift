@@ -39,6 +39,8 @@ class IPv6 : BaseProtocol {
         
         let nxthdr = reader.read_u8()
         switch nxthdr {
+        case 6:
+            context.parser = TCP.parse
         case 17:
             context.parser = UDP.parse
         case 58:
