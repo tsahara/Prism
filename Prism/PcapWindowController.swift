@@ -64,11 +64,10 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         case "SourceCell":
             if (pkt.ipv4 != nil) {
                 return pkt.ipv4!.src!.string
-            }
-            if (pkt.ipv6 != nil) {
+            } else if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.src!.string
             }
-            return ""
+            return pkt.src_string
             
         case "SourcePortCell":
             if (pkt.tcp != nil) {
