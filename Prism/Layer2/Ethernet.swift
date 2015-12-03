@@ -14,6 +14,17 @@ class Ethernet : BaseProtocol {
     override var name: String { get { return "Ethernet" } }
 
     var ethertype = 0
+
+    var dst: [UInt8] {
+        get {
+            var bytes = [UInt8]()
+            let ptr = UnsafePointer<UInt8>(data.bytes)
+            for i in 0..<6 {
+                bytes.append((ptr + i).memory)
+            }
+            return bytes
+        }
+    }
     
     var src: [UInt8] {
         get {

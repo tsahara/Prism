@@ -84,7 +84,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             if (pkt.ipv6 != nil) {
                 return pkt.ipv6!.dst!.string
             }
-            return ""
+            return pkt.dst_string
             
         case "DestinationPortCell":
             if (pkt.tcp != nil) {

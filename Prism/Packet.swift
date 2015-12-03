@@ -95,6 +95,16 @@ class Packet {
             return ""
         }
     }
+    
+    var dst_string: String {
+        get {
+            if let p = protocols[0] as? Ethernet {
+                return String(format: "%02x:%02x:%02x:%02x:%02x:%02x", arguments: p.dst.map {
+                    byte in UInt(byte) })
+            }
+            return ""
+        }
+    }
 
     class func parseText(text: String) -> Packet? {
         var timestamp: NSDate?
