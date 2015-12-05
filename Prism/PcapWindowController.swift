@@ -12,6 +12,8 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
 
+    var hexa: HexadumpWindowController?
+    
     var pcap: Pcap? { get { return (self.document as! PcapDocument?)?.pcap } }
 
     override func windowDidLoad() {
@@ -36,6 +38,12 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
                 item.label = "Stop"
             }
         }
+    }
+    
+    @IBAction func toolbar_hexadump(sender: AnyObject) {
+        print("hexadump")
+        hexa = HexadumpWindowController(windowNibName: "HexadumpWindow")
+        hexa!.showWindow(nil)
     }
 
     @IBAction func ReadText(sender: AnyObject) {

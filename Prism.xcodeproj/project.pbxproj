@@ -19,6 +19,8 @@
 		1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
 		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
+		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
+		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
@@ -67,6 +69,8 @@
 		1F1283181B84D430007815E9 /* file-header-only.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "file-header-only.pcap"; path = "Data/file-header-only.pcap"; sourceTree = "<group>"; };
 		1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
 		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
+		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
 		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
+				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
 				1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
 				1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */,
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
@@ -143,6 +148,7 @@
 				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
 				1FF679231BB169EE009C6258 /* Utils.swift */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
+				1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
 				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
@@ -309,6 +315,7 @@
 				1F0A73B01A9C0BDE00FA91D4 /* PcapDocument.xib in Resources */,
 				1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */,
 				1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */,
+				1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +353,7 @@
 				1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */,
 				1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */,
 				1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */,
+				1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */,
 				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,

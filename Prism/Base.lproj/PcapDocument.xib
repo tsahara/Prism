@@ -7,7 +7,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PcapWindowController" customModule="Prism" customModuleProvider="target">
             <connections>
                 <outlet property="packet_table" destination="DSE-Hl-MPG" id="0pt-6R-sAd"/>
-                <outlet property="text" destination="veu-A3-LjB" id="sgE-lD-Aho"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -23,53 +22,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="620"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iie-a4-3P6">
-                        <rect key="frame" x="342" y="57" width="117" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2yu-UQ-9Dt">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <connections>
-                                <action selector="ReadText:" target="-2" id="JLT-BC-Jcc"/>
-                            </connections>
-                        </buttonCell>
-                    </button>
-                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-RA-2q1">
-                        <rect key="frame" x="20" y="99" width="760" height="267"/>
-                        <clipView key="contentView" ambiguous="YES" id="Shi-LH-WpX">
-                            <rect key="frame" x="1" y="1" width="758" height="265"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="veu-A3-LjB">
-                                    <rect key="frame" x="0.0" y="0.0" width="758" height="444"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="758" height="265"/>
-                                    <size key="maxSize" width="766" height="10000000"/>
-                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="758" height="265"/>
-                                    <size key="maxSize" width="766" height="10000000"/>
-                                    <allowedInputSourceLocales>
-                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                    </allowedInputSourceLocales>
-                                </textView>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <animations/>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="6Tv-r3-QOq">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="ZgO-Qo-NEe">
-                            <rect key="frame" x="743" y="1" width="16" height="265"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
-                        </scroller>
-                    </scrollView>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-L7-bD1">
                         <rect key="frame" x="-1" y="388" width="802" height="233"/>
                         <clipView key="contentView" ambiguous="YES" id="b7W-0A-cEw">
@@ -215,9 +167,15 @@
                             <action selector="startstop:" target="-2" id="cKg-SP-0Rl"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="F0B6B4B9-DAF4-4F5F-B8AD-BB31351BA216" label="Hexadump" paletteLabel="Hexadump" tag="-1" image="NSApplicationIcon" id="nXn-h6-OHO">
+                        <connections>
+                            <action selector="toolbar_hexadump:" target="-2" id="Sse-jO-23w"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="bJx-80-Gt0"/>
+                    <toolbarItem reference="nXn-h6-OHO"/>
                     <toolbarItem reference="d19-sJ-1bk"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -228,6 +186,7 @@
         </window>
     </objects>
     <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSGoRightTemplate" width="9" height="12"/>
     </resources>
 </document>
