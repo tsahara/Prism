@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate {
+class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSOutlineViewDataSource {
     @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
 
@@ -117,5 +117,29 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         default:
             return "(no value)"
         }
+    }
+    
+    // Outline View Programming Topics
+    // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html
+    
+    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
+        print("ov: 1: item=\(item)")
+        return 1
+    }
+
+    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+        return false
+    }
+
+    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
+        print("ov3: index=\(index), item=\(item)")
+        return "fuga"
+    }
+
+    func outlineView(outlineView: NSOutlineView,
+        objectValueForTableColumn tableColumn: NSTableColumn?,
+        byItem item: AnyObject?) -> AnyObject? {
+            print("ov4: column=\(tableColumn), item=\(item)")
+            return "fuga \(tableColumn)"
     }
 }
