@@ -24,6 +24,10 @@ class NetworkInterface {
             if (filehandle != nil) { break }
         }
 
+        guard filehandle != nil else {
+            return
+        }
+        
         c_bpf_setup(filehandle!.fileDescriptor, "en0", UInt32(buffer.count))
 
         filehandle!.readabilityHandler = {

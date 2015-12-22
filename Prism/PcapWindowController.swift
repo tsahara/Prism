@@ -8,6 +8,8 @@
 
 import Cocoa
 
+let fuga = "FuGa"
+
 class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSOutlineViewDataSource {
     @IBOutlet weak var packet_table: NSTableView!
     @IBOutlet var text: NSTextView!
@@ -140,6 +142,6 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         objectValueForTableColumn tableColumn: NSTableColumn?,
         byItem item: AnyObject?) -> AnyObject? {
             print("ov4: column=\(tableColumn), item=\(item)")
-            return "fuga \(tableColumn)"
+            return fuga
     }
 }
