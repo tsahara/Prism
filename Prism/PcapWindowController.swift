@@ -121,6 +121,11 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
     
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        print("Selected Row is \(packet_table!.selectedRow)")
+    }
+
+    
     // Outline View Programming Topics
     // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html
     
