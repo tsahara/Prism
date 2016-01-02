@@ -137,7 +137,7 @@ class Pcap {
             let date = NSDate(timeIntervalSinceReferenceDate: sec)
             
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
-            print(pkt.data)
+            //print(pkt.data)
             let parser = Ethernet.parse
             let context = ParseContext(pkt.data, endian: endian, parser: parser)
             pkt.parse(context)

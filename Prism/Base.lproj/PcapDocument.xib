@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PcapWindowController" customModule="Prism" customModuleProvider="target">
             <connections>
+                <outlet property="packet_outline" destination="sKX-Up-jUI" id="3CM-B8-Y6J"/>
                 <outlet property="packet_table" destination="DSE-Hl-MPG" id="0pt-6R-sAd"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>

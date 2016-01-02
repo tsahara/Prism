@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Protocol {
+@objc protocol Protocol {
     var broken: Bool { get }
     var header_length: Int { get }
     var name: String { get }
@@ -18,7 +18,7 @@ protocol Protocol {
     static func parse(context: ParseContext) -> Protocol
 }
 
-class BaseProtocol: Protocol {
+class BaseProtocol: NSObject, Protocol {
     var broken = false
     var header_length = 0
     var name: String { get { return "(base)" } }

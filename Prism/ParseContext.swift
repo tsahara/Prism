@@ -22,7 +22,7 @@ enum ByteOrder {
 
 typealias ParseClosure = ((ParseContext) -> Protocol)?
 
-class ParseContext {
+@objc class ParseContext : NSObject {
     let reader: NSDataReader
     let endian: ByteOrder
     

@@ -12,10 +12,13 @@ let fuga = "FuGa"
 
 class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSOutlineViewDataSource {
     @IBOutlet weak var packet_table: NSTableView!
+
     @IBOutlet var text: NSTextView!
 
+    @IBOutlet weak var packet_outline: NSOutlineView!
+
     var hexa: HexadumpWindowController?
-    
+    var selected_packet: Packet?
     var pcap: Pcap? { get { return (self.document as! PcapDocument?)?.pcap } }
 
     override func windowDidLoad() {
@@ -122,7 +125,9 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        print("Selected Row is \(packet_table!.selectedRow)")
+        guard let pcap = pcap else { return }
+        self.selected_packet = pcap.packets[packet_table!.selectedRow]
+        self.packet_outline.reloadItem(nil)
     }
 
     
@@ -130,8 +135,8 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        print("ov: 1: item=\(item)")
-        return 1
+        guard let pkt = self.selected_packet else { return 0 }
+        return pkt.protocols.count
     }
 
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
@@ -139,14 +144,14 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     }
 
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        print("ov3: index=\(index), item=\(item)")
-        return "fuga"
+        guard let pkt = selected_packet else { return "(???)" }
+        return pkt.protocols[index]
     }
 
     func outlineView(outlineView: NSOutlineView,
         objectValueForTableColumn tableColumn: NSTableColumn?,
         byItem item: AnyObject?) -> AnyObject? {
-            print("ov4: column=\(tableColumn), item=\(item)")
-            return fuga
+            let proto = item as! Protocol
+            return proto.name
     }
 }
