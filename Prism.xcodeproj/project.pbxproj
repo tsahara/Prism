@@ -22,6 +22,7 @@
 		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
 		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
+		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
@@ -72,6 +73,7 @@
 		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
 		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
+		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
 		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
 		1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
 				1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
 				1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
+				1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */,
 				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
 				1FF679231BB169EE009C6258 /* Utils.swift */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
@@ -348,6 +351,7 @@
 				1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */,
 				1FF679241BB169EE009C6258 /* Utils.swift in Sources */,
 				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
+				1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */,
 				1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */,
 				1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */,
 				1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */,

@@ -10,9 +10,9 @@ import Foundation
 
 @objc protocol Protocol {
     var broken: Bool { get }
+    var fields: [ProtocolField] { get }
     var header_length: Int { get }
     var name: String { get }
-
     var isNetworkProtocol: Bool { get }
 
     static func parse(context: ParseContext) -> Protocol
@@ -27,6 +27,8 @@ class BaseProtocol: NSObject, Protocol {
     var data: NSData
     var offset: Int
 
+    var fields: [ProtocolField] = []
+    
     init(_ context: ParseContext) {
         self.data = context.reader.data
         self.offset = context.reader.offset

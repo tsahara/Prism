@@ -8,6 +8,8 @@
 
 import Foundation
 
+// https://tools.ietf.org/html/rfc791#section-3.1
+//
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 // |Version|  IHL  |Type of Service|          Total Length         |
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

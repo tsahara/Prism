@@ -135,23 +135,42 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        guard let pkt = self.selected_packet else { return 0 }
-        return pkt.protocols.count
+        if item == nil {
+            guard let pkt = self.selected_packet else { return 0 }
+            return pkt.protocols.count
+        } else {
+            let proto = item as! Protocol
+            return proto.fields.count
+        }
     }
 
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+        if item is Protocol {
+            let proto = item as! Protocol
+            if proto.fields.count > 0 {
+                return true
+            }
+        }
         return false
     }
 
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        guard let pkt = selected_packet else { return "(???)" }
-        return pkt.protocols[index]
+        if item == nil {
+            guard let pkt = selected_packet else { return "(???)" }
+            return pkt.protocols[index]
+        } else {
+            let proto = item as! Protocol
+            return proto.fields[index]
+        }
     }
 
     func outlineView(outlineView: NSOutlineView,
         objectValueForTableColumn tableColumn: NSTableColumn?,
         byItem item: AnyObject?) -> AnyObject? {
-            let proto = item as! Protocol
-            return proto.name
+            if item is Protocol {
+                return (item as! Protocol).name
+            } else {
+                return (item as! ProtocolField).name
+            }
     }
 }

@@ -33,7 +33,7 @@ class NetworkInterface {
         filehandle!.readabilityHandler = {
             fh in
             let len = read(fh.fileDescriptor, &self.buffer, 2000)
-            print("read \(len) bytes")
+//            print("read \(len) bytes")
             callback(NSData(bytes: &self.buffer, length: len))
         }
         print("started")
