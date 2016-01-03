@@ -11,7 +11,18 @@ import Foundation
 @objc class ProtocolField : NSObject {
     let name: String
     
-    init(name: String) {
+    let data: NSData
+    let offset: Int
+    let length: Int
+    
+    init(reader: NSDataReader, length: Int, name: String) {
+        self.data = reader.data
+        self.offset = reader.offset
+        self.length = length
         self.name = name
+    }
+    
+    func interpretation() -> String {
+        return self.name
     }
 }

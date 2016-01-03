@@ -170,7 +170,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             if item is Protocol {
                 return (item as! Protocol).name
             } else {
-                return (item as! ProtocolField).name
+                return (item as! ProtocolField).interpretation()
             }
     }
 }
