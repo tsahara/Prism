@@ -37,7 +37,7 @@ class IPv4 : BaseProtocol {
             return p
         }
         p.header_length = 20
-        
+
         r.read_u8()  // version, ihl
         r.read_u8()  // tos
         let total_length = r.read_u16be()
@@ -46,6 +46,10 @@ class IPv4 : BaseProtocol {
         r.read_u8()    // ttl
         let proto = r.read_u8()
         r.read_u16be() // cksum
+
+        let f = IPv4AddressField(reader: r, length: 4, name: "Source IP Address")
+        p.fields.append(f)
+
         r.read_u32be()
         r.read_u32be()
         

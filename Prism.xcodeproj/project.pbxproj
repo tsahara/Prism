@@ -24,6 +24,7 @@
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
+		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
@@ -76,6 +77,7 @@
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
+		1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
 		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
 		1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
 				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
+				1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
 				1FA6FE031C3932CE00E3310C /* MacAddressField.swift */,
 				1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
 				1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */,
@@ -363,6 +366,7 @@
 				1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */,
 				1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */,
 				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
+				1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */,
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 				1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */,
