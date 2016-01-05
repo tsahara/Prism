@@ -49,9 +49,10 @@ class IPv4 : BaseProtocol {
 
         let f = IPv4AddressField(reader: r, length: 4, name: "Source IP Address")
         p.fields.append(f)
+        r.advance(4)
 
-        r.read_u32be()
-        r.read_u32be()
+        p.fields.append(IPv4AddressField(reader: r, length: 4, name: "Destination IP Address"))
+        r.advance(4)
         
         switch proto {
         case 1:
