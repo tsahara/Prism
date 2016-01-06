@@ -214,11 +214,26 @@
                             <action selector="toolbar_hexadump:" target="-2" id="Sse-jO-23w"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="754B6039-8E7F-4D15-9914-5D901590606B" label="Search" paletteLabel="Search" id="SOw-cc-Ip9">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="96" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="6SE-kR-ZPx">
+                            <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="5i8-ni-quj">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                        </searchField>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="bJx-80-Gt0"/>
                     <toolbarItem reference="nXn-h6-OHO"/>
                     <toolbarItem reference="d19-sJ-1bk"/>
+                    <toolbarItem reference="SOw-cc-Ip9"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>

@@ -20,7 +20,7 @@ class TCP : BaseProtocol {
         }
         return p
     }
-    
+
     var dstport: Int? {
         get {
             return Int(UnsafePointer<UInt16>(data.bytes + offset + 2).memory.bigEndian)
