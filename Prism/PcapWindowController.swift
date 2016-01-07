@@ -14,12 +14,17 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     @IBOutlet weak var packet_table: NSTableView!
 
     @IBOutlet var text: NSTextView!
+    @IBOutlet weak var search_field: NSSearchFieldCell!
 
     @IBOutlet weak var packet_outline: NSOutlineView!
 
     var hexa: HexadumpWindowController?
     var selected_packet: Packet?
     var pcap: Pcap? { get { return (self.document as! PcapDocument?)?.pcap } }
+
+    @IBAction func search(sender: AnyObject) {
+        print("search: \(search_field.stringValue)")
+    }
 
     override func windowDidLoad() {
 //        window!.titleVisibility = .Hidden

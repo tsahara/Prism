@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="packet_outline" destination="sKX-Up-jUI" id="3CM-B8-Y6J"/>
                 <outlet property="packet_table" destination="DSE-Hl-MPG" id="0pt-6R-sAd"/>
+                <outlet property="search_field" destination="5i8-ni-quj" id="6Tb-Hh-Txt"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -200,7 +201,7 @@
                     </scrollView>
                 </subviews>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rz8-VD-Vzw">
+            <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="Rz8-VD-Vzw">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="y4v-ji-CGU"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d19-sJ-1bk"/>
@@ -225,6 +226,9 @@
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="search:" target="-2" id="0GP-Yi-BxT"/>
+                                </connections>
                             </searchFieldCell>
                         </searchField>
                     </toolbarItem>
