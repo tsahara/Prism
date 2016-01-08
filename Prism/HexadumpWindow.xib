@@ -16,20 +16,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="671" height="472"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-Au-Qyx">
+                        <rect key="frame" x="300" y="3" width="71" height="32"/>
+                        <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGz-9Z-Rxf">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-3L-KQt">
-                        <rect key="frame" x="-1" y="43" width="673" height="430"/>
+                        <rect key="frame" x="0.0" y="43" width="671" height="430"/>
                         <clipView key="contentView" ambiguous="YES" id="n0f-il-Eg6">
-                            <rect key="frame" x="1" y="1" width="671" height="428"/>
+                            <rect key="frame" x="1" y="1" width="669" height="428"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="WiE-GK-KF9">
-                                    <rect key="frame" x="0.0" y="0.0" width="671" height="428"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="669" height="428"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="671" height="428"/>
+                                    <size key="minSize" width="669" height="428"/>
                                     <size key="maxSize" width="691" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="671" height="428"/>
+                                    <size key="minSize" width="669" height="428"/>
                                     <size key="maxSize" width="691" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -40,20 +47,13 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="dWg-1N-I57">
-                            <rect key="frame" x="656" y="1" width="16" height="428"/>
+                            <rect key="frame" x="654" y="1" width="16" height="428"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-Au-Qyx">
-                        <rect key="frame" x="300" y="3" width="71" height="32"/>
-                        <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGz-9Z-Rxf">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="372.5" y="352"/>
+            <point key="canvasLocation" x="334.5" y="338"/>
         </window>
     </objects>
 </document>
