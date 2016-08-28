@@ -54,21 +54,21 @@ class IPv6 : BaseProtocol {
         return p
     }
 
-    var dst: in6_addr? {
+    var dst: IPv6Address? {
         get {
             guard header_length >= 40 else {
                 return nil
             }
-            return in6_addr(data: data, offset: self.offset + 24)
+            return IPv6Address(data: data, offset: self.offset + 24)
         }
     }
 
-    var src: in6_addr? {
+    var src: IPv6Address? {
         get {
             guard header_length >= 32 else {
                 return nil
             }
-            return in6_addr(data: data, offset: self.offset + 8)
+            return IPv6Address(data: data, offset: self.offset + 8)
         }
     }
 }

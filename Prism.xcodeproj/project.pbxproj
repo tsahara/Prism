@@ -22,6 +22,9 @@
 		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
 		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
+		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
+		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
+		1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* PrismHelper */; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
 		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
@@ -53,7 +56,27 @@
 			remoteGlobalIDString = 1F0A73A41A9C0BDE00FA91D4;
 			remoteInfo = Prism;
 		};
+		1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F81D38A1C66DF1500171A8D;
+			remoteInfo = PrismHelper;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F81D3941C66DF9100171A8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F0A73A51A9C0BDE00FA91D4 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +99,9 @@
 		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
 		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
+		1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6Address.swift; sourceTree = "<group>"; };
+		1F81D38B1C66DF1500171A8D /* PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
 		1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
@@ -117,6 +143,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F81D3881C66DF1500171A8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,6 +158,7 @@
 			children = (
 				1F0A73A71A9C0BDE00FA91D4 /* Prism */,
 				1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */,
+				1F81D38C1C66DF1500171A8D /* PrismHelper */,
 				1F0A73A61A9C0BDE00FA91D4 /* Products */,
 				1FCF35971C0926DA00B1269A /* .travis.yml */,
 				1FCF35961C0926B900B1269A /* README.md */,
@@ -136,6 +170,7 @@
 			children = (
 				1F0A73A51A9C0BDE00FA91D4 /* Prism.app */,
 				1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */,
+				1F81D38B1C66DF1500171A8D /* PrismHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +182,7 @@
 				1FA6FE071C4005F200E3310C /* EthertypeField.swift */,
 				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
 				1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
+				1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */,
 				1FA6FE031C3932CE00E3310C /* MacAddressField.swift */,
 				1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
 				1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */,
@@ -212,6 +248,14 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		1F81D38C1C66DF1500171A8D /* PrismHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1F81D38D1C66DF1500171A8D /* main.m */,
+			);
+			path = PrismHelper;
+			sourceTree = "<group>";
+		};
 		1FDAF28E1BBC0B5000DABACF /* Layer4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,10 +296,12 @@
 				1F0A73A11A9C0BDE00FA91D4 /* Sources */,
 				1F0A73A21A9C0BDE00FA91D4 /* Frameworks */,
 				1F0A73A31A9C0BDE00FA91D4 /* Resources */,
+				1F81D3941C66DF9100171A8D /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1F81D3971C66DFD200171A8D /* PBXTargetDependency */,
 			);
 			name = Prism;
 			productName = Prism;
@@ -280,6 +326,22 @@
 			productReference = 1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1F81D38A1C66DF1500171A8D /* PrismHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */;
+			buildPhases = (
+				1F81D3871C66DF1500171A8D /* Sources */,
+				1F81D3881C66DF1500171A8D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrismHelper;
+			productName = PrismHelper;
+			productReference = 1F81D38B1C66DF1500171A8D /* PrismHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -298,6 +360,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 1F0A73A41A9C0BDE00FA91D4;
 					};
+					1F81D38A1C66DF1500171A8D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 1F0A73A01A9C0BDE00FA91D4 /* Build configuration list for PBXProject "Prism" */;
@@ -315,6 +380,7 @@
 			targets = (
 				1F0A73A41A9C0BDE00FA91D4 /* Prism */,
 				1F0A73B91A9C0BDE00FA91D4 /* PrismTests */,
+				1F81D38A1C66DF1500171A8D /* PrismHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -372,6 +438,7 @@
 				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
 				1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */,
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
+				1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 				1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */,
 			);
@@ -387,6 +454,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F81D3871C66DF1500171A8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F81D38E1C66DF1500171A8D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -394,6 +469,11 @@
 			isa = PBXTargetDependency;
 			target = 1F0A73A41A9C0BDE00FA91D4 /* Prism */;
 			targetProxy = 1F0A73BB1A9C0BDE00FA91D4 /* PBXContainerItemProxy */;
+		};
+		1F81D3971C66DFD200171A8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F81D38A1C66DF1500171A8D /* PrismHelper */;
+			targetProxy = 1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -421,10 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -434,11 +511,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -455,7 +531,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -464,10 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -477,12 +549,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -491,7 +562,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -500,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -515,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -562,6 +634,30 @@
 			};
 			name = Release;
 		};
+		1F81D38F1C66DF1500171A8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1F81D3901C66DF1500171A8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +684,15 @@
 			buildConfigurations = (
 				1F0A73C81A9C0BDE00FA91D4 /* Debug */,
 				1F0A73C91A9C0BDE00FA91D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F81D38F1C66DF1500171A8D /* Debug */,
+				1F81D3901C66DF1500171A8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
