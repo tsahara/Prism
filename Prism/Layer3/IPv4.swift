@@ -67,21 +67,21 @@ class IPv4 : BaseProtocol {
         return p
     }
 
-    var src: in_addr? {
+    var src: IPv4Address? {
         get {
             guard header_length >= 16 else {
                 return nil
             }
-            return in_addr(data: data, offset: self.offset + 12)
+            return IPv4Address(data: data, offset: self.offset + 12)
         }
     }
 
-    var dst: in_addr? {
+    var dst: IPv4Address? {
         get {
             guard header_length >= 20 else {
                 return nil
             }
-            return in_addr(data: data, offset: self.offset + 16)
+            return IPv4Address(data: data, offset: self.offset + 16)
         }
     }
 }
