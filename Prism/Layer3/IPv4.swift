@@ -28,7 +28,7 @@ class IPv4 : BaseProtocol {
     override var name: String { get { return "IPv4" } }
     override var isNetworkProtocol: Bool { get { return true } }
     
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = IPv4(context)
         
         let r = context.reader

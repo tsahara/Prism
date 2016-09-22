@@ -9,7 +9,7 @@
 import Foundation
 
 class UnknownProtocol : BaseProtocol {
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         context.parser = nil
         return UnknownProtocol(context)
     }

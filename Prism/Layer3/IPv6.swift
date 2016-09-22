@@ -12,7 +12,7 @@ class IPv6 : BaseProtocol {
     override var name: String { get { return "IPv6" } }
     override var isNetworkProtocol: Bool { get { return true } }
 
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = IPv6(context)
 
         let reader = context.reader

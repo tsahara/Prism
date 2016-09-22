@@ -22,21 +22,21 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     var selected_packet: Packet?
     var pcap: Pcap? { get { return (self.document as! PcapDocument?)?.pcap } }
 
-    @IBAction func search(sender: AnyObject) {
+    @IBAction func search(_ sender: AnyObject) {
         print("search: \(search_field.stringValue)")
     }
 
     override func windowDidLoad() {
 //        window!.titleVisibility = .Hidden
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserverForName("AddPacketNotification", object: pcap, queue: NSOperationQueue.mainQueue()) {
+        let center = NotificationCenter.default
+        center.addObserver(forName: NSNotification.Name(rawValue: "AddPacketNotification"), object: pcap, queue: OperationQueue.main) {
             notification in
             self.packet_table.noteNumberOfRowsChanged()
         }
         print("loaded")
     }
     
-    @IBAction func startstop(sender: AnyObject) {
+    @IBAction func startstop(_ sender: AnyObject) {
         let item = sender as! NSToolbarItem
 
         if pcap != nil {
@@ -50,13 +50,13 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
     
-    @IBAction func toolbar_hexadump(sender: AnyObject) {
+    @IBAction func toolbar_hexadump(_ sender: AnyObject) {
         print("hexadump")
         hexa = HexadumpWindowController(windowNibName: "HexadumpWindow")
         hexa!.showWindow(nil)
     }
 
-    @IBAction func ReadText(sender: AnyObject) {
+    @IBAction func ReadText(_ sender: AnyObject) {
         if let pkt = Packet.parseText(text.string!) {
             pcap!.packets.append(pkt)
             packet_table.reloadData()
@@ -66,7 +66,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     }
     
     // NSTableViewDataSource Protocol
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
+    func numberOfRows(in aTableView: NSTableView) -> Int {
         if pcap != nil {
             return pcap!.packets.count
         } else {
@@ -74,16 +74,16 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
     
-    func tableView(tableView: NSTableView, objectValueForTableColumn aTableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
+    func tableView(_ tableView: NSTableView, objectValueFor aTableColumn: NSTableColumn?, row rowIndex: Int) -> Any? {
         let pkt = pcap!.packets[rowIndex]
         
         let label = aTableColumn!.identifier
         switch label {
         case "TimeCell":
-            let f = NSDateFormatter()
+            let f = DateFormatter()
             f.dateFormat = "HH:mm:ss"
             let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
-            return f.stringFromDate(pkt.timestamp) + subsec
+            return f.string(from: pkt.timestamp as Date) + subsec
             
         case "SourceCell":
             if (pkt.ipv4 != nil) {
@@ -129,7 +129,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
     
-    func tableViewSelectionDidChange(notification: NSNotification) {
+    func tableViewSelectionDidChange(_ notification: Notification) {
         guard let pcap = pcap else { return }
         self.selected_packet = pcap.packets[packet_table!.selectedRow]
         self.packet_outline.reloadItem(nil)
@@ -139,7 +139,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     // Outline View Programming Topics
     // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html
     
-    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
+    func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if item == nil {
             guard let pkt = self.selected_packet else { return 0 }
             return pkt.protocols.count
@@ -149,7 +149,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
 
-    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+    func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if item is Protocol {
             let proto = item as! Protocol
             if proto.fields.count > 0 {
@@ -159,7 +159,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         return false
     }
 
-    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
+    func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if item == nil {
             guard let pkt = selected_packet else { return "(???)" }
             return pkt.protocols[index]
@@ -169,9 +169,9 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
         }
     }
 
-    func outlineView(outlineView: NSOutlineView,
-        objectValueForTableColumn tableColumn: NSTableColumn?,
-        byItem item: AnyObject?) -> AnyObject? {
+    func outlineView(_ outlineView: NSOutlineView,
+        objectValueFor tableColumn: NSTableColumn?,
+        byItem item: Any?) -> Any? {
             if item is Protocol {
                 return (item as! Protocol).name
             } else {

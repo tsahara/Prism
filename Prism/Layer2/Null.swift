@@ -11,7 +11,7 @@ import Foundation
 class NullProtocol : BaseProtocol {
     override var name: String { get { return "Null" } }
     
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = NullProtocol(context)
         
         let reader = context.reader

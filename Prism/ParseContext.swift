@@ -9,13 +9,13 @@
 import Foundation
 
 enum ByteOrder {
-    case BigEndian, LittleEndian
+    case bigEndian, littleEndian
     
     static func host() -> ByteOrder {
         if CFByteOrderGetCurrent() == Int(CFByteOrderLittleEndian.rawValue) {
-            return .LittleEndian
+            return .littleEndian
         } else {
-            return .BigEndian
+            return .bigEndian
         }
     }
 }
@@ -23,13 +23,13 @@ enum ByteOrder {
 typealias ParseClosure = ((ParseContext) -> Protocol)?
 
 @objc class ParseContext : NSObject {
-    let reader: NSDataReader
+    let reader: DataReader
     let endian: ByteOrder
     
     var parser: ParseClosure
     
-    init(_ data: NSData, endian: ByteOrder, parser: ParseClosure) {
-        self.reader = NSDataReader(data)
+    init(_ data: Data, endian: ByteOrder, parser: ParseClosure) {
+        self.reader = DataReader(data)
         self.endian = endian
         self.parser = parser
     }

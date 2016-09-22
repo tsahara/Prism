@@ -20,9 +20,9 @@ class Ethernet : BaseProtocol {
     var dst: [UInt8] {
         get {
             var bytes = [UInt8]()
-            let ptr = UnsafePointer<UInt8>(data.bytes)
+            let ptr = (data as NSData).bytes.bindMemory(to: UInt8.self, capacity: data.count)
             for i in 0..<6 {
-                bytes.append((ptr + i).memory)
+                bytes.append((ptr + i).pointee)
             }
             return bytes
         }
@@ -31,15 +31,15 @@ class Ethernet : BaseProtocol {
     var src: [UInt8] {
         get {
             var bytes = [UInt8]()
-            let ptr = UnsafePointer<UInt8>(data.bytes) + 6
+            let ptr = (data as NSData).bytes.bindMemory(to: UInt8.self, capacity: data.count) + 6
             for i in 0..<6 {
-               bytes.append((ptr + i).memory)
+               bytes.append((ptr + i).pointee)
             }
             return bytes
         }
     }
 
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = Ethernet(context)
 
         let reader = context.reader

@@ -25,7 +25,7 @@
 		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
 		1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
 		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
-		1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* PrismHelper */; };
+		1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
 		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
@@ -353,11 +353,12 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Tomoyuki Sahara";
 				TargetAttributes = {
 					1F0A73A41A9C0BDE00FA91D4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7PCDT74GU2;
 						LastSwiftMigration = 0800;
 					};
 					1F0A73B91A9C0BDE00FA91D4 = {
@@ -367,6 +368,8 @@
 					};
 					1F81D38A1C66DF1500171A8D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7PCDT74GU2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -513,8 +516,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -522,6 +527,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -551,8 +557,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -560,6 +568,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -568,6 +577,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -576,8 +586,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
@@ -593,8 +604,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				INFOPLIST_FILE = Prism/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
@@ -647,24 +659,28 @@
 		1F81D38F1C66DF1500171A8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		1F81D3901C66DF1500171A8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				GCC_NO_COMMON_BLOCKS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

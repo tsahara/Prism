@@ -9,23 +9,23 @@
 import Foundation
 
 class Packet {
-    let timestamp: NSDate
+    let timestamp: Date
     let original_length: Int
     let captured_length: Int
-    let data: NSData
+    let data: Data
     
     var protocols: [Protocol] = []
     var layer3: Protocol? = nil
     var transport: Protocol? = nil
     
-    init(timestamp: NSDate, original_length: Int, captured_length: Int, data: NSData) {
+    init(timestamp: Date, original_length: Int, captured_length: Int, data: Data) {
         self.timestamp = timestamp
         self.original_length = original_length
         self.captured_length = captured_length
         self.data = data
     }
     
-    func parse(context: ParseContext) {
+    func parse(_ context: ParseContext) {
         var p: Protocol
 
         while (context.parser != nil) {
@@ -106,32 +106,32 @@ class Packet {
         }
     }
 
-    class func parseText(text: String) -> Packet? {
-        var timestamp: NSDate?
-        var buf = [UInt8](count: 2000, repeatedValue: 0)
+    class func parseText(_ text: String) -> Packet? {
+        var timestamp: Date?
+        var buf = [UInt8](repeating: 0, count: 2000)
         var idx = 0
 
         var time_t_now = time(nil)
-        let tm_now = localtime(&time_t_now).memory
+        let tm_now = localtime(&time_t_now).pointee
 
         let re_summary = try! NSRegularExpression(pattern: "^(\\d{2}):(\\d{2}):(\\d{2}\\.\\d+) ", options: [])
         let re_bytes = try! NSRegularExpression(pattern: "^\\s*0x(?:[0-9a-fA-F]{4}): ((?: [0-9a-fA-F]+)+)", options: [])
         
-        NSString(string: text).enumerateLinesUsingBlock {
+        NSString(string: text).enumerateLines {
             line, _ in
             let nsline = line as NSString
             
-            if let m = re_summary.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
+            if let m = re_summary.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 var tm = tm_now
-                tm.tm_hour = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(1)))!)
-                tm.tm_min  = Int32(Int(nsline.substringWithRange(m.rangeAtIndex(2)))!)
+                tm.tm_hour = Int32(Int(nsline.substring(with: m.rangeAt(1)))!)
+                tm.tm_min  = Int32(Int(nsline.substring(with: m.rangeAt(2)))!)
                 tm.tm_sec  = 0
-                let sec = Double(nsline.substringWithRange(m.rangeAtIndex(3)))!
-                timestamp = NSDate(timeIntervalSince1970: NSTimeInterval(Double(mktime(&tm)) + sec))
+                let sec = Double(nsline.substring(with: m.rangeAt(3)))!
+                timestamp = Date(timeIntervalSince1970: TimeInterval(Double(mktime(&tm)) + sec))
             }
             
-            if let m = re_bytes.firstMatchInString(line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
-                for s in nsline.substringWithRange(m.rangeAtIndex(1)).componentsSeparatedByString(" ") {
+            if let m = re_bytes.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
+                for s in nsline.substring(with: m.rangeAt(1)).components(separatedBy: " ") {
                     if s.characters.count == 4 {
                         let word = strtoul(s, nil, 16)
                         buf[idx]   = UInt8(word >> 8)
@@ -146,10 +146,10 @@ class Packet {
                 
             }
         }
-        let data = NSData(bytes: buf, length: idx)
+        let data = Data(bytes: UnsafePointer<UInt8>(buf), count: idx)
         if timestamp != nil {
-            let pkt = Packet(timestamp: timestamp!, original_length: data.length, captured_length: data.length, data: data)
-            let context = ParseContext(pkt.data, endian: .BigEndian, parser: NullProtocol.parse)
+            let pkt = Packet(timestamp: timestamp!, original_length: data.count, captured_length: data.count, data: data)
+            let context = ParseContext(pkt.data, endian: .bigEndian, parser: NullProtocol.parse)
             pkt.parse(context)
             return pkt
         } else {

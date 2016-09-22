@@ -11,16 +11,16 @@ import Foundation
 class NetworkInterface {
     let ifname: String
     var fd: Int32 = -1
-    var filehandle: NSFileHandle?
-    var buffer = [UInt8](count: 2000, repeatedValue: 0)
+    var filehandle: FileHandle?
+    var buffer = [UInt8](repeating: 0, count: 2000)
     
     init(name: String) {
         ifname = name
     }
     
-    func on_receive(callback: ((NSData) -> Void)) {
+    func on_receive(_ callback: @escaping ((Data) -> Void)) {
         for i in 0..<8 {
-            filehandle = NSFileHandle(forReadingAtPath: "/dev/bpf\(i)")
+            filehandle = FileHandle(forReadingAtPath: "/dev/bpf\(i)")
             if (filehandle != nil) { break }
         }
 
@@ -32,9 +32,13 @@ class NetworkInterface {
 
         filehandle!.readabilityHandler = {
             fh in
-            let len = read(fh.fileDescriptor, &self.buffer, 2000)
-//            print("read \(len) bytes")
-            callback(NSData(bytes: &self.buffer, length: len))
+            var buffer = Data(capacity: 2000)
+            buffer.withUnsafeMutableBytes {
+                (ptr: UnsafeMutablePointer<UInt8>) in
+                let len = read(fh.fileDescriptor, ptr, 2000)
+                buffer.count = len
+                callback(buffer)
+            }
         }
         print("started")
     }

@@ -14,12 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        return false
 //    }
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 //        NSDocumentController.sharedDocumentController().openDocument(self)
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 }

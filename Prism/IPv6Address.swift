@@ -11,21 +11,22 @@ import Foundation
 struct IPv6Address {
     var in6: in6_addr
 
-    init(data: NSData, offset: Int) {
-        var in6 = in6_addr()
-        withUnsafeMutablePointer(&in6) {
-            ptr in
-            memcpy(ptr, data.bytes + offset, 16)
+    init(data: Data, offset: Int) {
+        self.in6 = data.withUnsafeBytes {
+            (p1: UnsafePointer<UInt8>) in
+            (p1 + offset).withMemoryRebound(to: in6_addr.self, capacity: MemoryLayout<in6_addr>.size) {
+                p2 in
+                return p2.pointee
+            }
         }
-        self.in6 = in6
     }
 
     var string: String {
         get {
             var in6 = self.in6
-            var buf = Array<CChar>(count: 60, repeatedValue: 0)
+            var buf = Array<CChar>(repeating: 0, count: 60)
             inet_ntop(AF_INET6, &in6, &buf, socklen_t(buf.count))
-            return String.fromCString(&buf)!
+            return String(cString: &buf)
         }
     }
 }

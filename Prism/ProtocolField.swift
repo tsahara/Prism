@@ -11,12 +11,12 @@ import Foundation
 @objc class ProtocolField : NSObject {
     let name: String
     
-    let data: NSData
+    let data: Data
     let offset: Int
     let length: Int
     
-    init(reader: NSDataReader, length: Int, name: String) {
-        self.data = reader.data
+    init(reader: DataReader, length: Int, name: String) {
+        self.data = reader.data as Data
         self.offset = reader.offset
         self.length = length
         self.name = name

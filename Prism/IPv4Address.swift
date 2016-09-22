@@ -11,11 +11,11 @@ import Foundation
 struct IPv4Address {
     var in4: in_addr
     
-    init(data: NSData, offset: Int) {
+    init(data: Data, offset: Int) {
         var in4 = in_addr()
-        withUnsafeMutablePointer(&in4) {
+        withUnsafeMutablePointer(to: &in4) {
             ptr in
-            memcpy(ptr, data.bytes + offset, 4)
+            memcpy(ptr, (data as NSData).bytes + offset, 4)
         }
         self.in4 = in4
     }
@@ -23,9 +23,9 @@ struct IPv4Address {
     var string: String {
         get {
             var in4 = self.in4
-            var buf = Array<CChar>(count: 16, repeatedValue: 0)
+            var buf = Array<CChar>(repeating: 0, count: 16)
             inet_ntop(AF_INET, &in4, &buf, socklen_t(buf.count))
-            return String.fromCString(&buf)!
+            return String(cString: &buf)
         }
     }
 }

@@ -15,7 +15,7 @@ import Foundation
     var name: String { get }
     var isNetworkProtocol: Bool { get }
 
-    static func parse(context: ParseContext) -> Protocol
+    static func parse(_ context: ParseContext) -> Protocol
 }
 
 class BaseProtocol: NSObject, Protocol {
@@ -24,17 +24,17 @@ class BaseProtocol: NSObject, Protocol {
     var name: String { get { return "(base)" } }
     var isNetworkProtocol: Bool { get { return false } }
     
-    var data: NSData
+    var data: Data
     var offset: Int
 
     var fields: [ProtocolField] = []
     
     init(_ context: ParseContext) {
-        self.data = context.reader.data
+        self.data = context.reader.data as Data
         self.offset = context.reader.offset
     }
 
-    class func parse(context: ParseContext) -> Protocol {
+    class func parse(_ context: ParseContext) -> Protocol {
         context.parser = nil
         return UnknownProtocol(context)
     }

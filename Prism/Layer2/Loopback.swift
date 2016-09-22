@@ -15,11 +15,11 @@ class LoopbackProtocol : BaseProtocol {
 
     var af = 0
     
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = LoopbackProtocol(context)
 
         let reader = context.reader
-        if (context.endian == .LittleEndian) {
+        if (context.endian == .littleEndian) {
             p.af = Int(reader.u32le())
         } else {
             p.af = Int(reader.read_u32be())

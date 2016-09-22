@@ -25,7 +25,7 @@ class Pcap {
      
      - returns: byte sequence.
      */
-    func encode() -> NSData {
+    func encode() -> Data {
         var hdr = pcap_file_header()
         hdr.magic = PCAP_FILE_MAGIC
         hdr.version_major = 2
@@ -33,7 +33,9 @@ class Pcap {
         hdr.thiszone = 0
         hdr.snaplen = 65536
         hdr.linktype = 0
-        return NSData(bytes: &hdr, length: sizeof(pcap_file_header))
+        return withUnsafePointer(to: &hdr) {
+            ptr in Data(bytes: ptr, count: MemoryLayout<pcap_file_header>.size)
+        }
     }
 
     /**
@@ -41,22 +43,22 @@ class Pcap {
      
      - returns: PCAP object.
      */
-    class func readFile(controller: PcapWindowController, data: NSData) -> Pcap? {
-        let reader = NSDataReader(data)
+    class func readFile(_ controller: PcapWindowController, data: Data) -> Pcap? {
+        let reader = DataReader(data)
 
-        if (data.length < sizeof(pcap_file_header)) {
-            print("File too short (size=\(data.length))", terminator: "")
+        if (data.count < MemoryLayout<pcap_file_header>.size) {
+            print("File too short (size=\(data.count))", terminator: "")
             return nil
         }
 
-        let filehdr = UnsafePointer<pcap_file_header>(data.bytes).memory
+        let filehdr = (data as NSData).bytes.bindMemory(to: pcap_file_header.self, capacity: data.count).pointee
 
         var endian: ByteOrder
         switch reader.u32() {
         case PCAP_FILE_MAGIC:
-            endian = .BigEndian
+            endian = .bigEndian
         case PCAP_FILE_MAGIC.byteSwapped:
-            endian = .LittleEndian
+            endian = .littleEndian
         default:
             print("bad magic: \(filehdr.magic.bigEndian)", terminator: "")
             return nil
@@ -77,8 +79,8 @@ class Pcap {
 
         let pcap = Pcap()
         
-        while (reader.offset < data.length) {
-            if (reader.offset + 16 > data.length) {
+        while (reader.offset < data.count) {
+            if (reader.offset + 16 > data.count) {
                 print("short packet header!")
                 return nil
             }
@@ -87,13 +89,13 @@ class Pcap {
             let caplen  = reader.u32endian()
             let origlen = reader.u32endian()
             
-            if (reader.offset + Int(caplen) > data.length) {
+            if (reader.offset + Int(caplen) > data.count) {
                 print("packets < caplen")
                 return pcap
             }
 
             let sec = Double(ts_sec) + 1.0e-6 * Double(ts_usec)
-            let date = NSDate(timeIntervalSinceReferenceDate: sec)
+            let date = Date(timeIntervalSinceReferenceDate: sec)
 
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
             let context = ParseContext(pkt.data, endian: endian, parser: parser)
@@ -114,11 +116,11 @@ class Pcap {
         netif = NetworkInterface(name: "en0")
         netif!.on_receive {
             data in
-            let reader = NSDataReader(data)
+            let reader = DataReader(data)
             let endian = ByteOrder.host()
             reader.endian = endian
 
-            if (reader.offset + 16 > data.length) {
+            if (reader.offset + 16 > data.count) {
                 print("BPF: short packet header!")
                 return
             }
@@ -128,13 +130,13 @@ class Pcap {
             let origlen = reader.u32endian()
             let hdrlen  = reader.u16endian()
             
-            if (reader.offset + Int(caplen) > data.length) {
+            if (reader.offset + Int(caplen) > data.count) {
                 print("BPF: packets < caplen")
                 return
             }
             
             let sec = Double(ts_sec) + 1.0e-6 * Double(ts_usec)
-            let date = NSDate(timeIntervalSinceReferenceDate: sec)
+            let date = Date(timeIntervalSinceReferenceDate: sec)
             
             let pkt = Packet(timestamp: date, original_length: Int(origlen), captured_length: Int(caplen), data: reader.readdata(Int(caplen)))
             //print(pkt.data)
@@ -144,8 +146,8 @@ class Pcap {
 
             self.packets.append(pkt)
             
-            let center = NSNotificationCenter.defaultCenter()
-            center.postNotificationName("AddPacketNotification", object: self)
+            let center = NotificationCenter.default
+            center.post(name: Notification.Name(rawValue: "AddPacketNotification"), object: self)
         }
     }
 

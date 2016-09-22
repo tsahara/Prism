@@ -11,7 +11,7 @@ import Foundation
 class ICMP6 : BaseProtocol {
     override var name: String { get { return "ICMP6" } }
     
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = ICMP6(context)
        
         let r = context.reader

@@ -11,7 +11,7 @@ import Foundation
 class UDP : BaseProtocol {
     override var name: String { get { return "UDP" } }
 
-    override class func parse(context: ParseContext) -> Protocol {
+    override class func parse(_ context: ParseContext) -> Protocol {
         let p = UDP(context)
         let reader = context.reader
         if (reader.length < 8) {
@@ -23,13 +23,13 @@ class UDP : BaseProtocol {
     
     var dstport: Int? {
         get {
-            return Int(UnsafePointer<UInt16>(data.bytes + offset + 2).memory.bigEndian)
+            return Int(DataReader(data).get16be(at: 2))
         }
     }
     
     var srcport: Int? {
         get {
-            return Int(UnsafePointer<UInt16>(data.bytes + offset).memory.bigEndian)
+            return Int(DataReader(data).get16be(at: 0))
         }
     }
 
