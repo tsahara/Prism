@@ -8,8 +8,6 @@
 
 import Cocoa
 
-let fuga = "FuGa"
-
 class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableViewDelegate, NSOutlineViewDataSource {
     @IBOutlet weak var packet_table: NSTableView!
 
