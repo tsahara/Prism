@@ -19,13 +19,14 @@
 		1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
 		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
+		1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19E2541DC9ACD400C1DC6D /* Helper.swift */; };
 		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
 		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
 		1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
 		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
-		1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
 		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
@@ -73,7 +74,7 @@
 			dstPath = Contents/Library/LaunchServices;
 			dstSubfolderSpec = 1;
 			files = (
-				1F81D3951C66DF9C00171A8D /* PrismHelper in CopyFiles */,
+				1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +98,15 @@
 		1F1283181B84D430007815E9 /* file-header-only.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "file-header-only.pcap"; path = "Data/file-header-only.pcap"; sourceTree = "<group>"; };
 		1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
 		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		1F19E2541DC9ACD400C1DC6D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		1F19E2561DC9B03400C1DC6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F19E2571DC9B13D00C1DC6D /* Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Launchd.plist; sourceTree = "<group>"; };
 		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
 		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
 		1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6Address.swift; sourceTree = "<group>"; };
 		1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4Address.swift; sourceTree = "<group>"; };
-		1F81D38B1C66DF1500171A8D /* PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
@@ -172,7 +176,7 @@
 			children = (
 				1F0A73A51A9C0BDE00FA91D4 /* Prism.app */,
 				1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */,
-				1F81D38B1C66DF1500171A8D /* PrismHelper */,
+				1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +186,7 @@
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
 				1FA6FE071C4005F200E3310C /* EthertypeField.swift */,
+				1F19E2541DC9ACD400C1DC6D /* Helper.swift */,
 				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
 				1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
 				1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */,
@@ -255,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				1F81D38D1C66DF1500171A8D /* main.m */,
+				1F19E2561DC9B03400C1DC6D /* Info.plist */,
+				1F19E2571DC9B13D00C1DC6D /* Launchd.plist */,
 			);
 			path = PrismHelper;
 			sourceTree = "<group>";
@@ -342,7 +349,7 @@
 			);
 			name = PrismHelper;
 			productName = PrismHelper;
-			productReference = 1F81D38B1C66DF1500171A8D /* PrismHelper */;
+			productReference = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -449,6 +456,7 @@
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
 				1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
+				1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */,
 				1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,8 +671,19 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					PrismHelper/Info.plist,
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					PrismHelper/Launchd.plist,
+				);
+				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -677,8 +696,19 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					PrismHelper/Info.plist,
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					PrismHelper/Launchd.plist,
+				);
+				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
