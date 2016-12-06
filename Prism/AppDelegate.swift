@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         h.install()
         h.connect {
             success in
-            print("callbacked \(success)")
+            print("callback: \(success)")
         }
     }
 

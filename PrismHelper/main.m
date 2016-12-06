@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PrismHelper.h"
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSLog(@"PrismHelper started");
+        [[[PrismHelper alloc] init] run];
     }
     return 0;
 }

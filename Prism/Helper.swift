@@ -16,7 +16,7 @@ import ServiceManagement
 }
 
 class Helper {
-    let HelperVersion = "1.0.0"
+    let HelperVersion = "1.0"
     let ServiceName   = "net.caddr.PrismHelper"
 
     func connect(callback: @escaping (Bool) -> Void) {
