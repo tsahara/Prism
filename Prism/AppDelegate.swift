@@ -17,11 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 //        NSDocumentController.sharedDocumentController().openDocument(self)
-        let h = Helper()
-        h.install()
-        h.connect {
-            success in
-            print("callback: \(success)")
+        if false {
+            let h = Helper()
+            h.install()
+            h.connect {
+                success in
+                print("callback: \(success)")
+            }
         }
     }
 
