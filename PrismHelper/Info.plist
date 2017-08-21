@@ -2,17 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>PrismHelper</string>
-	<key>CFBundleIdentifier</key>
-	<string>net.caddr.PrismHelper</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier &quot;net.caddr.Prism&quot; and anchor apple generic and certificate leaf[subject.CN] = &quot;Mac Developer: Tomoyuki Sahara (96J5HTC9TP)&quot; and certificate 1[field.1.2.840.113635.100.6.2.1]</string>
+		<string>identifier "net.caddr.Prism" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Tomoyuki Sahara (96J5HTC9TP)" and certificate 1[field.1.2.840.113635.100.6.2.1]</string>
 	</array>
 </dict>
 </plist>

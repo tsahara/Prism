@@ -365,7 +365,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Tomoyuki Sahara";
 				TargetAttributes = {
 					1F0A73A41A9C0BDE00FA91D4 = {
@@ -689,6 +689,7 @@
 					__launchd_plist,
 					PrismHelper/Launchd.plist,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
 				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -714,6 +715,7 @@
 					__launchd_plist,
 					PrismHelper/Launchd.plist,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
 				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
