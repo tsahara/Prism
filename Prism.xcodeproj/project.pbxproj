@@ -20,6 +20,7 @@
 		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
 		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
 		1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19E2541DC9ACD400C1DC6D /* Helper.swift */; };
+		1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F247C2F1F55B5630024DAD1 /* SessionTable.swift */; };
 		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
 		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
 		1F4484921DF7688A00583705 /* PrismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4484911DF7688A00583705 /* PrismHelper.m */; };
@@ -102,6 +103,7 @@
 		1F19E2541DC9ACD400C1DC6D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1F19E2561DC9B03400C1DC6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F19E2571DC9B13D00C1DC6D /* Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Launchd.plist; sourceTree = "<group>"; };
+		1F247C2F1F55B5630024DAD1 /* SessionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTable.swift; sourceTree = "<group>"; };
 		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
 		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
 		1F4484901DF7688A00583705 /* PrismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrismHelper.h; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
 				1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
 				1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */,
+				1F247C2F1F55B5630024DAD1 /* SessionTable.swift */,
 				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
 				1FF679231BB169EE009C6258 /* Utils.swift */,
 				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
@@ -459,6 +462,7 @@
 				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
 				1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */,
 				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
+				1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */,
 				1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */,
 				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
 				1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */,
