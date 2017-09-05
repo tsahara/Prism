@@ -29,6 +29,7 @@
 		1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
 		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
 		1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9821B41F5EE34D00C61F77 /* Preferences.xib */; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
 		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
@@ -113,6 +114,7 @@
 		1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4Address.swift; sourceTree = "<group>"; };
 		1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F9821B41F5EE34D00C61F77 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
 		1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */,
 				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
 				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
+				1F9821B41F5EE34D00C61F77 /* Preferences.xib */,
 				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
 				1F0F18441C05F814005DDBA2 /* dummy.h */,
 				1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
@@ -417,6 +420,7 @@
 				1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */,
 				1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */,
 				1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */,
+				1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
