@@ -213,7 +213,7 @@
                     </splitView>
                 </subviews>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rz8-VD-Vzw">
+            <toolbar key="toolbar" implicitIdentifier="7D39F991-9B9B-42C5-BB03-709464B091B1" autosavesConfiguration="NO" displayMode="labelOnly" sizeMode="small" id="Rz8-VD-Vzw">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="y4v-ji-CGU"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="d19-sJ-1bk"/>
@@ -227,16 +227,11 @@
                             <action selector="toolbar_hexadump:" target="-2" id="Sse-jO-23w"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="632A2A84-72A4-4743-B00D-BE4083CF55AF" label="Exec" paletteLabel="Exec" tag="-1" image="NSComputer" id="XJj-kG-lch">
-                        <connections>
-                            <action selector="executeCommand:" target="-1" id="Hso-sL-aS8"/>
-                        </connections>
-                    </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="1DADF8E1-C990-45E7-B0E6-0FB656C61798" label="Search" paletteLabel="Search" id="SOw-cc-Ip9">
+                    <toolbarItem implicitItemIdentifier="754B6039-8E7F-4D15-9914-5D901590606B" label="Search" paletteLabel="Search" id="SOw-cc-Ip9">
                         <nil key="toolTip"/>
                         <size key="minSize" width="96" height="22"/>
                         <size key="maxSize" width="96" height="22"/>
-                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="6SE-kR-ZPx">
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="6SE-kR-ZPx">
                             <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="5i8-ni-quj">
@@ -253,7 +248,6 @@
                 <defaultToolbarItems>
                     <toolbarItem reference="bJx-80-Gt0"/>
                     <toolbarItem reference="nXn-h6-OHO"/>
-                    <toolbarItem reference="XJj-kG-lch"/>
                     <toolbarItem reference="d19-sJ-1bk"/>
                     <toolbarItem reference="SOw-cc-Ip9"/>
                 </defaultToolbarItems>
@@ -266,7 +260,6 @@
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSComputer" width="32" height="32"/>
         <image name="NSGoRightTemplate" width="9" height="12"/>
     </resources>
 </document>

@@ -8,8 +8,6 @@
 
 import Cocoa
 
-
-/// Cocoa class for a pcap file.
 class PcapDocument: NSDocument {
     var pcap: Pcap
     var controller: PcapWindowController?
