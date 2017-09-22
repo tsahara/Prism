@@ -50,12 +50,12 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     
     @IBAction func toolbar_hexadump(_ sender: AnyObject) {
         print("hexadump")
-        hexa = HexadumpWindowController(windowNibName: "HexadumpWindow")
+        hexa = HexadumpWindowController(windowNibName: NSNib.Name(rawValue: "HexadumpWindow"))
         hexa!.showWindow(nil)
     }
 
     @IBAction func ReadText(_ sender: AnyObject) {
-        if let pkt = Packet.parseText(text.string!) {
+        if let pkt = Packet.parseText(text.string) {
             pcap!.packets.append(pkt)
             packet_table.reloadData()
         } else {
@@ -75,15 +75,14 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     func tableView(_ tableView: NSTableView, objectValueFor aTableColumn: NSTableColumn?, row rowIndex: Int) -> Any? {
         let pkt = pcap!.packets[rowIndex]
         
-        let label = aTableColumn!.identifier
-        switch label {
-        case "TimeCell":
+        switch aTableColumn!.title {
+        case "Time":
             let f = DateFormatter()
             f.dateFormat = "HH:mm:ss"
             let subsec = String(format: ".%9u", Int(pkt.timestamp.timeIntervalSince1970 * 1000000000))
             return f.string(from: pkt.timestamp as Date) + subsec
             
-        case "SourceCell":
+        case "Source":
             if (pkt.ipv4 != nil) {
                 return pkt.ipv4!.src!.string
             } else if (pkt.ipv6 != nil) {
@@ -91,7 +90,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             }
             return pkt.src_string
             
-        case "SourcePortCell":
+        case "Src Port":
             if (pkt.tcp != nil) {
                 return String(pkt.tcp!.srcport!)
             } else if (pkt.udp != nil) {
@@ -99,7 +98,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             }
             return ""
             
-        case "DestinationCell":
+        case "Destination":
             if (pkt.ipv4 != nil) {
                 return pkt.ipv4!.dst!.string
             }
@@ -108,7 +107,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             }
             return pkt.dst_string
             
-        case "DestinationPortCell":
+        case "Dst Port":
             if (pkt.tcp != nil) {
                 return String(pkt.tcp!.dstport!)
             } else if (pkt.udp != nil) {
@@ -116,10 +115,10 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             }
             return ""
             
-        case "ProtocolCell":
+        case "Protocol":
             return pkt.proto
             
-        case "SummaryCell":
+        case "Summary":
             return "summary"
 
         default:

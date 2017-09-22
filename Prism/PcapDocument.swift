@@ -22,7 +22,7 @@ class PcapDocument: NSDocument {
         self.controller = aController as? PcapWindowController
     }
 
-    override class func autosavesInPlace() -> Bool {
+    override class var autosavesInPlace: Bool {
         return true
     }
 
@@ -33,7 +33,7 @@ class PcapDocument: NSDocument {
 //    }
    
     override func makeWindowControllers() {
-        self.addWindowController(PcapWindowController(windowNibName: "PcapDocument"))
+        self.addWindowController(PcapWindowController(windowNibName: NSNib.Name(rawValue: "PcapDocument")))
     }
 
     override func data(ofType typeName: String) throws -> Data {
@@ -54,6 +54,6 @@ class PcapDocument: NSDocument {
         guard (p == nil) else {
             throw NSError(domain: NSCocoaErrorDomain, code: NSFileReadCorruptFileError, userInfo: nil)
         }
-        print("Read \(p!.packets.count)")
+        printDocument("Read \(p!.packets.count)")
     }
 }

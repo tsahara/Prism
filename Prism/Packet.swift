@@ -123,15 +123,15 @@ class Packet {
             
             if let m = re_summary.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
                 var tm = tm_now
-                tm.tm_hour = Int32(Int(nsline.substring(with: m.rangeAt(1)))!)
-                tm.tm_min  = Int32(Int(nsline.substring(with: m.rangeAt(2)))!)
+                tm.tm_hour = Int32(Int(nsline.substring(with: m.range(at: 1)))!)
+                tm.tm_min  = Int32(Int(nsline.substring(with: m.range(at: 2)))!)
                 tm.tm_sec  = 0
-                let sec = Double(nsline.substring(with: m.rangeAt(3)))!
+                let sec = Double(nsline.substring(with: m.range(at: 3)))!
                 timestamp = Date(timeIntervalSince1970: TimeInterval(Double(mktime(&tm)) + sec))
             }
             
             if let m = re_bytes.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.characters.count)) {
-                for s in nsline.substring(with: m.rangeAt(1)).components(separatedBy: " ") {
+                for s in nsline.substring(with: m.range(at: 1)).components(separatedBy: " ") {
                     if s.characters.count == 4 {
                         let word = strtoul(s, nil, 16)
                         buf[idx]   = UInt8(word >> 8)
