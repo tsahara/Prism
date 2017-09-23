@@ -43,11 +43,10 @@ class Pcap {
      
      - returns: PCAP object.
      */
-    class func readFile(_ controller: PcapWindowController, data: Data) -> Pcap? {
+    class func readFile(data: Data) -> Pcap? {
         let reader = DataReader(data)
 
         if (data.count < MemoryLayout<pcap_file_header>.size) {
-            print("File too short (size=\(data.count))", terminator: "")
             return nil
         }
 

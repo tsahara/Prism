@@ -50,10 +50,9 @@ class PcapDocument: NSDocument {
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
 
-        let p = Pcap.readFile(self.controller!, data: data)
-        guard (p == nil) else {
+        guard let p = Pcap.readFile(data: data) else {
             throw NSError(domain: NSCocoaErrorDomain, code: NSFileReadCorruptFileError, userInfo: nil)
         }
-        printDocument("Read \(p!.packets.count)")
+        printDocument("Read \(p.packets.count)")
     }
 }

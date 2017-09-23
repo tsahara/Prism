@@ -1,791 +1,799 @@
 // !$*UTF8*$!
 {
-    archiveVersion = 1;
-    classes = {
-    };
-    objectVersion = 46;
-    objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
 
 /* Begin PBXBuildFile section */
-        1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */; };
-        1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */; };
-        1F0A73B01A9C0BDE00FA91D4 /* PcapDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */; };
-        1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */; };
-        1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */; };
-        1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */; };
-        1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */; };
-        1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */; };
-        1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */; };
-        1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
-        1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
-        1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
-        1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19E2541DC9ACD400C1DC6D /* Helper.swift */; };
-        1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F247C2F1F55B5630024DAD1 /* SessionTable.swift */; };
-        1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
-        1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
-        1F4484921DF7688A00583705 /* PrismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4484911DF7688A00583705 /* PrismHelper.m */; };
-        1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
-        1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
-        1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
-        1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
-        1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-        1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9821B41F5EE34D00C61F77 /* Preferences.xib */; };
-        1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
-        1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
-        1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
-        1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE071C4005F200E3310C /* EthertypeField.swift */; };
-        1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
-        1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
-        1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
-        1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF35981C0C7E2100B1269A /* TCP.swift */; };
-        1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; };
-        1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */; };
-        1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */; };
-        1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D81BA5C4B3006B2589 /* Loopback.swift */; };
-        1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */; };
-        1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DC1BA834A4006B2589 /* Protocol.swift */; };
-        1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */; };
-        1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
-        1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; };
-        1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; };
-        1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2637A1BC01A2D0073FCC6 /* Null.swift */; };
-        1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; };
-        1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; };
+		1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */; };
+		1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */; };
+		1F0A73B01A9C0BDE00FA91D4 /* PcapDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */; };
+		1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */; };
+		1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */; };
+		1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */; };
+		1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */; };
+		1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */; };
+		1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */; };
+		1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
+		1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F12831A1B84D440007815E9 /* icmp6-lo.pcap */; };
+		1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
+		1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19E2541DC9ACD400C1DC6D /* Helper.swift */; };
+		1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F247C2F1F55B5630024DAD1 /* SessionTable.swift */; };
+		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
+		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
+		1F4484921DF7688A00583705 /* PrismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4484911DF7688A00583705 /* PrismHelper.m */; };
+		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
+		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
+		1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
+		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
+		1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9821B41F5EE34D00C61F77 /* Preferences.xib */; };
+		1F9A18D11F764EE400F84340 /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A18D01F764EE400F84340 /* DataReader.swift */; };
+		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
+		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
+		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
+		1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE071C4005F200E3310C /* EthertypeField.swift */; };
+		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
+		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
+		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
+		1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF35981C0C7E2100B1269A /* TCP.swift */; };
+		1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; };
+		1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */; };
+		1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D81BA5C4B3006B2589 /* Loopback.swift */; };
+		1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */; };
+		1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DC1BA834A4006B2589 /* Protocol.swift */; };
+		1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */; };
+		1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
+		1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; };
+		1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; };
+		1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2637A1BC01A2D0073FCC6 /* Null.swift */; };
+		1FF679241BB169EE009C6258 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679231BB169EE009C6258 /* Utils.swift */; };
+		1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-        1F0A73BB1A9C0BDE00FA91D4 /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = 1F0A73A41A9C0BDE00FA91D4;
-            remoteInfo = Prism;
-        };
-        1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = 1F81D38A1C66DF1500171A8D;
-            remoteInfo = PrismHelper;
-        };
+		1F0A73BB1A9C0BDE00FA91D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F0A73A41A9C0BDE00FA91D4;
+			remoteInfo = Prism;
+		};
+		1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F81D38A1C66DF1500171A8D;
+			remoteInfo = PrismHelper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-        1F81D3941C66DF9100171A8D /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = Contents/Library/LaunchServices;
-            dstSubfolderSpec = 1;
-            files = (
-                1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		1F81D3941C66DF9100171A8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-        1F0A73A51A9C0BDE00FA91D4 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
-        1F0A73A91A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-        1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcapDocument.swift; sourceTree = "<group>"; };
-        1F0A73AF1A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PcapDocument.xib; sourceTree = "<group>"; };
-        1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-        1F0A73B41A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-        1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrismTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-        1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismTests.swift; sourceTree = "<group>"; };
-        1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = emptyfile.pcap; path = Data/emptyfile.pcap; sourceTree = "<group>"; };
-        1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceTests.swift; sourceTree = "<group>"; };
-        1F0F18441C05F814005DDBA2 /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dummy.h; sourceTree = "<group>"; };
-        1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcapWindowController.swift; sourceTree = "<group>"; };
-        1F1283181B84D430007815E9 /* file-header-only.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "file-header-only.pcap"; path = "Data/file-header-only.pcap"; sourceTree = "<group>"; };
-        1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
-        1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
-        1F19E2541DC9ACD400C1DC6D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-        1F19E2561DC9B03400C1DC6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        1F19E2571DC9B13D00C1DC6D /* Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Launchd.plist; sourceTree = "<group>"; };
-        1F247C2F1F55B5630024DAD1 /* SessionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTable.swift; sourceTree = "<group>"; };
-        1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
-        1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
-        1F4484901DF7688A00583705 /* PrismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrismHelper.h; sourceTree = "<group>"; };
-        1F4484911DF7688A00583705 /* PrismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrismHelper.m; sourceTree = "<group>"; };
-        1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
-        1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6Address.swift; sourceTree = "<group>"; };
-        1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4Address.swift; sourceTree = "<group>"; };
-        1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-        1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-        1F9821B41F5EE34D00C61F77 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-        1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
-        1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
-        1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
-        1FA6FE071C4005F200E3310C /* EthertypeField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthertypeField.swift; sourceTree = "<group>"; };
-        1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
-        1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
-        1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
-        1FB57EEC1B9DD26E0016FCA6 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
-        1FCF35961C0926B900B1269A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-        1FCF35971C0926DA00B1269A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-        1FCF35981C0C7E2100B1269A /* TCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCP.swift; path = Layer4/TCP.swift; sourceTree = "<group>"; };
-        1FDAF28F1BBC0B7600DABACF /* UDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDP.swift; path = Layer4/UDP.swift; sourceTree = "<group>"; };
-        1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
-        1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataReader.swift; sourceTree = "<group>"; };
-        1FEE66D81BA5C4B3006B2589 /* Loopback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loopback.swift; path = Layer2/Loopback.swift; sourceTree = "<group>"; };
-        1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
-        1FEE66DC1BA834A4006B2589 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-        1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownProtocol.swift; sourceTree = "<group>"; };
-        1FEE66E11BA83C2C006B2589 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv6.swift; path = Layer3/IPv6.swift; sourceTree = "<group>"; };
-        1FF263741BBEA3FB0073FCC6 /* ICMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP.swift; path = Layer3/ICMP.swift; sourceTree = "<group>"; };
-        1FF263761BBEA4E50073FCC6 /* ICMP6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP6.swift; path = Layer3/ICMP6.swift; sourceTree = "<group>"; };
-        1FF2637A1BC01A2D0073FCC6 /* Null.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Null.swift; path = Layer2/Null.swift; sourceTree = "<group>"; };
-        1FF679231BB169EE009C6258 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-        1FF679251BB2DD91009C6258 /* IPv4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv4.swift; path = Layer3/IPv4.swift; sourceTree = "<group>"; };
+		1F0A73A51A9C0BDE00FA91D4 /* Prism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prism.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0A73A91A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcapDocument.swift; sourceTree = "<group>"; };
+		1F0A73AF1A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PcapDocument.xib; sourceTree = "<group>"; };
+		1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F0A73B41A9C0BDE00FA91D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrismTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismTests.swift; sourceTree = "<group>"; };
+		1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = emptyfile.pcap; path = Data/emptyfile.pcap; sourceTree = "<group>"; };
+		1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceTests.swift; sourceTree = "<group>"; };
+		1F0F18441C05F814005DDBA2 /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dummy.h; sourceTree = "<group>"; };
+		1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcapWindowController.swift; sourceTree = "<group>"; };
+		1F1283181B84D430007815E9 /* file-header-only.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "file-header-only.pcap"; path = "Data/file-header-only.pcap"; sourceTree = "<group>"; };
+		1F12831A1B84D440007815E9 /* icmp6-lo.pcap */ = {isa = PBXFileReference; lastKnownFileType = file; name = "icmp6-lo.pcap"; path = "Data/icmp6-lo.pcap"; sourceTree = "<group>"; };
+		1F12831C1B87ED8C007815E9 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		1F19E2541DC9ACD400C1DC6D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		1F19E2561DC9B03400C1DC6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F19E2571DC9B13D00C1DC6D /* Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Launchd.plist; sourceTree = "<group>"; };
+		1F247C2F1F55B5630024DAD1 /* SessionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTable.swift; sourceTree = "<group>"; };
+		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
+		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
+		1F4484901DF7688A00583705 /* PrismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrismHelper.h; sourceTree = "<group>"; };
+		1F4484911DF7688A00583705 /* PrismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrismHelper.m; sourceTree = "<group>"; };
+		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
+		1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6Address.swift; sourceTree = "<group>"; };
+		1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4Address.swift; sourceTree = "<group>"; };
+		1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F9821B41F5EE34D00C61F77 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		1F9A18D01F764EE400F84340 /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
+		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
+		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
+		1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
+		1FA6FE071C4005F200E3310C /* EthertypeField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthertypeField.swift; sourceTree = "<group>"; };
+		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
+		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
+		1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
+		1FB57EEC1B9DD26E0016FCA6 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
+		1FCF35961C0926B900B1269A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1FCF35971C0926DA00B1269A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		1FCF35981C0C7E2100B1269A /* TCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCP.swift; path = Layer4/TCP.swift; sourceTree = "<group>"; };
+		1FDAF28F1BBC0B7600DABACF /* UDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDP.swift; path = Layer4/UDP.swift; sourceTree = "<group>"; };
+		1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		1FEE66D81BA5C4B3006B2589 /* Loopback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loopback.swift; path = Layer2/Loopback.swift; sourceTree = "<group>"; };
+		1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
+		1FEE66DC1BA834A4006B2589 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownProtocol.swift; sourceTree = "<group>"; };
+		1FEE66E11BA83C2C006B2589 /* IPv6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv6.swift; path = Layer3/IPv6.swift; sourceTree = "<group>"; };
+		1FF263741BBEA3FB0073FCC6 /* ICMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP.swift; path = Layer3/ICMP.swift; sourceTree = "<group>"; };
+		1FF263761BBEA4E50073FCC6 /* ICMP6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICMP6.swift; path = Layer3/ICMP6.swift; sourceTree = "<group>"; };
+		1FF2637A1BC01A2D0073FCC6 /* Null.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Null.swift; path = Layer2/Null.swift; sourceTree = "<group>"; };
+		1FF679231BB169EE009C6258 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1FF679251BB2DD91009C6258 /* IPv4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPv4.swift; path = Layer3/IPv4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        1F0A73A21A9C0BDE00FA91D4 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        1F0A73B71A9C0BDE00FA91D4 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        1F81D3881C66DF1500171A8D /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		1F0A73A21A9C0BDE00FA91D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0A73B71A9C0BDE00FA91D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F81D3881C66DF1500171A8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        1F0A739C1A9C0BDE00FA91D4 = {
-            isa = PBXGroup;
-            children = (
-                1F0A73A71A9C0BDE00FA91D4 /* Prism */,
-                1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */,
-                1F81D38C1C66DF1500171A8D /* PrismHelper */,
-                1F0A73A61A9C0BDE00FA91D4 /* Products */,
-                1FCF35971C0926DA00B1269A /* .travis.yml */,
-                1FCF35961C0926B900B1269A /* README.md */,
-            );
-            sourceTree = "<group>";
-        };
-        1F0A73A61A9C0BDE00FA91D4 /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                1F0A73A51A9C0BDE00FA91D4 /* Prism.app */,
-                1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */,
-                1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        1F0A73A71A9C0BDE00FA91D4 /* Prism */ = {
-            isa = PBXGroup;
-            children = (
-                1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
-                1FA6FE071C4005F200E3310C /* EthertypeField.swift */,
-                1F19E2541DC9ACD400C1DC6D /* Helper.swift */,
-                1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
-                1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
-                1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */,
-                1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */,
-                1FA6FE031C3932CE00E3310C /* MacAddressField.swift */,
-                1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
-                1FEE66D51BA1C92C006B2589 /* NSDataReader.swift */,
-                1F12831C1B87ED8C007815E9 /* Packet.swift */,
-                1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */,
-                1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
-                1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
-                1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
-                1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
-                1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */,
-                1F247C2F1F55B5630024DAD1 /* SessionTable.swift */,
-                1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
-                1FF679231BB169EE009C6258 /* Utils.swift */,
-                1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
-                1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */,
-                1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
-                1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
-                1F9821B41F5EE34D00C61F77 /* Preferences.xib */,
-                1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
-                1F0F18441C05F814005DDBA2 /* dummy.h */,
-                1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
-                1FEE66D71BA5C48F006B2589 /* Layer2 */,
-                1FEE66E01BA83C00006B2589 /* Layer3 */,
-                1FDAF28E1BBC0B5000DABACF /* Layer4 */,
-                1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
-            );
-            path = Prism;
-            sourceTree = "<group>";
-        };
-        1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */ = {
-            isa = PBXGroup;
-            children = (
-                1F0A73A91A9C0BDE00FA91D4 /* Info.plist */,
-            );
-            name = "Supporting Files";
-            sourceTree = "<group>";
-        };
-        1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */ = {
-            isa = PBXGroup;
-            children = (
-                1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */,
-                1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */,
-                1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */,
-                1F0A73CC1A9CABF200FA91D4 /* Data */,
-                1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */,
-            );
-            path = PrismTests;
-            sourceTree = "<group>";
-        };
-        1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */ = {
-            isa = PBXGroup;
-            children = (
-                1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */,
-            );
-            name = "Supporting Files";
-            sourceTree = "<group>";
-        };
-        1F0A73CC1A9CABF200FA91D4 /* Data */ = {
-            isa = PBXGroup;
-            children = (
-                1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */,
-                1F1283181B84D430007815E9 /* file-header-only.pcap */,
-                1F12831A1B84D440007815E9 /* icmp6-lo.pcap */,
-            );
-            name = Data;
-            sourceTree = "<group>";
-        };
-        1F81D38C1C66DF1500171A8D /* PrismHelper */ = {
-            isa = PBXGroup;
-            children = (
-                1F81D38D1C66DF1500171A8D /* main.m */,
-                1F4484901DF7688A00583705 /* PrismHelper.h */,
-                1F4484911DF7688A00583705 /* PrismHelper.m */,
-                1F19E2561DC9B03400C1DC6D /* Info.plist */,
-                1F19E2571DC9B13D00C1DC6D /* Launchd.plist */,
-            );
-            path = PrismHelper;
-            sourceTree = "<group>";
-        };
-        1FDAF28E1BBC0B5000DABACF /* Layer4 */ = {
-            isa = PBXGroup;
-            children = (
-                1FCF35981C0C7E2100B1269A /* TCP.swift */,
-                1FDAF28F1BBC0B7600DABACF /* UDP.swift */,
-            );
-            name = Layer4;
-            sourceTree = "<group>";
-        };
-        1FEE66D71BA5C48F006B2589 /* Layer2 */ = {
-            isa = PBXGroup;
-            children = (
-                1F493B5D1BB6E259004B2808 /* Ethernet.swift */,
-                1FEE66D81BA5C4B3006B2589 /* Loopback.swift */,
-                1FF2637A1BC01A2D0073FCC6 /* Null.swift */,
-            );
-            name = Layer2;
-            sourceTree = "<group>";
-        };
-        1FEE66E01BA83C00006B2589 /* Layer3 */ = {
-            isa = PBXGroup;
-            children = (
-                1FF263741BBEA3FB0073FCC6 /* ICMP.swift */,
-                1FF263761BBEA4E50073FCC6 /* ICMP6.swift */,
-                1FF679251BB2DD91009C6258 /* IPv4.swift */,
-                1FEE66E11BA83C2C006B2589 /* IPv6.swift */,
-            );
-            name = Layer3;
-            sourceTree = "<group>";
-        };
+		1F0A739C1A9C0BDE00FA91D4 = {
+			isa = PBXGroup;
+			children = (
+				1F0A73A71A9C0BDE00FA91D4 /* Prism */,
+				1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */,
+				1F81D38C1C66DF1500171A8D /* PrismHelper */,
+				1F0A73A61A9C0BDE00FA91D4 /* Products */,
+				1FCF35971C0926DA00B1269A /* .travis.yml */,
+				1FCF35961C0926B900B1269A /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		1F0A73A61A9C0BDE00FA91D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73A51A9C0BDE00FA91D4 /* Prism.app */,
+				1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */,
+				1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F0A73A71A9C0BDE00FA91D4 /* Prism */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
+				1FA6FE071C4005F200E3310C /* EthertypeField.swift */,
+				1F19E2541DC9ACD400C1DC6D /* Helper.swift */,
+				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
+				1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
+				1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */,
+				1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */,
+				1FA6FE031C3932CE00E3310C /* MacAddressField.swift */,
+				1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
+				1F12831C1B87ED8C007815E9 /* Packet.swift */,
+				1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */,
+				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
+				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
+				1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
+				1FEE66DC1BA834A4006B2589 /* Protocol.swift */,
+				1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */,
+				1F247C2F1F55B5630024DAD1 /* SessionTable.swift */,
+				1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */,
+				1FF679231BB169EE009C6258 /* Utils.swift */,
+				1F0A73B11A9C0BDE00FA91D4 /* Images.xcassets */,
+				1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */,
+				1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */,
+				1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */,
+				1F9821B41F5EE34D00C61F77 /* Preferences.xib */,
+				1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */,
+				1F0F18441C05F814005DDBA2 /* dummy.h */,
+				1FB57EEC1B9DD26E0016FCA6 /* dummy.m */,
+				1F9A18D21F764EEE00F84340 /* Util */,
+				1FEE66D71BA5C48F006B2589 /* Layer2 */,
+				1FEE66E01BA83C00006B2589 /* Layer3 */,
+				1FDAF28E1BBC0B5000DABACF /* Layer4 */,
+				1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
+			);
+			path = Prism;
+			sourceTree = "<group>";
+		};
+		1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73A91A9C0BDE00FA91D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */,
+				1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */,
+				1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */,
+				1F0A73CC1A9CABF200FA91D4 /* Data */,
+				1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */,
+			);
+			path = PrismTests;
+			sourceTree = "<group>";
+		};
+		1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73BF1A9C0BDE00FA91D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F0A73CC1A9CABF200FA91D4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A73CD1A9CAC8D00FA91D4 /* emptyfile.pcap */,
+				1F1283181B84D430007815E9 /* file-header-only.pcap */,
+				1F12831A1B84D440007815E9 /* icmp6-lo.pcap */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		1F81D38C1C66DF1500171A8D /* PrismHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1F81D38D1C66DF1500171A8D /* main.m */,
+				1F4484901DF7688A00583705 /* PrismHelper.h */,
+				1F4484911DF7688A00583705 /* PrismHelper.m */,
+				1F19E2561DC9B03400C1DC6D /* Info.plist */,
+				1F19E2571DC9B13D00C1DC6D /* Launchd.plist */,
+			);
+			path = PrismHelper;
+			sourceTree = "<group>";
+		};
+		1F9A18D21F764EEE00F84340 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1F9A18D01F764EE400F84340 /* DataReader.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		1FDAF28E1BBC0B5000DABACF /* Layer4 */ = {
+			isa = PBXGroup;
+			children = (
+				1FCF35981C0C7E2100B1269A /* TCP.swift */,
+				1FDAF28F1BBC0B7600DABACF /* UDP.swift */,
+			);
+			name = Layer4;
+			sourceTree = "<group>";
+		};
+		1FEE66D71BA5C48F006B2589 /* Layer2 */ = {
+			isa = PBXGroup;
+			children = (
+				1F493B5D1BB6E259004B2808 /* Ethernet.swift */,
+				1FEE66D81BA5C4B3006B2589 /* Loopback.swift */,
+				1FF2637A1BC01A2D0073FCC6 /* Null.swift */,
+			);
+			name = Layer2;
+			sourceTree = "<group>";
+		};
+		1FEE66E01BA83C00006B2589 /* Layer3 */ = {
+			isa = PBXGroup;
+			children = (
+				1FF263741BBEA3FB0073FCC6 /* ICMP.swift */,
+				1FF263761BBEA4E50073FCC6 /* ICMP6.swift */,
+				1FF679251BB2DD91009C6258 /* IPv4.swift */,
+				1FEE66E11BA83C2C006B2589 /* IPv6.swift */,
+			);
+			name = Layer3;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-        1F0A73A41A9C0BDE00FA91D4 /* Prism */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = 1F0A73C41A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "Prism" */;
-            buildPhases = (
-                1F0A73A11A9C0BDE00FA91D4 /* Sources */,
-                1F0A73A21A9C0BDE00FA91D4 /* Frameworks */,
-                1F0A73A31A9C0BDE00FA91D4 /* Resources */,
-                1F81D3941C66DF9100171A8D /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                1F81D3971C66DFD200171A8D /* PBXTargetDependency */,
-            );
-            name = Prism;
-            productName = Prism;
-            productReference = 1F0A73A51A9C0BDE00FA91D4 /* Prism.app */;
-            productType = "com.apple.product-type.application";
-        };
-        1F0A73B91A9C0BDE00FA91D4 /* PrismTests */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = 1F0A73C71A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "PrismTests" */;
-            buildPhases = (
-                1F0A73B61A9C0BDE00FA91D4 /* Sources */,
-                1F0A73B71A9C0BDE00FA91D4 /* Frameworks */,
-                1F0A73B81A9C0BDE00FA91D4 /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                1F0A73BC1A9C0BDE00FA91D4 /* PBXTargetDependency */,
-            );
-            name = PrismTests;
-            productName = PrismTests;
-            productReference = 1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */;
-            productType = "com.apple.product-type.bundle.unit-test";
-        };
-        1F81D38A1C66DF1500171A8D /* PrismHelper */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = 1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */;
-            buildPhases = (
-                1F81D3871C66DF1500171A8D /* Sources */,
-                1F81D3881C66DF1500171A8D /* Frameworks */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = PrismHelper;
-            productName = PrismHelper;
-            productReference = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */;
-            productType = "com.apple.product-type.tool";
-        };
+		1F0A73A41A9C0BDE00FA91D4 /* Prism */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0A73C41A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "Prism" */;
+			buildPhases = (
+				1F0A73A11A9C0BDE00FA91D4 /* Sources */,
+				1F0A73A21A9C0BDE00FA91D4 /* Frameworks */,
+				1F0A73A31A9C0BDE00FA91D4 /* Resources */,
+				1F81D3941C66DF9100171A8D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F81D3971C66DFD200171A8D /* PBXTargetDependency */,
+			);
+			name = Prism;
+			productName = Prism;
+			productReference = 1F0A73A51A9C0BDE00FA91D4 /* Prism.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F0A73B91A9C0BDE00FA91D4 /* PrismTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0A73C71A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "PrismTests" */;
+			buildPhases = (
+				1F0A73B61A9C0BDE00FA91D4 /* Sources */,
+				1F0A73B71A9C0BDE00FA91D4 /* Frameworks */,
+				1F0A73B81A9C0BDE00FA91D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F0A73BC1A9C0BDE00FA91D4 /* PBXTargetDependency */,
+			);
+			name = PrismTests;
+			productName = PrismTests;
+			productReference = 1F0A73BA1A9C0BDE00FA91D4 /* PrismTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F81D38A1C66DF1500171A8D /* PrismHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */;
+			buildPhases = (
+				1F81D3871C66DF1500171A8D /* Sources */,
+				1F81D3881C66DF1500171A8D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrismHelper;
+			productName = PrismHelper;
+			productReference = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-        1F0A739D1A9C0BDE00FA91D4 /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                LastSwiftMigration = 0700;
-                LastSwiftUpdateCheck = 0700;
-                LastUpgradeCheck = 0900;
-                ORGANIZATIONNAME = "Tomoyuki Sahara";
-                TargetAttributes = {
-                    1F0A73A41A9C0BDE00FA91D4 = {
-                        CreatedOnToolsVersion = 6.1.1;
-                        DevelopmentTeam = 7PCDT74GU2;
-                        LastSwiftMigration = 0900;
-                    };
-                    1F0A73B91A9C0BDE00FA91D4 = {
-                        CreatedOnToolsVersion = 6.1.1;
-                        LastSwiftMigration = 0900;
-                        TestTargetID = 1F0A73A41A9C0BDE00FA91D4;
-                    };
-                    1F81D38A1C66DF1500171A8D = {
-                        CreatedOnToolsVersion = 7.2.1;
-                        DevelopmentTeam = 7PCDT74GU2;
-                        LastSwiftMigration = 0800;
-                    };
-                };
-            };
-            buildConfigurationList = 1F0A73A01A9C0BDE00FA91D4 /* Build configuration list for PBXProject "Prism" */;
-            compatibilityVersion = "Xcode 3.2";
-            developmentRegion = English;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-                Base,
-            );
-            mainGroup = 1F0A739C1A9C0BDE00FA91D4;
-            productRefGroup = 1F0A73A61A9C0BDE00FA91D4 /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                1F0A73A41A9C0BDE00FA91D4 /* Prism */,
-                1F0A73B91A9C0BDE00FA91D4 /* PrismTests */,
-                1F81D38A1C66DF1500171A8D /* PrismHelper */,
-            );
-        };
+		1F0A739D1A9C0BDE00FA91D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Tomoyuki Sahara";
+				TargetAttributes = {
+					1F0A73A41A9C0BDE00FA91D4 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7PCDT74GU2;
+						LastSwiftMigration = 0900;
+					};
+					1F0A73B91A9C0BDE00FA91D4 = {
+						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0900;
+						TestTargetID = 1F0A73A41A9C0BDE00FA91D4;
+					};
+					1F81D38A1C66DF1500171A8D = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7PCDT74GU2;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 1F0A73A01A9C0BDE00FA91D4 /* Build configuration list for PBXProject "Prism" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F0A739C1A9C0BDE00FA91D4;
+			productRefGroup = 1F0A73A61A9C0BDE00FA91D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F0A73A41A9C0BDE00FA91D4 /* Prism */,
+				1F0A73B91A9C0BDE00FA91D4 /* PrismTests */,
+				1F81D38A1C66DF1500171A8D /* PrismHelper */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-        1F0A73A31A9C0BDE00FA91D4 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1F0A73B01A9C0BDE00FA91D4 /* PcapDocument.xib in Resources */,
-                1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */,
-                1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */,
-                1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */,
-                1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        1F0A73B81A9C0BDE00FA91D4 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */,
-                1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */,
-                1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		1F0A73A31A9C0BDE00FA91D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0A73B01A9C0BDE00FA91D4 /* PcapDocument.xib in Resources */,
+				1F0A73B21A9C0BDE00FA91D4 /* Images.xcassets in Resources */,
+				1F0A73B51A9C0BDE00FA91D4 /* MainMenu.xib in Resources */,
+				1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */,
+				1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0A73B81A9C0BDE00FA91D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */,
+				1F0A73CE1A9CAC8D00FA91D4 /* emptyfile.pcap in Resources */,
+				1F12831B1B84D440007815E9 /* icmp6-lo.pcap in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-        1F0A73A11A9C0BDE00FA91D4 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */,
-                1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */,
-                1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
-                1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */,
-                1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */,
-                1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */,
-                1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
-                1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
-                1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */,
-                1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */,
-                1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */,
-                1FF679241BB169EE009C6258 /* Utils.swift in Sources */,
-                1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
-                1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */,
-                1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */,
-                1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */,
-                1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */,
-                1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */,
-                1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */,
-                1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */,
-                1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */,
-                1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */,
-                1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
-                1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */,
-                1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
-                1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */,
-                1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */,
-                1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
-                1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */,
-                1FEE66D61BA1C92C006B2589 /* NSDataReader.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        1F0A73B61A9C0BDE00FA91D4 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */,
-                1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */,
-                1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        1F81D3871C66DF1500171A8D /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                1F81D38E1C66DF1500171A8D /* main.m in Sources */,
-                1F4484921DF7688A00583705 /* PrismHelper.m in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		1F0A73A11A9C0BDE00FA91D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */,
+				1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */,
+				1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
+				1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */,
+				1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */,
+				1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */,
+				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
+				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
+				1FEE66DF1BA834CB006B2589 /* UnknownProtocol.swift in Sources */,
+				1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */,
+				1FE536C81C04ABDD002839B8 /* NetworkInterface.swift in Sources */,
+				1FF679241BB169EE009C6258 /* Utils.swift in Sources */,
+				1F0A73AD1A9C0BDE00FA91D4 /* PcapDocument.swift in Sources */,
+				1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */,
+				1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */,
+				1FEE66DD1BA834A4006B2589 /* Protocol.swift in Sources */,
+				1FEE66E21BA83C2C006B2589 /* IPv6.swift in Sources */,
+				1F9A18D11F764EE400F84340 /* DataReader.swift in Sources */,
+				1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */,
+				1FF2637B1BC01A2D0073FCC6 /* Null.swift in Sources */,
+				1FEE66DB1BA5CB3A006B2589 /* ParseContext.swift in Sources */,
+				1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */,
+				1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */,
+				1FF263751BBEA3FB0073FCC6 /* ICMP.swift in Sources */,
+				1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */,
+				1FDAF2901BBC0B7600DABACF /* UDP.swift in Sources */,
+				1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */,
+				1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */,
+				1F0A73AB1A9C0BDE00FA91D4 /* AppDelegate.swift in Sources */,
+				1F19E2551DC9ACD400C1DC6D /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F0A73B61A9C0BDE00FA91D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */,
+				1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */,
+				1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F81D3871C66DF1500171A8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F81D38E1C66DF1500171A8D /* main.m in Sources */,
+				1F4484921DF7688A00583705 /* PrismHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-        1F0A73BC1A9C0BDE00FA91D4 /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = 1F0A73A41A9C0BDE00FA91D4 /* Prism */;
-            targetProxy = 1F0A73BB1A9C0BDE00FA91D4 /* PBXContainerItemProxy */;
-        };
-        1F81D3971C66DFD200171A8D /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = 1F81D38A1C66DF1500171A8D /* PrismHelper */;
-            targetProxy = 1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */;
-        };
+		1F0A73BC1A9C0BDE00FA91D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F0A73A41A9C0BDE00FA91D4 /* Prism */;
+			targetProxy = 1F0A73BB1A9C0BDE00FA91D4 /* PBXContainerItemProxy */;
+		};
+		1F81D3971C66DFD200171A8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F81D38A1C66DF1500171A8D /* PrismHelper */;
+			targetProxy = 1F81D3961C66DFD200171A8D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-        1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */ = {
-            isa = PBXVariantGroup;
-            children = (
-                1F0A73AF1A9C0BDE00FA91D4 /* Base */,
-            );
-            name = PcapDocument.xib;
-            sourceTree = "<group>";
-        };
-        1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */ = {
-            isa = PBXVariantGroup;
-            children = (
-                1F0A73B41A9C0BDE00FA91D4 /* Base */,
-            );
-            name = MainMenu.xib;
-            sourceTree = "<group>";
-        };
+		1F0A73AE1A9C0BDE00FA91D4 /* PcapDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0A73AF1A9C0BDE00FA91D4 /* Base */,
+			);
+			name = PcapDocument.xib;
+			sourceTree = "<group>";
+		};
+		1F0A73B31A9C0BDE00FA91D4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0A73B41A9C0BDE00FA91D4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-        1F0A73C21A9C0BDE00FA91D4 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                ASSETCATALOG_COMPILER_APPICON_NAME = "";
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "Developer ID Application";
-                COPY_PHASE_STRIP = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                GCC_DYNAMIC_NO_PIC = NO;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_OPTIMIZATION_LEVEL = 0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 10.10;
-                MTL_ENABLE_DEBUG_INFO = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            };
-            name = Debug;
-        };
-        1F0A73C31A9C0BDE00FA91D4 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                ASSETCATALOG_COMPILER_APPICON_NAME = "";
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "Developer ID Application";
-                COPY_PHASE_STRIP = YES;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 10.10;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-            };
-            name = Release;
-        };
-        1F0A73C51A9C0BDE00FA91D4 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CLANG_ENABLE_MODULES = YES;
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                COMBINE_HIDPI_IMAGES = YES;
-                DEVELOPMENT_TEAM = 7PCDT74GU2;
-                INFOPLIST_FILE = Prism/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-                PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-                SWIFT_SWIFT3_OBJC_INFERENCE = On;
-                SWIFT_VERSION = 4.0;
-            };
-            name = Debug;
-        };
-        1F0A73C61A9C0BDE00FA91D4 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CLANG_ENABLE_MODULES = YES;
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                COMBINE_HIDPI_IMAGES = YES;
-                DEVELOPMENT_TEAM = 7PCDT74GU2;
-                INFOPLIST_FILE = Prism/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-                PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
-                SWIFT_SWIFT3_OBJC_INFERENCE = On;
-                SWIFT_VERSION = 4.0;
-            };
-            name = Release;
-        };
-        1F0A73C81A9C0BDE00FA91D4 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                COMBINE_HIDPI_IMAGES = YES;
-                FRAMEWORK_SEARCH_PATHS = (
-                    "$(DEVELOPER_FRAMEWORKS_DIR)",
-                    "$(inherited)",
-                );
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                INFOPLIST_FILE = PrismTests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-                PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_SWIFT3_OBJC_INFERENCE = On;
-                SWIFT_VERSION = 4.0;
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prism.app/Contents/MacOS/Prism";
-            };
-            name = Debug;
-        };
-        1F0A73C91A9C0BDE00FA91D4 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                COMBINE_HIDPI_IMAGES = YES;
-                FRAMEWORK_SEARCH_PATHS = (
-                    "$(DEVELOPER_FRAMEWORKS_DIR)",
-                    "$(inherited)",
-                );
-                INFOPLIST_FILE = PrismTests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-                PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_SWIFT3_OBJC_INFERENCE = On;
-                SWIFT_VERSION = 4.0;
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prism.app/Contents/MacOS/Prism";
-            };
-            name = Release;
-        };
-        1F81D38F1C66DF1500171A8D /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                DEBUG_INFORMATION_FORMAT = dwarf;
-                DEVELOPMENT_TEAM = 7PCDT74GU2;
-                GCC_NO_COMMON_BLOCKS = YES;
-                INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
-                MACOSX_DEPLOYMENT_TARGET = 10.11;
-                OTHER_LDFLAGS = (
-                    "-sectcreate",
-                    __TEXT,
-                    __info_plist,
-                    PrismHelper/Info.plist,
-                    "-sectcreate",
-                    __TEXT,
-                    __launchd_plist,
-                    PrismHelper/Launchd.plist,
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
-                PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
-                SKIP_INSTALL = YES;
-                SWIFT_VERSION = 3.0;
-            };
-            name = Debug;
-        };
-        1F81D3901C66DF1500171A8D /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                COPY_PHASE_STRIP = NO;
-                DEVELOPMENT_TEAM = 7PCDT74GU2;
-                GCC_NO_COMMON_BLOCKS = YES;
-                INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
-                MACOSX_DEPLOYMENT_TARGET = 10.11;
-                OTHER_LDFLAGS = (
-                    "-sectcreate",
-                    __TEXT,
-                    __info_plist,
-                    PrismHelper/Info.plist,
-                    "-sectcreate",
-                    __TEXT,
-                    __launchd_plist,
-                    PrismHelper/Launchd.plist,
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
-                PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
-                SKIP_INSTALL = YES;
-                SWIFT_VERSION = 3.0;
-            };
-            name = Release;
-        };
+		1F0A73C21A9C0BDE00FA91D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F0A73C31A9C0BDE00FA91D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		1F0A73C51A9C0BDE00FA91D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
+				INFOPLIST_FILE = Prism/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1F0A73C61A9C0BDE00FA91D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
+				INFOPLIST_FILE = Prism/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Prism/Prism-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		1F0A73C81A9C0BDE00FA91D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrismTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prism.app/Contents/MacOS/Prism";
+			};
+			name = Debug;
+		};
+		1F0A73C91A9C0BDE00FA91D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrismTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caddr.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prism.app/Contents/MacOS/Prism";
+			};
+			name = Release;
+		};
+		1F81D38F1C66DF1500171A8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					PrismHelper/Info.plist,
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					PrismHelper/Launchd.plist,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
+				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1F81D3901C66DF1500171A8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PrismHelper/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					PrismHelper/Info.plist,
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					PrismHelper/Launchd.plist,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.caddr.PrismHelper;
+				PRODUCT_NAME = "net.caddr.$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-        1F0A73A01A9C0BDE00FA91D4 /* Build configuration list for PBXProject "Prism" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                1F0A73C21A9C0BDE00FA91D4 /* Debug */,
-                1F0A73C31A9C0BDE00FA91D4 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        1F0A73C41A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "Prism" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                1F0A73C51A9C0BDE00FA91D4 /* Debug */,
-                1F0A73C61A9C0BDE00FA91D4 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        1F0A73C71A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "PrismTests" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                1F0A73C81A9C0BDE00FA91D4 /* Debug */,
-                1F0A73C91A9C0BDE00FA91D4 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                1F81D38F1C66DF1500171A8D /* Debug */,
-                1F81D3901C66DF1500171A8D /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
+		1F0A73A01A9C0BDE00FA91D4 /* Build configuration list for PBXProject "Prism" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0A73C21A9C0BDE00FA91D4 /* Debug */,
+				1F0A73C31A9C0BDE00FA91D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0A73C41A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "Prism" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0A73C51A9C0BDE00FA91D4 /* Debug */,
+				1F0A73C61A9C0BDE00FA91D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0A73C71A9C0BDE00FA91D4 /* Build configuration list for PBXNativeTarget "PrismTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0A73C81A9C0BDE00FA91D4 /* Debug */,
+				1F0A73C91A9C0BDE00FA91D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F81D3911C66DF1500171A8D /* Build configuration list for PBXNativeTarget "PrismHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F81D38F1C66DF1500171A8D /* Debug */,
+				1F81D3901C66DF1500171A8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-    };
-    rootObject = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
+	};
+	rootObject = 1F0A739D1A9C0BDE00FA91D4 /* Project object */;
 }
