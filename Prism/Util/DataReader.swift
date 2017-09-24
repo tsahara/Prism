@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 class DataReader {
     let data: Data
     var offset: Int

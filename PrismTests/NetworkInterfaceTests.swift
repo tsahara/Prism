@@ -26,7 +26,6 @@ class NetworkInterfaceTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let ni = NetworkInterface(name: "en0")
-        ni.start()
     }
 
     func testPerformanceExample() {
