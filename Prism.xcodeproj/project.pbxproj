@@ -389,6 +389,7 @@
 					};
 					1F0A73B91A9C0BDE00FA91D4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7PCDT74GU2;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1F0A73A41A9C0BDE00FA91D4;
@@ -668,7 +669,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -695,7 +696,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7PCDT74GU2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
