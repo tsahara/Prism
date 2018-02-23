@@ -128,6 +128,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     
     func tableViewSelectionDidChange(_ notification: Notification) {
         guard let pcap = pcap else { return }
+        if packet_table!.selectedRow < 0 { return }
         self.selected_packet = pcap.packets[packet_table!.selectedRow]
         self.packet_outline.reloadItem(nil)
     }
