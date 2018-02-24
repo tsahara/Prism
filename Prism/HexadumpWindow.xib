@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,24 +18,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="671" height="472"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-Au-Qyx">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-Au-Qyx">
                         <rect key="frame" x="300" y="3" width="71" height="32"/>
                         <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGz-9Z-Rxf">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <scrollView ambiguous="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-3L-KQt">
-                        <rect key="frame" x="0.0" y="43" width="672" height="430"/>
-                        <clipView key="contentView" ambiguous="YES" id="n0f-il-Eg6">
-                            <rect key="frame" x="1" y="1" width="655" height="428"/>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-3L-KQt">
+                        <rect key="frame" x="0.0" y="43" width="671" height="430"/>
+                        <clipView key="contentView" id="n0f-il-Eg6">
+                            <rect key="frame" x="1" y="1" width="654" height="428"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="WiE-GK-KF9">
-                                    <rect key="frame" x="0.0" y="0.0" width="1" height="428"/>
+                                <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="WiE-GK-KF9">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="428"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="1" height="428"/>
+                                    <size key="minSize" width="654" height="428"/>
                                     <size key="maxSize" width="691" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
@@ -47,19 +47,21 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="dWg-1N-I57">
-                            <rect key="frame" x="656" y="1" width="15" height="428"/>
+                            <rect key="frame" x="655" y="1" width="15" height="428"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="WMa-3L-KQt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="-1" id="0Vy-Gx-aAv"/>
+                    <constraint firstAttribute="bottom" secondItem="NmP-Au-Qyx" secondAttribute="bottom" constant="10" id="0wO-tu-XB8"/>
                     <constraint firstItem="WMa-3L-KQt" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="3sF-Sg-5YK"/>
                     <constraint firstItem="NmP-Au-Qyx" firstAttribute="top" secondItem="WMa-3L-KQt" secondAttribute="bottom" constant="12" id="9vU-VN-xOj"/>
+                    <constraint firstItem="NmP-Au-Qyx" firstAttribute="centerX" secondItem="WMa-3L-KQt" secondAttribute="centerX" id="oe7-Dh-Qs2"/>
                     <constraint firstAttribute="trailing" secondItem="WMa-3L-KQt" secondAttribute="trailing" id="xg5-1n-ZPP"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="334.5" y="338"/>
+            <point key="canvasLocation" x="295" y="131"/>
         </window>
     </objects>
 </document>
