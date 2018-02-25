@@ -38,14 +38,14 @@ class IPv4 : BaseProtocol {
         }
         p.header_length = 20
 
-        r.read_u8()  // version, ihl
-        r.read_u8()  // tos
-        let total_length = r.read_u16be()
-        r.read_u16be() // id
-        r.read_u16be() // fragment+offset
-        r.read_u8()    // ttl
+        r.skip8()  // version, ihl
+        r.skip8()  // tos
+        r.skip16() // total_length
+        r.skip16() // id
+        r.skip16() // fragment+offset
+        r.skip8()  // ttl
         let proto = r.read_u8()
-        r.read_u16be() // cksum
+        r.skip16() // cksum
 
         let f = IPv4AddressField(reader: r, length: 4, name: "Source IP Address")
         p.fields.append(f)

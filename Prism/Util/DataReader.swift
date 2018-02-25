@@ -71,6 +71,18 @@ class DataReader {
         return u32()
     }
 
+    func skip8() {
+        advance(1)
+    }
+
+    func skip16() {
+        advance(2)
+    }
+
+    func skip32() {
+        advance(4)
+    }
+
     func u32endian() -> UInt32 {
         if (endian == .bigEndian) {
             return read_u32be()

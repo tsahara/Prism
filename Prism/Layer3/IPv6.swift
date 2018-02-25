@@ -31,7 +31,7 @@ class IPv6 : BaseProtocol {
         // Source Address: 128
         // Destination Address: 128
        
-        reader.u32()
+        reader.skip32()
         let len = Int(reader.read_u16be())
         if (reader.length < 40 + len) {
             p.broken = true
@@ -48,9 +48,9 @@ class IPv6 : BaseProtocol {
         default:
             context.parser = UnknownProtocol.parse
         }
-        reader.read_u8()
-        reader.readdata(16)
-        reader.readdata(16)
+        reader.skip8()
+        reader.skip16()
+        reader.skip16()
         return p
     }
 

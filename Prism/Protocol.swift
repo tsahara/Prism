@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol Protocol {
+protocol Protocol {
     var broken: Bool { get }
     var fields: [ProtocolField] { get }
     var header_length: Int { get }
