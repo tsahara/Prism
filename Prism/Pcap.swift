@@ -115,6 +115,7 @@ class Pcap {
         netif = NetworkInterface(name: "en0")
         netif!.on_receive {
             data in
+            NSLog("pkt received")
             let reader = DataReader(data)
             let endian = ByteOrder.host()
             reader.endian = endian
@@ -127,7 +128,7 @@ class Pcap {
             let ts_usec = reader.u32endian()
             let caplen  = reader.u32endian()
             let origlen = reader.u32endian()
-            let hdrlen  = reader.u16endian()
+            let _  = reader.u16endian()
             
             if (reader.offset + Int(caplen) > data.count) {
                 print("BPF: packets < caplen")
@@ -144,9 +145,6 @@ class Pcap {
             pkt.parse(context)
 
             self.packets.append(pkt)
-            
-            let center = NotificationCenter.default
-            center.post(name: Notification.Name(rawValue: "AddPacketNotification"), object: self)
         }
     }
 

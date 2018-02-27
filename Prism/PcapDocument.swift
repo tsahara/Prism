@@ -53,7 +53,8 @@ class PcapDocument: NSDocument {
         guard let p = Pcap.readFile(data: data) else {
             throw NSError(domain: NSCocoaErrorDomain, code: NSFileReadCorruptFileError, userInfo: nil)
         }
-        NSLog("Read \(p.packets.count) packets")
+        pcap = p
+        NSLog("PcapDocument.read: \(p.packets.count) packets")
 
         let center = NotificationCenter.default
         center.post(name: Notification.Name(rawValue: "AddPacketNotification"), object: p)

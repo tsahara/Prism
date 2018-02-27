@@ -14,6 +14,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     @IBOutlet var text: NSTextView!
     @IBOutlet weak var search_field: NSSearchFieldCell!
 
+    @IBOutlet weak var label: NSTextField!
     @IBOutlet weak var packet_outline: NSOutlineView!
 
     var hexa: HexadumpWindowController?
@@ -25,13 +26,17 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     }
 
     override func windowDidLoad() {
-//        window!.titleVisibility = .Hidden
         let center = NotificationCenter.default
         center.addObserver(forName: NSNotification.Name(rawValue: "AddPacketNotification"), object: pcap, queue: OperationQueue.main) {
             notification in
+            NSLog("add-packet-notification")
             self.packet_table.noteNumberOfRowsChanged()
+            self.label.stringValue = "packets count = \(self.pcap?.packets.count)"
         }
-        print("loaded")
+        label.stringValue = "loaded"
+
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "AddPacketNotification"), object: pcap!)
+        NSLog("windowDidLoad: cnt==\(self.pcap!.packets.count)")
     }
     
     @IBAction func startstop(_ sender: AnyObject) {
@@ -65,6 +70,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     
     // NSTableViewDataSource Protocol
     func numberOfRows(in aTableView: NSTableView) -> Int {
+        NSLog("numberOfRows: \(pcap?.packets.count)")
         if pcap != nil {
             return pcap!.packets.count
         } else {
