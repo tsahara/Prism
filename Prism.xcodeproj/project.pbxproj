@@ -27,6 +27,7 @@
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
 		1F4DE8D91D7267BB00FD73AD /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
+		1F63DE472048292900836264 /* IPv4AddressTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63DE462048292900836264 /* IPv4AddressTest.swift */; };
 		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
 		1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9821B41F5EE34D00C61F77 /* Preferences.xib */; };
@@ -112,6 +113,7 @@
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
 		1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv6Address.swift; sourceTree = "<group>"; };
 		1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4Address.swift; sourceTree = "<group>"; };
+		1F63DE462048292900836264 /* IPv4AddressTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPv4AddressTest.swift; sourceTree = "<group>"; };
 		1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F9821B41F5EE34D00C61F77 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		1F0A73BD1A9C0BDE00FA91D4 /* PrismTests */ = {
 			isa = PBXGroup;
 			children = (
+				1F63DE462048292900836264 /* IPv4AddressTest.swift */,
 				1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */,
 				1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */,
 				1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */,
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0A73C11A9C0BDE00FA91D4 /* PrismTests.swift in Sources */,
+				1F63DE472048292900836264 /* IPv4AddressTest.swift in Sources */,
 				1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */,
 				1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */,
 			);
