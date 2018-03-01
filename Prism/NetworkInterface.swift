@@ -10,7 +10,6 @@ import Foundation
 
 class NetworkInterface {
     let ifname: String
-    var fd: Int32 = -1
     var filehandle: FileHandle?
     var buffer = [UInt8](repeating: 0, count: 2000)
     
@@ -45,6 +44,5 @@ class NetworkInterface {
     
     func stop() {
         filehandle?.closeFile()
-        fd = -1
     }
 }
