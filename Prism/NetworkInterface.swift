@@ -22,12 +22,12 @@ class NetworkInterface {
             filehandle = FileHandle(forReadingAtPath: "/dev/bpf\(i)")
             if (filehandle != nil) { break }
         }
-
-        guard filehandle != nil else {
+        if filehandle == nil {
+            // call Helper
             return
         }
-        
-        c_bpf_setup(filehandle!.fileDescriptor, "en0", UInt32(buffer.count))
+
+        c_bpf_setup(filehandle!.fileDescriptor, ifname, UInt32(buffer.count))
 
         filehandle!.readabilityHandler = {
             fh in
