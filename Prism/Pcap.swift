@@ -44,11 +44,9 @@ class Pcap {
      - returns: PCAP object.
      */
     class func readFile(data: Data) -> Pcap? {
-        let reader = DataReader(data)
+        guard data.count >= 20 else { return nil }
 
-        if (data.count < MemoryLayout<pcap_file_header>.size) {
-            return nil
-        }
+        let reader = DataReader(data)
 
         let filehdr = (data as NSData).bytes.bindMemory(to: pcap_file_header.self, capacity: data.count).pointee
 
