@@ -44,6 +44,33 @@ class DataReader {
         return val
     }
 
+    func read_u16() -> UInt16 {
+        let val = read_u16be()
+        if endian == .bigEndian {
+            return val
+        } else {
+            return val.byteSwapped
+        }
+    }
+
+    func read_s32() -> Int32 {
+        let val = read_s32be()
+        if endian == .bigEndian {
+            return val
+        } else {
+            return val.byteSwapped
+        }
+    }
+
+    func read_u32() -> UInt32 {
+        let val = read_u32be()
+        if endian == .bigEndian {
+            return val
+        } else {
+            return val.byteSwapped
+        }
+    }
+
     func read_u16be() -> UInt16 {
         let val = UInt16(data[offset]) * 256 + UInt16(data[offset + 1])
         offset += 2
@@ -56,6 +83,15 @@ class DataReader {
         } else {
             return read_u16be().littleEndian
         }
+    }
+
+    func read_s32be() -> Int32 {
+        var val = Int32(data[offset]) * 256 * 256 * 256
+        val += Int32(data[offset + 1]) * 256 * 256
+        val += Int32(data[offset + 2]) * 256
+        val += Int32(data[offset + 3])
+        offset += 4
+        return val
     }
 
     func u32() -> UInt32 {
