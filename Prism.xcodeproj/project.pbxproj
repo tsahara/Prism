@@ -17,6 +17,27 @@
 		1F0B07B3205026BA00DD2D1C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0B07B2205026BA00DD2D1C /* main.swift */; };
 		1F0B07B92050274A00DD2D1C /* PacketCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0B07B82050274A00DD2D1C /* PacketCapture.swift */; };
 		1F0B07BA2050274A00DD2D1C /* PacketCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0B07B82050274A00DD2D1C /* PacketCapture.swift */; };
+		1F0B07BF2051714E00DD2D1C /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
+		1F0B07C02051717E00DD2D1C /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12831C1B87ED8C007815E9 /* Packet.swift */; };
+		1F0B07C12051726500DD2D1C /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */; };
+		1F0B07C22051727600DD2D1C /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A18D01F764EE400F84340 /* DataReader.swift */; };
+		1F0B07C32051728F00DD2D1C /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */; };
+		1F0B07C4205172EC00DD2D1C /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
+		1F0B07C5205172FE00DD2D1C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DC1BA834A4006B2589 /* Protocol.swift */; };
+		1F0B07C62051730A00DD2D1C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
+		1F0B07C72051731700DD2D1C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
+		1F0B07C82051731E00DD2D1C /* UnknownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66DE1BA834CB006B2589 /* UnknownProtocol.swift */; };
+		1F0B07C92051733100DD2D1C /* ICMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263741BBEA3FB0073FCC6 /* ICMP.swift */; };
+		1F0B07CA2051733400DD2D1C /* ICMP6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF263761BBEA4E50073FCC6 /* ICMP6.swift */; };
+		1F0B07CB2051733800DD2D1C /* IPv4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF679251BB2DD91009C6258 /* IPv4.swift */; };
+		1F0B07CC2051733800DD2D1C /* IPv6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66E11BA83C2C006B2589 /* IPv6.swift */; };
+		1F0B07CD2051734300DD2D1C /* IPv4Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D81D7267BB00FD73AD /* IPv4Address.swift */; };
+		1F0B07CE2051734B00DD2D1C /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
+		1F0B07CF2051735900DD2D1C /* Loopback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE66D81BA5C4B3006B2589 /* Loopback.swift */; };
+		1F0B07D02051736C00DD2D1C /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF35981C0C7E2100B1269A /* TCP.swift */; };
+		1F0B07D12051736E00DD2D1C /* UDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAF28F1BBC0B7600DABACF /* UDP.swift */; };
+		1F0B07D22051737E00DD2D1C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
+		1F0B07D32051738A00DD2D1C /* Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2637A1BC01A2D0073FCC6 /* Null.swift */; };
 		1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */; };
 		1F111EF11BFFC6D900AE8976 /* PcapWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */; };
 		1F1283191B84D430007815E9 /* file-header-only.pcap in Resources */ = {isa = PBXBuildFile; fileRef = 1F1283181B84D430007815E9 /* file-header-only.pcap */; };
@@ -38,7 +59,6 @@
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
 		1FA6FE041C3932CE00E3310C /* MacAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE031C3932CE00E3310C /* MacAddressField.swift */; };
 		1FA6FE061C3AB66B00E3310C /* IPv4AddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */; };
-		1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FE071C4005F200E3310C /* EthertypeField.swift */; };
 		1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */; };
 		1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */; };
 		1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB57EEC1B9DD26E0016FCA6 /* dummy.m */; };
@@ -136,7 +156,6 @@
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
 		1FA6FE031C3932CE00E3310C /* MacAddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacAddressField.swift; sourceTree = "<group>"; };
 		1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPv4AddressField.swift; sourceTree = "<group>"; };
-		1FA6FE071C4005F200E3310C /* EthertypeField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthertypeField.swift; sourceTree = "<group>"; };
 		1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTests.swift; sourceTree = "<group>"; };
 		1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pcap.swift; sourceTree = "<group>"; };
 		1FB57EEB1B9DD26D0016FCA6 /* Prism-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prism-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -218,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				1F0A73AA1A9C0BDE00FA91D4 /* AppDelegate.swift */,
-				1FA6FE071C4005F200E3310C /* EthertypeField.swift */,
 				1F19E2541DC9ACD400C1DC6D /* Helper.swift */,
 				1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */,
 				1FA6FE051C3AB66B00E3310C /* IPv4AddressField.swift */,
@@ -226,7 +244,6 @@
 				1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */,
 				1FA6FE031C3932CE00E3310C /* MacAddressField.swift */,
 				1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */,
-				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */,
 				1F0A73AC1A9C0BDE00FA91D4 /* PcapDocument.swift */,
 				1F111EF01BFFC6D900AE8976 /* PcapWindowController.swift */,
@@ -303,6 +320,7 @@
 		1F0B07B72050271D00DD2D1C /* Packets */ = {
 			isa = PBXGroup;
 			children = (
+				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1F0B07B82050274A00DD2D1C /* PacketCapture.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
 			);
@@ -520,7 +538,6 @@
 				1FEE66D91BA5C4B3006B2589 /* Loopback.swift in Sources */,
 				1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */,
 				1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
-				1FA6FE081C4005F200E3310C /* EthertypeField.swift in Sources */,
 				1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */,
 				1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */,
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
@@ -566,8 +583,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0B07C4205172EC00DD2D1C /* Ethernet.swift in Sources */,
+				1F0B07CA2051733400DD2D1C /* ICMP6.swift in Sources */,
+				1F0B07D12051736E00DD2D1C /* UDP.swift in Sources */,
+				1F0B07BF2051714E00DD2D1C /* Pcap.swift in Sources */,
+				1F0B07D22051737E00DD2D1C /* IPv4AddressField.swift in Sources */,
+				1F0B07D02051736C00DD2D1C /* TCP.swift in Sources */,
 				1F0B07BA2050274A00DD2D1C /* PacketCapture.swift in Sources */,
+				1F0B07CD2051734300DD2D1C /* IPv4Address.swift in Sources */,
 				1F0B07B3205026BA00DD2D1C /* main.swift in Sources */,
+				1F0B07CF2051735900DD2D1C /* Loopback.swift in Sources */,
+				1F0B07C32051728F00DD2D1C /* NetworkInterface.swift in Sources */,
+				1F0B07C92051733100DD2D1C /* ICMP.swift in Sources */,
+				1F0B07C5205172FE00DD2D1C /* Protocol.swift in Sources */,
+				1F0B07C82051731E00DD2D1C /* UnknownProtocol.swift in Sources */,
+				1F0B07C62051730A00DD2D1C /* ProtocolField.swift in Sources */,
+				1F0B07CC2051733800DD2D1C /* IPv6.swift in Sources */,
+				1F0B07C02051717E00DD2D1C /* Packet.swift in Sources */,
+				1F0B07D32051738A00DD2D1C /* Null.swift in Sources */,
+				1F0B07C22051727600DD2D1C /* DataReader.swift in Sources */,
+				1F0B07C72051731700DD2D1C /* MacAddressField.swift in Sources */,
+				1F0B07CE2051734B00DD2D1C /* IPv6Address.swift in Sources */,
+				1F0B07CB2051733800DD2D1C /* IPv4.swift in Sources */,
+				1F0B07C12051726500DD2D1C /* ParseContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

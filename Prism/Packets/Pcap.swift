@@ -8,7 +8,7 @@
 
 import Foundation
 
-let PCAP_FILE_MAGIC: bpf_u_int32 = 0xa1b2c3d4
+let PCAP_FILE_MAGIC: UInt32 = 0xa1b2c3d4
 
 class Pcap {
     /// packets in PCAP
@@ -19,6 +19,8 @@ class Pcap {
     
     /// Network interface on which capturing is going
     var netif: NetworkInterface?
+
+    var endianness: ByteOrder = .littleEndian
 
     /// Header Fields
     var version_major: UInt16 = 0
@@ -34,16 +36,17 @@ class Pcap {
      - returns: byte sequence.
      */
     func encode() -> Data {
-        var hdr = pcap_file_header()
-        hdr.magic = PCAP_FILE_MAGIC
-        hdr.version_major = 2
-        hdr.version_minor = 4
-        hdr.thiszone = 0
-        hdr.snaplen = 65536
-        hdr.linktype = 0
-        return withUnsafePointer(to: &hdr) {
-            ptr in Data(bytes: ptr, count: MemoryLayout<pcap_file_header>.size)
-        }
+//        var hdr = pcap_file_header()
+//        hdr.magic = PCAP_FILE_MAGIC
+//        hdr.version_major = 2
+//        hdr.version_minor = 4
+//        hdr.thiszone = 0
+//        hdr.snaplen = 65536
+//        hdr.linktype = 0
+//        return withUnsafePointer(to: &hdr) {
+//            ptr in Data(bytes: ptr, count: MemoryLayout<pcap_file_header>.size)
+//        }
+        return Data()
     }
 
     /**

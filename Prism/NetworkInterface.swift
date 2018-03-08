@@ -27,7 +27,7 @@ class NetworkInterface {
             return
         }
 
-        c_bpf_setup(filehandle!.fileDescriptor, ifname, UInt32(buffer.count))
+//        c_bpf_setup(filehandle!.fileDescriptor, ifname, UInt32(buffer.count))
 
         filehandle!.readabilityHandler = {
             fh in
