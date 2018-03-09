@@ -47,6 +47,7 @@
 		1F247C301F55B5630024DAD1 /* SessionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F247C2F1F55B5630024DAD1 /* SessionTable.swift */; };
 		1F3C87AE1C12E77A00BD31A4 /* HexadumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */; };
 		1F3C87B01C12E8D300BD31A4 /* HexadumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */; };
+		1F3DE8662052CF6F00E07902 /* PcapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DE8652052CF6F00E07902 /* PcapTest.swift */; };
 		1F4484921DF7688A00583705 /* PrismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4484911DF7688A00583705 /* PrismHelper.m */; };
 		1F493B5E1BB6E259004B2808 /* Ethernet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F493B5D1BB6E259004B2808 /* Ethernet.swift */; };
 		1F4DE8D71D718CD600FD73AD /* IPv6Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4DE8D61D718CD600FD73AD /* IPv6Address.swift */; };
@@ -143,6 +144,7 @@
 		1F247C2F1F55B5630024DAD1 /* SessionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTable.swift; sourceTree = "<group>"; };
 		1F3C87AD1C12E77A00BD31A4 /* HexadumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexadumpWindow.xib; sourceTree = "<group>"; };
 		1F3C87AF1C12E8D300BD31A4 /* HexadumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexadumpWindowController.swift; sourceTree = "<group>"; };
+		1F3DE8652052CF6F00E07902 /* PcapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcapTest.swift; sourceTree = "<group>"; };
 		1F4484901DF7688A00583705 /* PrismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrismHelper.h; sourceTree = "<group>"; };
 		1F4484911DF7688A00583705 /* PrismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrismHelper.m; sourceTree = "<group>"; };
 		1F493B5D1BB6E259004B2808 /* Ethernet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ethernet.swift; path = Layer2/Ethernet.swift; sourceTree = "<group>"; };
@@ -162,8 +164,8 @@
 		1FB57EEC1B9DD26E0016FCA6 /* dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
 		1FCF35961C0926B900B1269A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FCF35971C0926DA00B1269A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		1FCF35981C0C7E2100B1269A /* TCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCP.swift; path = Layer4/TCP.swift; sourceTree = "<group>"; };
-		1FDAF28F1BBC0B7600DABACF /* UDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDP.swift; path = Layer4/UDP.swift; sourceTree = "<group>"; };
+		1FCF35981C0C7E2100B1269A /* TCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
+		1FDAF28F1BBC0B7600DABACF /* UDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDP.swift; sourceTree = "<group>"; };
 		1FE536C71C04ABDD002839B8 /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		1FEE66D81BA5C4B3006B2589 /* Loopback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loopback.swift; path = Layer2/Loopback.swift; sourceTree = "<group>"; };
 		1FEE66DA1BA5CB3A006B2589 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
@@ -264,7 +266,6 @@
 				1F9A18D21F764EEE00F84340 /* Util */,
 				1FEE66D71BA5C48F006B2589 /* Layer2 */,
 				1FEE66E01BA83C00006B2589 /* Layer3 */,
-				1FDAF28E1BBC0B5000DABACF /* Layer4 */,
 				1F0A73A81A9C0BDE00FA91D4 /* Supporting Files */,
 			);
 			path = Prism;
@@ -284,6 +285,7 @@
 				1F63DE462048292900836264 /* IPv4AddressTest.swift */,
 				1F0F18401C05F16A005DDBA2 /* NetworkInterfaceTests.swift */,
 				1FB57EDD1B9B202F0016FCA6 /* PacketTests.swift */,
+				1F3DE8652052CF6F00E07902 /* PcapTest.swift */,
 				1F0A73C01A9C0BDE00FA91D4 /* PrismTests.swift */,
 				1F0A73CC1A9CABF200FA91D4 /* Data */,
 				1F0A73BE1A9C0BDE00FA91D4 /* Supporting Files */,
@@ -323,8 +325,18 @@
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1F0B07B82050274A00DD2D1C /* PacketCapture.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
+				1F3DE8642052CF1500E07902 /* Transport */,
 			);
 			path = Packets;
+			sourceTree = "<group>";
+		};
+		1F3DE8642052CF1500E07902 /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				1FCF35981C0C7E2100B1269A /* TCP.swift */,
+				1FDAF28F1BBC0B7600DABACF /* UDP.swift */,
+			);
+			path = Transport;
 			sourceTree = "<group>";
 		};
 		1F81D38C1C66DF1500171A8D /* PrismHelper */ = {
@@ -345,15 +357,6 @@
 				1F9A18D01F764EE400F84340 /* DataReader.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		1FDAF28E1BBC0B5000DABACF /* Layer4 */ = {
-			isa = PBXGroup;
-			children = (
-				1FCF35981C0C7E2100B1269A /* TCP.swift */,
-				1FDAF28F1BBC0B7600DABACF /* UDP.swift */,
-			);
-			name = Layer4;
 			sourceTree = "<group>";
 		};
 		1FEE66D71BA5C48F006B2589 /* Layer2 */ = {
@@ -576,6 +579,7 @@
 				1F63DE472048292900836264 /* IPv4AddressTest.swift in Sources */,
 				1F0F18411C05F16A005DDBA2 /* NetworkInterfaceTests.swift in Sources */,
 				1FB57EDE1B9B202F0016FCA6 /* PacketTests.swift in Sources */,
+				1F3DE8662052CF6F00E07902 /* PcapTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

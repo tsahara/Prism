@@ -21,15 +21,15 @@ class TCP : BaseProtocol {
         return p
     }
 
-    var dstport: Int? {
+    var dstport: UInt16 {
         get {
-            return Int(DataReader(data).get16be(at: 2))
+            return UInt16(DataReader(data).get16be(at: 2))
         }
     }
     
-    var srcport: Int? {
+    var srcport: UInt16 {
         get {
-            return Int(DataReader(data).get16be(at: 0))
+            return DataReader(data).get16be(at: 0)
         }
     }
 }
