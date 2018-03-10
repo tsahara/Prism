@@ -15,4 +15,9 @@ guard argv.count == 2 else {
     exit(1)
 }
 
-//let pcap = Pcap.load(argv[1])
+do {
+    let pcap = try Pcap.readFile(data: Data(contentsOf: URL(fileURLWithPath: argv[1])))
+    print("read pcap file")
+} catch {
+    print("error while readling file")
+}

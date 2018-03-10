@@ -55,7 +55,7 @@ class Pcap {
      - returns: PCAP object.
      */
     class func readFile(data: Data) -> Pcap? {
-        guard data.count >= 20 else {
+        guard data.count >= 24 else {
             // Error: file is too short
             return nil
         }
@@ -85,13 +85,16 @@ class Pcap {
         pcap.linktype      = reader.read_u32()
 
         print("linktype=\(pcap.linktype)\n", terminator: "")
-        
+
+        let linktype = PcapLinkType(rawValue: pcap.linktype)
+        guard linktype != nil else { return nil}
+
         var parser: (ParseContext) -> Protocol
-        switch pcap.linktype {
-        case 1:
-            parser = Ethernet.parse
-        default:
+        switch linktype! {
+        case .NULL:
             parser = LoopbackProtocol.parse
+        case .EN10MB:
+            parser = Ethernet.parse
         }
 
         while (reader.offset < data.count) {
@@ -169,4 +172,9 @@ class Pcap {
         netif?.stop()
         print("stop capture")
     }
+}
+
+// DLT_* in <net/bpf.h>
+enum PcapLinkType: UInt32 {
+    case NULL = 0, EN10MB = 1
 }
