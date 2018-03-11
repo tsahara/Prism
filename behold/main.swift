@@ -17,7 +17,11 @@ guard argv.count == 2 else {
 
 do {
     let pcap = try Pcap.readFile(data: Data(contentsOf: URL(fileURLWithPath: argv[1])))
-    print("read pcap file")
+    if pcap != nil {
+        print("read \(pcap!.packets.count) packets")
+    } else {
+        print("pcap error")
+    }
 } catch {
     print("error while readling file")
 }

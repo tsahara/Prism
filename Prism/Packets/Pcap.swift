@@ -70,7 +70,7 @@ class Pcap {
         case PCAP_FILE_MAGIC.byteSwapped:
             endian = .littleEndian
         default:
-            print("bad magic: \(magic.bigEndian)", terminator: "")
+            print(String(format: "bad magic: %08x", magic.bigEndian))
             return nil
         }
         reader.endian = endian
