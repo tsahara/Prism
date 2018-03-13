@@ -55,6 +55,8 @@
 		1F63DE472048292900836264 /* IPv4AddressTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63DE462048292900836264 /* IPv4AddressTest.swift */; };
 		1F81D38E1C66DF1500171A8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F81D38D1C66DF1500171A8D /* main.m */; };
 		1F81D3951C66DF9C00171A8D /* net.caddr.PrismHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F93F52B2057FD9700AFEB0C /* Pcapng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93F52A2057FD9700AFEB0C /* Pcapng.swift */; };
+		1F93F52C2057FD9700AFEB0C /* Pcapng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93F52A2057FD9700AFEB0C /* Pcapng.swift */; };
 		1F9821B51F5EE34D00C61F77 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9821B41F5EE34D00C61F77 /* Preferences.xib */; };
 		1F9A18D11F764EE400F84340 /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A18D01F764EE400F84340 /* DataReader.swift */; };
 		1FA6FE001C38BDCC00E3310C /* ProtocolField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */; };
@@ -153,6 +155,7 @@
 		1F63DE462048292900836264 /* IPv4AddressTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPv4AddressTest.swift; sourceTree = "<group>"; };
 		1F81D38B1C66DF1500171A8D /* net.caddr.PrismHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.PrismHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F81D38D1C66DF1500171A8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F93F52A2057FD9700AFEB0C /* Pcapng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pcapng.swift; sourceTree = "<group>"; };
 		1F9821B41F5EE34D00C61F77 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		1F9A18D01F764EE400F84340 /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
 		1FA6FDFF1C38BDCC00E3310C /* ProtocolField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolField.swift; sourceTree = "<group>"; };
@@ -325,6 +328,7 @@
 				1F12831C1B87ED8C007815E9 /* Packet.swift */,
 				1F0B07B82050274A00DD2D1C /* PacketCapture.swift */,
 				1FB57EE91B9DCEB30016FCA6 /* Pcap.swift */,
+				1F93F52A2057FD9700AFEB0C /* Pcapng.swift */,
 				1F3DE8642052CF1500E07902 /* Transport */,
 			);
 			path = Packets;
@@ -542,6 +546,7 @@
 				1FCF35991C0C7E2100B1269A /* TCP.swift in Sources */,
 				1FB57EED1B9DD26E0016FCA6 /* dummy.m in Sources */,
 				1FF679261BB2DD91009C6258 /* IPv4.swift in Sources */,
+				1F93F52B2057FD9700AFEB0C /* Pcapng.swift in Sources */,
 				1FF263771BBEA4E50073FCC6 /* ICMP6.swift in Sources */,
 				1F12831D1B87ED8C007815E9 /* Packet.swift in Sources */,
 				1FB57EEA1B9DCEB30016FCA6 /* Pcap.swift in Sources */,
@@ -603,6 +608,7 @@
 				1F0B07C82051731E00DD2D1C /* UnknownProtocol.swift in Sources */,
 				1F0B07C62051730A00DD2D1C /* ProtocolField.swift in Sources */,
 				1F0B07CC2051733800DD2D1C /* IPv6.swift in Sources */,
+				1F93F52C2057FD9700AFEB0C /* Pcapng.swift in Sources */,
 				1F0B07C02051717E00DD2D1C /* Packet.swift in Sources */,
 				1F0B07D32051738A00DD2D1C /* Null.swift in Sources */,
 				1F0B07C22051727600DD2D1C /* DataReader.swift in Sources */,

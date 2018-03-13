@@ -8,7 +8,8 @@
 
 import Foundation
 
-let argv = CommandLine.arguments
+//let argv = CommandLine.arguments
+let argv = ["a", "/Users/sahara/src/Unclog/stat.ripe.net.v4.pcap"]
 
 guard argv.count == 2 else {
     print("usage: behold <pcapfile>")
@@ -16,12 +17,18 @@ guard argv.count == 2 else {
 }
 
 do {
-    let pcap = try Pcap.readFile(data: Data(contentsOf: URL(fileURLWithPath: argv[1])))
+    let filename = argv[1]
+    let data = try Data(contentsOf: URL(fileURLWithPath: filename))
+    let pcap = Pcap.readFile(data: data)
     if pcap != nil {
         print("read \(pcap!.packets.count) packets")
     } else {
-        print("pcap error")
+        let pcapng = try Pcapng(data: data)
+        print("read \(pcapng.packets.count) packets")
     }
 } catch {
     print("error while readling file")
+    exit(1)
 }
+
+
