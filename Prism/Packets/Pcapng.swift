@@ -8,8 +8,14 @@
 
 import Foundation
 
+let SECTION_LENGTH_NOT_SPECIFIED = UINT64_MAX - 1
+
 class Pcapng {
     var packets: [Packet] = []
+
+    var major_version: UInt16
+    var minor_version: UInt16
+
 
     init(data: Data) throws {
         let PCAPNG_FILE_MAGIC: UInt32 = 0x1a2b3c4d
@@ -21,12 +27,16 @@ class Pcapng {
         let magic = reader.read_u32be()
 
         if magic == PCAPNG_FILE_MAGIC {
-            // file byte order is big-endian.
-            print("big-endian")
+            reader.endian = .bigEndian
         } else if magic == PCAPNG_FILE_MAGIC.byteSwapped {
-            // file byte order is little-endian.
-            print("little-endian")
+            reader.endian = .littleEndian
         }
+
+        major_version = reader.read_u16()
+        minor_version = reader.read_u16()
+
+        let section_length = reader.read_u64()
+        print("sec len = \(section_length)")
     }
 }
 

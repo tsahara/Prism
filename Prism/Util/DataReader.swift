@@ -71,6 +71,14 @@ class DataReader {
         }
     }
 
+    func read_u64() -> UInt64 {
+        if endian == .bigEndian {
+            return UInt64(read_u32()) << 32 + UInt64(read_u32())
+        } else {
+            return UInt64(read_u32()) + UInt64(read_u32()) << 32
+        }
+    }
+
     func read_u16be() -> UInt16 {
         let val = UInt16(data[offset]) * 256 + UInt16(data[offset + 1])
         offset += 2
