@@ -115,6 +115,10 @@ class DataReader {
         return u32()
     }
 
+    func skip(_ count: Int) {
+        advance(count)
+    }
+
     func skip8() {
         advance(1)
     }
