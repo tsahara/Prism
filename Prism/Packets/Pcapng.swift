@@ -44,7 +44,14 @@ class Pcapng {
 
         reader.skip(Int(total_length) - 24)
 
-        let block_type = reader.read_u32()
+        var next_ifid: UInt16 = 1
+
+        let block_type = reader.read_u32()
+        guard block_type == BlockType.InterfaceDescription.rawValue else {
+            throw PcapParseError.formatError(msg: "not interface")
+        }
+        let ifdesc = try InterfaceDescription(reader: reader, id: next_ifid)
+        next_ifid += 1
     }
 }
 
@@ -57,15 +64,14 @@ enum BlockType: UInt32 {
     case InterfaceDescription = 1
 }
 
-class Section {
-    var byte_order_magic: UInt32
-    var major_version: UInt16
-    var minor_version: UInt16
-
-    init(reader: DataReader) throws {
-
-    }
-}
+//class Section {
+//    var byte_order_magic: UInt32
+//    var major_version: UInt16
+//    var minor_version: UInt16
+//
+//    init(reader: DataReader) throws {
+//    }
+//}
 
 class InterfaceDescription {
     let id: UInt16
@@ -74,6 +80,7 @@ class InterfaceDescription {
 
     init(reader: DataReader, id: UInt16) throws {
         self.id = id
+
         let block_total_length = reader.read_u32()
         self.linktype = reader.read_u16()
         reader.skip16()
