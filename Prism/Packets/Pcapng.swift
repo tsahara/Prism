@@ -39,7 +39,7 @@ class Pcapng {
         major_version = reader.read_u16()
         minor_version = reader.read_u16()
 
-        let section_length = reader.read_u64()
+        let section_length = reader.read_s64()
         print("sec len = \(section_length)")
 
         reader.skip(Int(total_length) - 24)
