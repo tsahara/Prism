@@ -98,7 +98,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             
         case "Src Port":
             if (pkt.tcp != nil) {
-                return String(pkt.tcp!.srcport!)
+                return String(pkt.tcp!.srcport)
             } else if (pkt.udp != nil) {
                 return String(pkt.udp!.srcport!)
             }
@@ -115,7 +115,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
             
         case "Dst Port":
             if (pkt.tcp != nil) {
-                return String(pkt.tcp!.dstport!)
+                return String(pkt.tcp!.dstport)
             } else if (pkt.udp != nil) {
                 return String(pkt.udp!.dstport!)
             }

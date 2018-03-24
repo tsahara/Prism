@@ -112,7 +112,6 @@ class DataReader {
         }
     }
 
-
     func u32() -> UInt32 {
         var val = UInt32(data[offset]) * 256 * 256 * 256
         val += UInt32(data[offset + 1]) * 256 * 256
