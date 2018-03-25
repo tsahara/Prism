@@ -28,8 +28,8 @@ class DataReaderTest: XCTestCase {
     }
 
     func test_u16be() {
-        XCTAssertEqual(v.read_u16be(), 0x1234)
-        XCTAssertEqual(v.read_u16be(), 0x5678)
+        XCTAssertEqual(v.read_u16be(), 0x0123)
+        XCTAssertEqual(v.read_u16be(), 0x4567)
     }
 
     func test_s32be() {
