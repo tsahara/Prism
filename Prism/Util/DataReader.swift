@@ -22,6 +22,12 @@ class DataReader {
         offset += n
     }
 
+    var atEnd: Bool {
+        get {
+            return offset == data.count
+        }
+    }
+
     var length: Int { get { return data.count - offset } }
 
     func get_u8() -> UInt8 {

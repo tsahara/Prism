@@ -26,6 +26,9 @@ do {
         let pcapng = try Pcapng(data: data)
         print("read \(pcapng.packets.count) packets")
     }
+} catch let PcapParseError.formatError(msg) {
+    print("parse error: \(msg)")
+    exit(1)
 } catch {
     print("error while readling file")
     exit(1)
