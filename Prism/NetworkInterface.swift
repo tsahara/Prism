@@ -32,12 +32,12 @@ class NetworkInterface {
         filehandle!.readabilityHandler = {
             fh in
             var buffer = Data(capacity: 2000)
-            buffer.withUnsafeMutableBytes {
-                (ptr: UnsafeMutablePointer<UInt8>) in
-                let len = read(fh.fileDescriptor, ptr, 2000)
-                buffer.count = len
-                callback(buffer)
-            }
+//            buffer.withUnsafeMutableBytes {
+//                (ptr: UnsafeMutablePointer<UInt8>) in
+//                let len = read(fh.fileDescriptor, ptr, 2000)
+//                buffer.count = len
+//                callback(buffer)
+//            }
         }
         print("started")
     }
