@@ -33,7 +33,7 @@ class PcapDocument: NSDocument {
 //    }
    
     override func makeWindowControllers() {
-        self.addWindowController(PcapWindowController(windowNibName: NSNib.Name(rawValue: "PcapDocument")))
+        self.addWindowController(PcapWindowController(windowNibName: "PcapDocument"))
     }
 
     override func data(ofType typeName: String) throws -> Data {

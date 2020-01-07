@@ -55,7 +55,7 @@ class PcapWindowController : NSWindowController, NSTableViewDataSource, NSTableV
     
     @IBAction func toolbar_hexadump(_ sender: AnyObject) {
         print("hexadump")
-        hexa = HexadumpWindowController(windowNibName: NSNib.Name(rawValue: "HexadumpWindow"))
+        hexa = HexadumpWindowController(windowNibName: "HexadumpWindow")
         hexa!.showWindow(nil)
     }
 
